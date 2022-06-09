@@ -1,0 +1,21 @@
+﻿  Animation.cpp
+C:\Users\USUARIO\source\repos\Game\Game\Animation.cpp(36,47): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Animation.cpp(45,47): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+  Entity.cpp
+C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(23,38): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(23,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  main.cpp
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(77,27): warning C4018: '>=': no coinciden signed/unsigned
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(85,57): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(85,47): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+  Player.cpp
+  Generando código...
+  Game.vcxproj -> C:\Users\USUARIO\source\repos\Game\x64\Debug\Game.exe
