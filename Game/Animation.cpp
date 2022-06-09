@@ -2,50 +2,62 @@
 
 Animation::Animation()
 {
-}
-
-Animation::Animation(sf::Texture& t)
-{
-	source.x = 1;
-	source.y = Up;
-	sp.setTexture(t);
+    moveSpeed = 0;
+    tamSprite_x = 0;
+    tamSprite_y = 0,
+    posx = 0;
+    posy = 0;
 }
 
 Animation::~Animation()
 {
 }
 
-void Animation::config(sf::Event& ev1)
+void Animation::Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, double moveSpeed)
 {
-	if (ev1.key.code == sf::Keyboard::Up)
-		source.y = Up;
-	else if (ev1.key.code == sf::Keyboard::Down)
-		source.y = Down;
-	else if (ev1.key.code == sf::Keyboard::Left)
-		source.y = Left;
-	else if (ev1.key.code == sf::Keyboard::Right)
-		source.y = Right;
+    sp.setTexture(t1);
+    this->tamSprite_x = tamSprite_x;
+    this->tamSprite_y = tamSprite_y;
+    this->moveSpeed = moveSpeed;
+
+    rectSourceSprite.width = tamSprite_x;
+    rectSourceSprite.height = tamSprite_y;
+    rectSourceSprite.top = 0;
+    rectSourceSprite.left = 0;
+
+    sp.setTextureRect(rectSourceSprite);
 }
 
-void Animation::update(double tamTexture, double tamTotalTexture,int x, int y, int w, int h, double extra, bool c1)
+void Animation::orientation(sf::Event& ev)
 {
-	source.x++;
-	if (source.x * tamTexture >= tamTotalTexture)
-		source.x = 0;
-
-	sp.setTextureRect(sf::IntRect((source.x * x) + extra, y , w, h));
+    if (ev.type == sf::Event::KeyPressed)
+    {
+        if (ev.key.code == sf::Keyboard::Up)
+            rectSourceSprite.top = tamSprite_y * 3;
+        else if (ev.key.code == sf::Keyboard::Down)
+            rectSourceSprite.top = tamSprite_y * 0;
+        else if (ev.key.code == sf::Keyboard::Left)
+            rectSourceSprite.top = tamSprite_y;
+        else if (ev.key.code == sf::Keyboard::Right)
+            rectSourceSprite.top = tamSprite_y * 2;
+    }
 }
 
-void Animation::update2(double tamTexture, double tamTotalTexture, int x, int y, int w, int h, double extra, bool c1)
+void Animation::Update()
 {
-	source.x++;
-	if (source.x * tamTexture >= tamTotalTexture)
-		source.x = 0;
-
-	sp.setTextureRect(sf::IntRect((source.x * x) + extra, source.y * y, w, h));
+    if (time.getElapsedTime().asSeconds() > moveSpeed)
+    {
+        if (rectSourceSprite.left == tamSprite_x * 2)
+            rectSourceSprite.left = 0;
+        else
+            rectSourceSprite.left += tamSprite_x;
+        sp.setTextureRect(rectSourceSprite);
+        time.restart();
+    }
 }
 
-void Animation::draw(sf::RenderWindow& r)
+void Animation::Draw(sf::RenderWindow& app)
 {
-	r.draw(sp);
+    sp.setPosition(posx, posy);
+    app.draw(sp);
 }

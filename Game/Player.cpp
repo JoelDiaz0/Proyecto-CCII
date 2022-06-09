@@ -2,46 +2,32 @@
 
 Player::Player()
 {
-	name = "jugador";
-	source1.x = 1;
-	source1.y = Up;
 }
 
 Player::~Player()
 {
 }
 
-void Player::control(sf::Keyboard L, sf::Keyboard R, sf::Keyboard U, sf::Keyboard D)
+void Player::setControl(sf::Event& ev)
 {
-	this->L = L;
-	this->R = R;
-	this->D = D;
-	this->U = U;
+    anim.orientation(ev);
+
+    if (ev.type == sf::Event::KeyPressed)
+    {
+        if (ev.key.code == sf::Keyboard::Up)
+            anim.posy -= vsy;
+        else if (ev.key.code == sf::Keyboard::Down)
+            anim.posy += vsy;
+        else if (ev.key.code == sf::Keyboard::Left)
+            anim.posx -= vsx;
+        else if (ev.key.code == sf::Keyboard::Right)
+            anim.posx += vsx;
+    }
 }
 
-void Player::update(sf::Event& ev)
+void Player::Update()
 {
-	if (ev.key.code == sf::Keyboard::Up)
-	{
-		vy -= 10;
-		source1.y = Up;	
-	}
-		
-	else if (ev.key.code == sf::Keyboard::Down)
-	{
-		vy += 10;
-		source1.y = Down;	
-	}
-	else if (ev.key.code == sf::Keyboard::Left)
-	{
-		vx -= 10;
-		source1.y = Left;	
-	}
-	else if (ev.key.code == sf::Keyboard::Right)
-	{
-		vx += 10;
-		source1.y = Right;		
-	}
+
 }
 
 

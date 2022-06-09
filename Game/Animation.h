@@ -4,22 +4,22 @@
 
 class Animation
 {
-public:	
+public:
 	friend class Entity;
 	Animation();
-	Animation(sf::Texture& t);
 	~Animation();
-	void config(sf::Event &ev1);
-	void update(double tamTexture,double tamTotalTexture,int x, int y, int w, int h, double extra, bool c1 = false);
-	void update2(double tamTexture, double tamTotalTexture, int x, int y, int w, int h, double extra,bool c1);
-	void draw(sf::RenderWindow& r);
-
+	void Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, double moveSpeed);
+	void orientation(sf::Event& ev);
+	void Update();
+	void Draw(sf::RenderWindow& app);
 public:
-	enum Direction { Down, Left, Right, Up };
-	sf::Vector2i source;
 	sf::Sprite sp;
+	sf::IntRect rectSourceSprite;
+	double posx, posy;
 private:
-
+	double moveSpeed;
+	int tamSprite_x, tamSprite_y;
+	sf::Clock time;
 };
 
 

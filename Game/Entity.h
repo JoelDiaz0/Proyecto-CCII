@@ -1,23 +1,29 @@
 #pragma once
-#include <iostream>
+#include <SFML/Graphics.hpp>
 #include "Animation.h"
-
+#include <iostream>
 
 class Entity
 {
 public:
 	Entity();
 	~Entity();
-	void settings(Animation& anim, double posX, double posY);
-	void draw(sf::RenderWindow &app);
-	virtual void update();
 
+	virtual void Update();
 
+	void Initialize(Animation& anim, double x, double y, double vs);
+	void Draw(sf::RenderWindow& app);
+	void Scale(double tam_x, double tam_y);
+	void setSpeed_x(double vsx);
+	void setSpeed_y(double vsy);
+	void move_x();
+	void move_y();
+	void direcction();
 
-protected:
+public:
 	Animation anim;
-	std::string name;
-	double posX, posY, vx, vy;
+protected:
+	double vsx, vsy, tam_x, tam_y;
 	bool life;
 };
 
