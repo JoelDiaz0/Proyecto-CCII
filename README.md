@@ -22,7 +22,7 @@ Juego plataformero desarrollado en C++, inspirado en las mecánicas del juego gi
 - Git (Gestion de versiones)
 
 ## Mecánicas del juego
-- El juego permite a 2 jugadores que pueden moverse hacia la izquierda o derecha, saltar, mover algunos objetos y presionar botones que activan trampas.
+- El juego permite a 2 jugadores que pueden moverse hacia la izquierda o derecha, saltar, mover algunos objetos con uso de colisiones y presionar botones que activan trampas.
 - El objetivo del juego es cruzar un recorrido con obstáculos que incluye, enemigos, unos estáticos y otros móviles, y también trampas visibles u ocultas.
 - El jugador que llegue primero al final del nivel consigue puntos y quien consiga la mayor cantidad gana.
  
