@@ -25,3 +25,4 @@ Juego plataformero desarrollado en C++, inspirado en las mecánicas del juego gi
 - El juego permite a 2 jugadores que pueden moverse hacia la izquierda o derecha, saltar, mover algunos objetos y presionar botones que activan trampas.
 - El objetivo del juego es cruzar un recorrido con obstáculos que incluye, enemigos, unos estáticos y otros móviles, y también trampas visibles u ocultas.
 - El jugador que llegue primero al final del nivel consigue puntos y quien consiga la mayor cantidad gana.
+ 
