@@ -1,22 +1,27 @@
 ﻿  Animation.cpp
-C:\Users\USUARIO\source\repos\Game\Game\Animation.cpp(61,26): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\Animation.cpp(61,20): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Colision.cpp
+C:\Users\USUARIO\source\repos\Game\Game\Colision.cpp(34,98): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+C:\Users\USUARIO\source\repos\Game\Game\Colision.cpp(37,99): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
   Entity.cpp
-C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(27,25): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(27,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(58,39): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(27,31): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(27,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(38,39): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(58,32): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(38,32): warning C4244: 'argumento': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(59,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\Entity.cpp(59,32): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  Player.cpp
   main.cpp
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(3,10): warning C4067: símbolos (token) inesperados después de la directiva del preprocesador; se esperaba una nueva línea
+  Platform.cpp
+  Player.cpp
+C:\Users\USUARIO\source\repos\Game\Game\Player.cpp(20,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Player.cpp(22,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Player.cpp(49,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Player.cpp(51,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
   Generando código...
   Game.vcxproj -> C:\Users\USUARIO\source\repos\Game\x64\Debug\Game.exe

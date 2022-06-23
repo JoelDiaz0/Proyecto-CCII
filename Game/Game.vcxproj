@@ -134,8 +134,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Colision.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,10 +147,15 @@
     <Image Include="data\sprites\Enemigo1A.png" />
     <Image Include="data\sprites\Enemigo2.png" />
     <Image Include="data\sprites\fondo.jpg" />
+    <Image Include="data\sprites\nature-paltformer.png" />
+    <Image Include="data\sprites\p1.png" />
+    <Image Include="data\sprites\p2.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Colision.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

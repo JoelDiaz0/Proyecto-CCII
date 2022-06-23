@@ -27,6 +27,12 @@
     <ClCompile Include="Player.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Colision.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\sprites\Enemigo2.png">
@@ -38,6 +44,15 @@
     <Image Include="data\sprites\fondo.jpg">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="data\sprites\nature-paltformer.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\p1.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\p2.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -47,6 +62,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Colision.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
