@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include "Player.h";
+#include "Player.h"
 #include "Colision.h"
 #include <iostream>
 using std::cout;
