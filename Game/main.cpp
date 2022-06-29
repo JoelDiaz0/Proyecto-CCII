@@ -68,7 +68,11 @@ int main()
                     App.create(sf::VideoMode(W, H, 32), "Juego");
                     App.setFramerateLimit(60);
                     fullscream = false;
-                }
+                }//Debug, pulsa SHIFT para imprimir en la consola las coordenadas actuales del mouse
+                 //else if (ev.key.code == sf::Keyboard::Key::LShift) {//Como evento, dejarlo apretado no afecta
+                 //       cout << "PosX: " << sf::Mouse::getPosition(App).x << endl;
+                 //       cout << "PosT: " << sf::Mouse::getPosition(App).y << endl;
+                 //} 
             default:
                 break;
             }
