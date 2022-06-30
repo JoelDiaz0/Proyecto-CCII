@@ -70,7 +70,11 @@ int main()
                     fullscream = false;
                 }//pulsa SHIFT para imprimir en la consola las coordenadas actuales del mouse
                  //if (ev.key.code == sf::Keyboard::Key::LShift) {//Como evento, dejarlo apretado no afecta
-                 //       Coordeb = true;
+                 //       if(Coordeb == false){
+                 //               Coordeb=true;
+                 //           }else{
+                 //               Coordeb=false;
+                 //           }
                  //} 
             default:
                 break;
