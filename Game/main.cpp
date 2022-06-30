@@ -45,7 +45,7 @@ int main()
     pl1.scale_platform(2, 2);
 
     Colision c1, c2;
-
+    //static bool Coordeb{ false }; Crea el booleano para activar y desactivar el "modo debug" 
     //FUNCION PRINCIPAL
     while (App.isOpen())
     {
@@ -68,10 +68,9 @@ int main()
                     App.create(sf::VideoMode(W, H, 32), "Juego");
                     App.setFramerateLimit(60);
                     fullscream = false;
-                }//Debug, pulsa SHIFT para imprimir en la consola las coordenadas actuales del mouse
-                 //else if (ev.key.code == sf::Keyboard::Key::LShift) {//Como evento, dejarlo apretado no afecta
-                 //       cout << "PosX: " << sf::Mouse::getPosition(App).x << endl;
-                 //       cout << "PosT: " << sf::Mouse::getPosition(App).y << endl;
+                }//pulsa SHIFT para imprimir en la consola las coordenadas actuales del mouse
+                 //if (ev.key.code == sf::Keyboard::Key::LShift) {//Como evento, dejarlo apretado no afecta
+                 //       Coordeb = true;
                  //} 
             default:
                 break;
@@ -83,7 +82,27 @@ int main()
 
         c1.colision_pantalla(p1);
         c2.colision_pantalla(p2);
-
+        
+        //debug
+        //if (Coordeb == true) {
+        //    sf::Text mousePosX, mousePosY; 
+        //    sf::Font font;
+        //    font.loadFromFile("data\\fonts\\Baskic8.otf"); //Fuente custom ya que quitaron el defaultfont en sfml
+        //    //Este codigo podría ser usado para el SCORE
+        //
+        //   auto drawText = [&](sf::Text& t, std::string str, int value, int x, int y, int size, sf::Font& f, const sf::Color& c) { //Lambda porque no quería modificar otros archivos
+        //        t.setString(str + std::to_string(value));        //Pone un texto y luego agrega un valor numérico convertido a texto                                                                  
+        //        t.setPosition(x, y); //Posición del texto
+        //        t.setCharacterSize(size); //Tamanio de caracteres
+        //        t.setFont(f); //font custom
+        //        t.setFillColor(c);  //Color de texto
+        //        App.draw(t); //Hace aparecer el texto
+        //    };
+        //
+        //    drawText(mousePosX, std::string("Pos X mouse: "), sf::Mouse::getPosition(App).x, 1040, 85, 30, font, sf::Color::Black);
+        //    drawText(mousePosX, std::string("Pos Y mouse: "), sf::Mouse::getPosition(App).y, 1040, 125, 30, font, sf::Color::Black);
+        //}
+        
         p1.Update2(App, true);
         p2.Update2(App, false);
 
