@@ -44,6 +44,10 @@ int main()
     pl1.generar_tierra();
     pl1.scale_platform(2, 2);
 
+
+    cout <<" pija";
+
+
     Colision c1, c2;
     //static bool Coordeb{ false }; Crea el booleano para activar y desactivar el "modo debug" 
     //FUNCION PRINCIPAL
