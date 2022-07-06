@@ -134,29 +134,84 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="BloodMonster.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Colision.cpp" />
+    <ClCompile Include="Demon.cpp" />
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Fungus.cpp" />
+    <ClCompile Include="Hell.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Throwingfire.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\music\level1.ogg" />
+    <None Include="data\music\level2.ogg" />
     <None Include="data\music\music1.ogg" />
+    <None Include="data\music\the_hell.ogg" />
+    <None Include="data\sound\attack_fire_1.ogg" />
+    <None Include="data\sound\attack_thunder.ogg" />
+    <None Include="data\sound\bala_1.ogg" />
+    <None Include="data\sound\damage.ogg" />
+    <None Include="data\sound\FlameAtack.ogg" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="data\background\hell_background-0.jpg" />
+    <Image Include="data\background\hell_background-1.jpg" />
+    <Image Include="data\background\hell_background-2.jpg" />
+    <Image Include="data\background\hell_background-3.jpg" />
+    <Image Include="data\background\hell_background-4.jpg" />
+    <Image Include="data\background\hell_background-5.jpg" />
+    <Image Include="data\background\hell_background-6.jpg" />
+    <Image Include="data\background\hell_background-7.jpg" />
+    <Image Include="data\background\hell_graphics.png" />
+    <Image Include="data\sprites\bala_2.png" />
+    <Image Include="data\sprites\bloodmonster.png" />
+    <Image Include="data\sprites\buller_fire_1.png" />
+    <Image Include="data\sprites\buller_fire_2.png" />
+    <Image Include="data\sprites\buller_thunder.png" />
+    <Image Include="data\sprites\demon_attack.png" />
+    <Image Include="data\sprites\demon_walk.png" />
     <Image Include="data\sprites\Enemigo1A.png" />
     <Image Include="data\sprites\Enemigo2.png" />
     <Image Include="data\sprites\fondo.jpg" />
+    <Image Include="data\sprites\fungus.png" />
     <Image Include="data\sprites\nature-paltformer.png" />
     <Image Include="data\sprites\p1.png" />
+    <Image Include="data\sprites\p1_attack.png" />
+    <Image Include="data\sprites\p1_death.png" />
+    <Image Include="data\sprites\p1_idle.png" />
+    <Image Include="data\sprites\p1_jump.png" />
+    <Image Include="data\sprites\p1_run.png" />
+    <Image Include="data\sprites\p1_up.png" />
     <Image Include="data\sprites\p2.png" />
+    <Image Include="data\sprites\p2_attack.png" />
+    <Image Include="data\sprites\p2_death.png" />
+    <Image Include="data\sprites\p2_idle.png" />
+    <Image Include="data\sprites\p2_jump.png" />
+    <Image Include="data\sprites\p2_run.png" />
+    <Image Include="data\sprites\p2_up.png" />
+    <Image Include="data\sprites\throwingfire.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="BloodMonster.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="Colision.h" />
+    <ClInclude Include="Demon.h" />
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Fungus.h" />
+    <ClInclude Include="Hell.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Throwingfire.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="data\fonts\Baskic8.otf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

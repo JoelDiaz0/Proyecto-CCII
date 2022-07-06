@@ -7,7 +7,13 @@ class Animation
 public:
 	friend class Entity;
 	friend class Player;
+	friend class Enemy;
 	friend class Colision;
+	friend class Bullet;
+	friend class Throwingfire;
+	friend class Demon;
+	friend class Fungus;
+	friend class BloodMonster;
 	Animation();
 	~Animation();
 	void Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, int num_Sprites, double moveSpeed);
