@@ -21,12 +21,12 @@ class Menu {
 	std::vector<sf::Text> texts;
 	std::vector<std::size_t> sizes;
 	
+	std::vector<sf::Text> scores;
+	
 protected:
 	void set_values();
 	void loop_events();
 	void draw_all();
-	void draw_controls();	
-	void draw_puntuaciones();
 public:
 	Menu();
 	~Menu();
