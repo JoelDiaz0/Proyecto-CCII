@@ -27,6 +27,10 @@ int main()
     sf::RenderWindow App(sf::VideoMode(W, H, 32), "Juego");
     App.setFramerateLimit(60);
     bool fullscream = false;
+    //Musica - Level 1 -----------------------------------------------
+    sf::Music m1;
+    m1.openFromFile("data\\music\\music-level1.ogg");
+    m1.setVolume(6);
 
     //Musica - Level 5
     sf::Music m5;
