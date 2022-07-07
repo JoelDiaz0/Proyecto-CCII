@@ -1,8 +1,9 @@
 ﻿  main.cpp
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(229,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(236,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(242,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(247,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(251,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(256,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Game.vcxproj -> C:\Users\USUARIO\source\repos\Game\x64\Debug\Game.exe
+D:\DIEGO\PROYECTO CC\repositorio2\Proyecto-CCII\Game\main.cpp(116,47): warning C4305: 'argument': truncation from 'double' to 'T'
+          with
+          [
+              T=float
+          ]
+D:\DIEGO\PROYECTO CC\repositorio2\Proyecto-CCII\Game\main.cpp(264,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\repositorio2\Proyecto-CCII\Game\main.cpp(271,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Game.vcxproj -> D:\DIEGO\PROYECTO CC\repositorio2\Proyecto-CCII\x64\Debug\Game.exe

@@ -8,6 +8,7 @@
 #include "BloodMonster.h"
 
 #include "Hell.h"
+#include "montana.h"
 
 #include <vector>
 #include <iostream>
@@ -17,7 +18,7 @@ using std::endl;
 const int W = 1280;
 const int H = 720;
 
-int level = 5; //CAMBIO DE NIVEL
+int level = 3; //CAMBIO DE NIVEL
 
 bool cargando = true;
 
@@ -103,8 +104,17 @@ int main()
 
     ////Cargando texturas para las PLATAFORMAS
     std::vector<Platform*> vec_plataformas; //Vector de plataformas
+    std::vector<Platform*> vec_plataformas3; //Vector de plataformas
     sf::Texture level_hell; //Textura level 5
     level_hell.loadFromFile("data\\background\\hell_graphics.png");
+
+
+    //nivel montana textura
+    sf::Texture text_montana;
+    text_montana.loadFromFile("data\\sprites\\nivel_3\\fondo.png");
+    sf::Sprite level_montana(text_montana);
+    level_montana.scale(sf::Vector2f(0.7, 0.67));
+
 
 
     //Cargando texturas y creando animaciones para los ENEMIGOS
@@ -179,13 +189,37 @@ int main()
         else if (level == 3)
         {
             //DIEGO - MONTAÑA
-        }
+             //CARGANDO PLATAFORMAS Y ENEMIGOS
+            if (cargando == true)
+            {
+                cout << "Cargando una vez elementos en level " << level << endl;
+                m5.play();
+                
+               
+             
+            }
 
+            //DESARROLLO DEL NIVEL
+       
+                cargando = false;
+                m5.setLoop(true);
+
+                App.clear();
+
+                App.draw(level_montana);
+
+                jugador1->colision_windows(W, H);
+                jugador2->colision_windows(W, H);
+
+                
+                App.display();
+        }
+        
         else if (level == 4)
         {
             //AXEL - AMONGUS
         }
-
+        
         else if (level == 5)
         {
             //CARGANDO PLATAFORMAS Y ENEMIGOS
@@ -209,6 +243,7 @@ int main()
                     Plat2->position(i * 64.f * 2.f, 200.f);
                     vec_plataformas.push_back(Plat2);
                 }
+
                 for (int i = 0; i < 12; i++)
                 {
                     if (i == 5 || i == 6)
@@ -236,41 +271,9 @@ int main()
                     Muro2->position(W - 64, i * 64 * 2);
                     vec_plataformas.push_back(Muro2);
                 }
-                for (int i = 0; i < 1; i++)
-                {
-                    Enemy* enemigo1 = new Demon;
-                    enemigo1->Initialize_3(enemy_anim, enemy_anim2, b4, i * 200, 0, 1.5);
-                    enemigo1->Scale(1.5, 1.5);
-                    enemigo1->cargar_audio(at5);
+               
 
-                    Enemy* enemigo4 = new BloodMonster;
-                    enemigo4->Initialize(enemy_anim5, i * 250, 100, 2.f);
-                    enemigo4->Scale(2.f, 2.f);
-
-                    Enemy* enemigo2 = new Throwingfire;
-                    enemigo2->Initialize_2(enemy_anim4, b3, i * 150, 300, 2.f);
-                    enemigo2->Scale(3.f, 3.f);
-                    enemigo2->cargar_audio(at4);
-
-                    Enemy* enemigo3 = new Fungus;
-                    enemigo3->Initialize(enemy_anim3, i * 150, 300, 3.f);
-                    enemigo3->Scale(2.5, 2.5);
-
-                    vec_enemigos.push_back(enemigo1);
-                    vec_enemigos.push_back(enemigo2);
-                    vec_enemigos.push_back(enemigo3);
-                    vec_enemigos.push_back(enemigo4);
-                }
-
-                //Cargando fondo animado - level 5
-                std::string aux;
-                for (int i = 0; i < 8; i++)
-                {
-                    aux = "data\\background\\hell_background-" + std::to_string(i) + ".jpg";
-                    sf::Texture t1;
-                    t1.loadFromFile(aux);
-                    vec_textures.push_back(t1);
-                }
+               
                 for (int i = 0; i < 8; i++)
                 {
                     sf::Sprite s1;

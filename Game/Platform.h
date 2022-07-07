@@ -27,8 +27,8 @@ protected:
 	void tamanio(int posx, int posy, int tamx, int tamy);
 
 protected:
-	sf::IntRect rect;
-	sf::Sprite sp_p;
+	sf::IntRect rect;//recorte
+	sf::Sprite sp_p;//sprite
 	float pos_x{}, pos_y{};
 	float scale_x{}, scale_y{};
 };
