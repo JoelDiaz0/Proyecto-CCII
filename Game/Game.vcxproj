@@ -143,6 +143,7 @@
     <ClCompile Include="Fungus.cpp" />
     <ClCompile Include="Hell.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="montana.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Throwingfire.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Fungus.h" />
     <ClInclude Include="Hell.h" />
+    <ClInclude Include="montana.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Throwingfire.h" />
