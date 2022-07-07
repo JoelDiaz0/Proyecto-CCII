@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Platform.h"
-class montana : Platform
+class montana : public Platform
 {
 public:
 	montana();
