@@ -84,6 +84,9 @@
     <ClCompile Include="menu.cpp">
       <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Tatooine.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\sprites\Enemigo2.png">
@@ -237,6 +240,9 @@
     </ClInclude>
     <ClInclude Include="menu.h">
       <Filter>Archivos de encabezado\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Tatooine.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

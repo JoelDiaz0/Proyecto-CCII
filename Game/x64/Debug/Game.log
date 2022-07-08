@@ -1,4 +1,5 @@
 ﻿  main.cpp
+<<<<<<< HEAD
 C:\Users\USUARIO\source\repos\Game\Game\main.cpp(120,47): warning C4305: 'argumento': truncamiento de 'double' a 'T'
           with
           [
@@ -13,3 +14,8 @@ C:\Users\USUARIO\source\repos\Game\Game\main.cpp(285,57): warning C4244: 'argume
 C:\Users\USUARIO\source\repos\Game\Game\main.cpp(289,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\USUARIO\source\repos\Game\Game\main.cpp(294,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Game.vcxproj -> C:\Users\USUARIO\source\repos\Game\x64\Debug\Game.exe
+=======
+C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(213,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(213,45): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Game.vcxproj -> C:\Users\user\source\repos\Proyecto-CCII\x64\Debug\Game.exe
+>>>>>>> c10d13a51e1d6441836742b2cf66e2d29f153a8f
