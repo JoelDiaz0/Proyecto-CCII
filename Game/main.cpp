@@ -8,6 +8,7 @@
 #include "BloodMonster.h"
 
 #include "Hell.h"
+#include "Tatooine.h"
 #include "montana.h"
 
 #include <vector>
@@ -18,8 +19,11 @@ using std::endl;
 const int W = 1280;
 const int H = 720;
 
-int level = 3; //CAMBIO DE NIVEL
+int level = 1; //CAMBIO DE NIVEL
+/*
+cambiar cada vez q se pruebe el nivel
 
+*/
 bool cargando = true;
 
 int main()
@@ -36,6 +40,9 @@ int main()
     sf::Music m5;
     m5.openFromFile("data\\music\\the_hell.ogg");
     m5.setVolume(5.5);
+    //Fondo level 1 ----------------------------------------------------------
+    sf::Texture f1;
+    f1.loadFromFile("data\\background\\tatooine_background.jpg");
 
     //Cargando texturas y creando animaciones para las BALAS
     sf::Texture txd_bala, txd_bala2, txd_bala3, txd_bala4;
@@ -109,7 +116,14 @@ int main()
     ////Cargando texturas para las PLATAFORMAS
     std::vector<Platform*> vec_plataformas; //Vector de plataformas
     std::vector<Platform*> vec_plataformas3; //Vector de plataformas
-    sf::Texture level_hell; //Textura level 5
+    // level 1
+    sf::Texture level_tatooine;
+    level_tatooine.loadFromFile("data\\background\\tatooine_graphics.png");
+    sf::Sprite fondo1;
+    fondo1.setTexture(f1);
+
+    //Textura level 5
+    sf::Texture level_hell; 
     level_hell.loadFromFile("data\\background\\hell_graphics.png");
 
 
@@ -117,7 +131,7 @@ int main()
     sf::Texture text_montana;
     text_montana.loadFromFile("data\\sprites\\nivel_3\\fondo.png");
     sf::Sprite level_montana(text_montana);
-    level_montana.scale(sf::Vector2f(0.7, 0.67));
+   // level_montana.scale(sf::Vector2f(0.7, 0.67));
 
 
 
@@ -182,7 +196,53 @@ int main()
 
         else if (level == 1)
         {
-            //PETER - STAR WARS
+            if (cargando == true)
+            {
+                jugador1->Initialize_7(p1_idle, p1_run, p1_jump, p1_attack, p1_up, p1_death, b1, 20, 0, 3.5);
+                jugador2->Initialize_7(p2_idle, p2_run, p2_jump, p2_attack, p2_up, p2_death, b2, 10, 0, 3.5);
+                jugador1->Scale(2.5, 2.5);
+                jugador2->Scale(2.5, 2.5);
+                jugador1->cargar_audio(at);
+                jugador2->cargar_audio(at2);
+
+                cout << "Cargando una vez elementos en level " << level << endl;
+                m1.play();
+
+                double xF1{ 0.2 }, yF1{ 0.2 }; //variables para la plateforma
+
+                Platform* piso_level1 = new Tatooine;
+                piso_level1->cargar_textura(level_tatooine);
+                piso_level1->generar_bloque_1();
+                piso_level1->scale_platform(xF1, yF1);
+                piso_level1->position(0, 220);
+                vec_plataformas.push_back(piso_level1);
+            }
+
+            //DESARROLLO DEL NIVEL
+
+            cargando = false;
+            m1.setLoop(true);
+
+            App.clear();
+            App.draw(fondo1);
+
+            jugador1->colision_windows(W, H);
+            jugador2->colision_windows(W, H);
+
+            for (auto plat : vec_plataformas)
+            {
+                plat->draw(App);
+                jugador1->colision_platform(*plat);
+                jugador2->colision_platform(*plat);
+            }
+            jugador1->draw_1(App);
+            jugador1->Update();
+            jugador1->attack_1(App);
+            jugador2->draw_2(App);
+            jugador2->Update();
+            jugador2->attack_2(App);
+
+            App.display();
         }
 
         else if (level == 2)
@@ -225,7 +285,7 @@ int main()
         }
         
         else if (level == 5)
-        {
+        {/*
             //CARGANDO PLATAFORMAS Y ENEMIGOS
             if (cargando == true)
             {
@@ -325,7 +385,7 @@ int main()
                 jugador2->attack_2(App);
 
                 App.display();
-            }
+            }*/
         }
 
         else if (level == 6)

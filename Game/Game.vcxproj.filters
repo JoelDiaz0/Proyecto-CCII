@@ -75,6 +75,9 @@
     <ClCompile Include="montana.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Tatooine.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\sprites\Enemigo2.png">
@@ -224,6 +227,9 @@
       <Filter>Archivos de encabezado\Plataforma</Filter>
     </ClInclude>
     <ClInclude Include="montana.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Tatooine.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
