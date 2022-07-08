@@ -151,7 +151,7 @@ int main()
     enemy_anim5.Initialize(e5, 75, 31, 7, 0.075);
 
 
-    //static bool Coordeb{ false }; Crea el booleano para activar y desactivar el "modo debug" 
+    //static bool Coordeb{ false }; //Crea el booleano para activar y desactivar el "modo debug" 
     //FUNCION PRINCIPAL
     while (App.isOpen())
     {
@@ -423,7 +423,7 @@ int main()
             //ALEX
         }
 
-        //debug
+        //debug. Si quiere ser usado, debe pegarse arriba de "App.display()" dentro del nivel en el que se quiera usar.
         //if (Coordeb == true) {
         //    sf::Text mousePosX, mousePosY; 
         //    sf::Font font;
@@ -442,6 +442,7 @@ int main()
         //    drawText(mousePosX, std::string("Pos X mouse: "), sf::Mouse::getPosition(App).x, 1040, 85, 30, font, sf::Color::Black);
         //    drawText(mousePosX, std::string("Pos Y mouse: "), sf::Mouse::getPosition(App).y, 1040, 125, 30, font, sf::Color::Black);
         //}      
+        
     }
 
     //ELIMINAR OBJETOS Y MEMORIA
