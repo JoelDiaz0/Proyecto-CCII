@@ -20,7 +20,11 @@ const int W = 1280;
 const int H = 720;
 
 
+<<<<<<< Updated upstream
 int level = 1; //CAMBIO DE NIVEL
+=======
+int level = 3; //CAMBIO DE NIVEL
+>>>>>>> Stashed changes
 
 
 bool cargando = true;
@@ -130,7 +134,8 @@ int main()
     sf::Texture text_montana;
     text_montana.loadFromFile("data\\sprites\\nivel_3\\fondo.png");
     sf::Sprite level_montana(text_montana);
-   // level_montana.scale(sf::Vector2f(0.7, 0.67));
+    level_montana.scale(sf::Vector2f(0.7f, 0.67));
+   
 
 
 
@@ -343,7 +348,7 @@ int main()
             //DIEGO - MONTAÑA
              //CARGANDO PLATAFORMAS Y ENEMIGOS
             if (cargando == true)
-            {
+            {   
                 cout << "Cargando una vez elementos en level " << level << endl;
                 m5.play();
                 
