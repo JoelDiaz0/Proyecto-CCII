@@ -319,7 +319,7 @@ int main()
             }
 
             //DESARROLLO DEL NIVEL
-            for (auto &sp : vec_sprites)
+            for (auto &sp : vec_sprites)  //mmmmmmmm
             {
                 cargando = false;
                 m5.setLoop(true);

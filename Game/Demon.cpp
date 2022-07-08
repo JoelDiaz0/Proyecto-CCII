@@ -7,7 +7,7 @@ Demon::Demon() : Enemy()
 
 Demon::~Demon()
 {
-    for (auto &b : balas)
+    for (auto &b : balas) //mmm
         delete b;
 }
 

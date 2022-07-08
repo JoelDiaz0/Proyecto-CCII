@@ -2,7 +2,7 @@
 #include <iostream>
 #include "Enemy.h"
 
-class Demon : public Enemy
+class Demon : public Enemy 
 {
 public:
 	Demon();

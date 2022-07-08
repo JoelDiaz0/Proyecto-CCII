@@ -7,7 +7,7 @@ Throwingfire::Throwingfire() : Enemy()
 
 Throwingfire::~Throwingfire()
 {
-    for (auto &b : balas)
+    for (auto &b : balas) //*mmm
         delete b;
 }
 
