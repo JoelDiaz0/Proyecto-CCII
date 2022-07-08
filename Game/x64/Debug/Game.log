@@ -1,59 +1,48 @@
 ﻿  main.cpp
-<<<<<<< Updated upstream
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(217,53): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(217,48): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(218,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(224,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(224,45): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(225,49): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(234,53): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(234,48): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(235,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(241,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(241,45): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(242,49): warning C4305: 'argumento': truncamiento de 'double' a 'float'
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(248,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(248,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(255,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(255,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(262,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(262,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(269,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(269,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(276,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(276,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(283,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(283,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(290,49): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(290,44): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(297,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(297,45): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(304,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(304,45): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(395,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(406,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(415,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(422,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(428,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(433,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(437,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(442,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  Game.vcxproj -> C:\Users\user\source\repos\Proyecto-CCII\x64\Debug\Game.exe
-=======
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(133,48): warning C4305: 'argument': truncation from 'double' to 'T'
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(137,48): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(216,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(216,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(307,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(318,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(327,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(334,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(340,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(345,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(349,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(354,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(224,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(224,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(225,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(231,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(231,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(232,49): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(241,53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(241,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(242,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(248,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(248,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(249,49): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(255,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(255,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(262,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(262,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(269,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(269,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(276,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(276,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(283,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(283,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(290,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(290,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(297,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(297,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(304,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(304,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(311,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(311,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(368,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(368,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(369,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(426,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(437,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(446,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(453,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(459,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(464,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(468,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(473,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Game.vcxproj -> D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\x64\Debug\Game.exe
->>>>>>> Stashed changes

@@ -9,7 +9,7 @@ montana::~montana()
 
 void montana::generar_bloque_1()
 {
-	tamanio(0, 0, 76, 33);
+	tamanio(0, 0, 48, 48);
 	sp_p.setTextureRect(rect);
 }
 

@@ -20,11 +20,11 @@ const int W = 1280;
 const int H = 720;
 
 
-<<<<<<< Updated upstream
-int level = 1; //CAMBIO DE NIVEL
-=======
+//<<<<<<< Updated upstream
 int level = 3; //CAMBIO DE NIVEL
->>>>>>> Stashed changes
+//=======
+//  //CAMBIO DE NIVEL
+//>>>>>>> Stashed changes
 
 
 bool cargando = true;
@@ -129,13 +129,15 @@ int main()
     sf::Texture level_hell; 
     level_hell.loadFromFile("data\\background\\hell_graphics.png");
 
-
-    //nivel montana textura
+    //NIVEL 3
+    //nivel 3 montana textura
     sf::Texture text_montana;
     text_montana.loadFromFile("data\\sprites\\nivel_3\\fondo.png");
     sf::Sprite level_montana(text_montana);
     level_montana.scale(sf::Vector2f(0.7f, 0.67));
-   
+   //PISOS DEL NIVEL 3
+    sf::Texture piso_montana;
+    piso_montana.loadFromFile("data\\sprites\\nivel_3\\piso1.png");
 
 
 
@@ -342,34 +344,58 @@ int main()
         {
             //KEVIN - FONDO DEL MAR
         }
-
+        ////////NIVEL 3//////////////////////////////////
+        /////////////////////////////////////////////////
         else if (level == 3)
         {
             //DIEGO - MONTAÑA
              //CARGANDO PLATAFORMAS Y ENEMIGOS
-            if (cargando == true)
-            {   
+            if (cargando == true){ 
+                double xF1{ 1.2 }, yF1{ 1.2 };
+                jugador1->Initialize_7(p1_idle, p1_run, p1_jump, p1_attack, p1_up, p1_death, b1, 620, 0, 3.5);
+                jugador2->Initialize_7(p2_idle, p2_run, p2_jump, p2_attack, p2_up, p2_death, b2, 660, 0, 3.5);
+                jugador1->Scale(2.5, 2.5);
+                jugador2->Scale(2.5, 2.5);
+                jugador1->cargar_audio(at);
+                jugador2->cargar_audio(at2);
                 cout << "Cargando una vez elementos en level " << level << endl;
                 m5.play();
-                
-               
-             
+                for (int i = 0; i < 8; i++)
+                {
+                    Platform* piso_montana1 = new montana;
+                    piso_montana1->cargar_textura(piso_montana);
+                    piso_montana1->generar_bloque_1();
+                    piso_montana1->scale_platform(xF1, yF1);
+                    piso_montana1->position(400 + (48 * i),120);
+                    vec_plataformas.push_back(piso_montana1);
+                }
+   
             }
 
             //DESARROLLO DEL NIVEL
        
-                cargando = false;
-                m5.setLoop(true);
+             cargando = false;
+             m5.setLoop(true);
 
-                App.clear();
+             App.clear();
+             App.draw(level_montana);
 
-                App.draw(level_montana);
-
-                jugador1->colision_windows(W, H);
-                jugador2->colision_windows(W, H);
-
+             jugador1->colision_windows(W, H);
+             jugador2->colision_windows(W, H);
+             for (auto plat : vec_plataformas)
+             {
+                 plat->draw(App);
+                 jugador1->colision_platform(*plat);
+                 jugador2->colision_platform(*plat);
+             }
+             jugador1->draw_1(App);
+             jugador1->Update();
+             jugador1->attack_1(App);
+             jugador2->draw_2(App);
+             jugador2->Update();
+             jugador2->attack_2(App);
                 
-                App.display();
+             App.display();
         }
         
         else if (level == 4)
