@@ -19,15 +19,10 @@ using std::endl;
 const int W = 1280;
 const int H = 720;
 
-<<<<<<< HEAD
-int level = 5; //CAMBIO DE NIVEL
-=======
-int level = 1; //CAMBIO DE NIVEL
-/*
-cambiar cada vez q se pruebe el nivel
->>>>>>> c10d13a51e1d6441836742b2cf66e2d29f153a8f
 
-*/
+int level = 5; //CAMBIO DE NIVEL
+
+
 bool cargando = true;
 
 int main()
@@ -288,8 +283,8 @@ int main()
             //AXEL - AMONGUS
         }
         
-        else if (level == 5)
-        {/*
+        else if (level == 5) //7/07
+        {
             //CARGANDO PLATAFORMAS Y ENEMIGOS
             if (cargando == true)
             {
@@ -383,7 +378,7 @@ int main()
             }
 
             //DESARROLLO DEL NIVEL
-            for (auto &sp : vec_sprites)  //mmmmmmmm
+            for (auto &sp : vec_sprites)
             {
                 cargando = false;
                 m5.setLoop(true);
@@ -420,7 +415,7 @@ int main()
                 jugador2->attack_2(App);
 
                 App.display();
-            }*/
+            }
         }
 
         else if (level == 6)

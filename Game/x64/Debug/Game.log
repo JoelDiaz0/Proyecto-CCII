@@ -1,21 +1,104 @@
-﻿  main.cpp
-<<<<<<< HEAD
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(120,47): warning C4305: 'argumento': truncamiento de 'double' a 'T'
+﻿  Demon.cpp
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(31,51): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(34,51): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(36,51): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(43,82): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
           with
           [
               T=float
           ]
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(247,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(258,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(267,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(274,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(280,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(285,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(289,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\USUARIO\source\repos\Game\Game\main.cpp(294,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(43,54): warning C4244: 'argumento': conversión de 'const T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(45,82): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(45,54): warning C4244: 'argumento': conversión de 'const T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(47,82): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(47,54): warning C4244: 'argumento': conversión de 'const T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(53,101): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(53,57): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(54,101): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(54,57): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(55,101): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(55,57): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(60,28): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\USUARIO\source\repos\Game\Game\Demon.cpp(94,30): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  main.cpp
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(215,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(215,45): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(306,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(317,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(326,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(333,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(339,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(344,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(348,63): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\main.cpp(353,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  menu.cpp
+C:\Users\USUARIO\source\repos\Game\Game\menu.cpp(43,37): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\USUARIO\source\repos\Game\Game\menu.cpp(60,38): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+  Tatooine.cpp
+  Throwingfire.cpp
+C:\Users\USUARIO\source\repos\Game\Game\Throwingfire.cpp(70,78): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Throwingfire.cpp(70,50): warning C4244: 'argumento': conversión de 'const T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Throwingfire.cpp(75,97): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\USUARIO\source\repos\Game\Game\Throwingfire.cpp(75,53): warning C4244: 'argumento': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+  Generando código...
   Game.vcxproj -> C:\Users\USUARIO\source\repos\Game\x64\Debug\Game.exe
-=======
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(213,50): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(213,45): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-  Game.vcxproj -> C:\Users\user\source\repos\Proyecto-CCII\x64\Debug\Game.exe
->>>>>>> c10d13a51e1d6441836742b2cf66e2d29f153a8f

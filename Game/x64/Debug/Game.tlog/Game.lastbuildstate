@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.32.31326:TargetPlatformVersion=10.0.20348.0:
 Debug|x64|C:\Users\USUARIO\source\repos\Game\|
-=======
-PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.32.31326:TargetPlatformVersion=10.0.19041.0:
-Debug|x64|C:\Users\user\source\repos\Proyecto-CCII\|
->>>>>>> c10d13a51e1d6441836742b2cf66e2d29f153a8f
