@@ -31,6 +31,12 @@
     <Filter Include="Archivos de origen\Plataforma">
       <UniqueIdentifier>{8f1e16fd-53bd-44b2-b801-26758cf2ae52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Menu">
+      <UniqueIdentifier>{ab01c9de-98e2-4d19-a539-4895ba08613b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Menu">
+      <UniqueIdentifier>{dfd65d35-7004-4c77-9e8b-7d8e97111e13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -73,7 +79,10 @@
       <Filter>Archivos de origen\Plataforma</Filter>
     </ClCompile>
     <ClCompile Include="montana.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Plataforma</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Archivos de origen\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -224,7 +233,10 @@
       <Filter>Archivos de encabezado\Plataforma</Filter>
     </ClInclude>
     <ClInclude Include="montana.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Plataforma</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Archivos de encabezado\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

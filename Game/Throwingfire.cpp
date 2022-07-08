@@ -7,7 +7,7 @@ Throwingfire::Throwingfire() : Enemy()
 
 Throwingfire::~Throwingfire()
 {
-    for (auto b : balas)
+    for (auto &b : balas)
         delete b;
 }
 
@@ -83,7 +83,7 @@ void Throwingfire::attack(sf::RenderWindow& app)
 
     if (!disparo.empty())
     {
-        for (auto b : disparo)
+        for (auto &b : disparo)
         {
             b->draw(app);
             b->fire_1();

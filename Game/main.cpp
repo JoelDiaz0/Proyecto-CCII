@@ -18,7 +18,7 @@ using std::endl;
 const int W = 1280;
 const int H = 720;
 
-int level = 3; //CAMBIO DE NIVEL
+int level = 5; //CAMBIO DE NIVEL
 
 bool cargando = true;
 
@@ -27,6 +27,10 @@ int main()
     sf::RenderWindow App(sf::VideoMode(W, H, 32), "Juego");
     App.setFramerateLimit(60);
     bool fullscream = false;
+    //Musica - Level 1 -----------------------------------------------
+    sf::Music m1;
+    m1.openFromFile("data\\music\\music1.ogg");
+    m1.setVolume(6);
 
     //Musica - Level 5
     sf::Music m5;
@@ -239,11 +243,10 @@ int main()
                     Platform* Plat2 = new Hell;
                     Plat2->cargar_textura(level_hell);
                     Plat2->generar_bloque_2();
-                    Plat2->scale_platform(2.f, 2.f);
-                    Plat2->position(i * 64.f * 2.f, 200.f);
+                    Plat2->scale_platform(3.f, 3.f);
+                    Plat2->position(i * 64 * 2, 200);
                     vec_plataformas.push_back(Plat2);
                 }
-
                 for (int i = 0; i < 12; i++)
                 {
                     if (i == 5 || i == 6)
@@ -252,7 +255,7 @@ int main()
                     Plat->cargar_textura(level_hell);
                     Plat->generar_bloque_2();
                     Plat->scale_platform(2.f, 2.f);
-                    Plat->position(i * 64.f * 2.f, H / 2.f + 100.f);
+                    Plat->position(i * 64 * 2, H / 2 + 100);
                     vec_plataformas.push_back(Plat);
                 }
                 for (int i = 0; i < 6; i++)
@@ -271,9 +274,41 @@ int main()
                     Muro2->position(W - 64, i * 64 * 2);
                     vec_plataformas.push_back(Muro2);
                 }
-               
+                for (int i = 0; i < 1; i++)
+                {
+                    Enemy* enemigo1 = new Demon;
+                    enemigo1->Initialize_3(enemy_anim, enemy_anim2, b4, i * 200, 0, 1.5);
+                    enemigo1->Scale(1.5, 1.5);
+                    enemigo1->cargar_audio(at5);
 
-               
+                    Enemy* enemigo4 = new BloodMonster;
+                    enemigo4->Initialize(enemy_anim5, i * 250, 100, 2.f);
+                    enemigo4->Scale(2.f, 2.f);
+
+                    Enemy* enemigo2 = new Throwingfire;
+                    enemigo2->Initialize_2(enemy_anim4, b3, i * 150, 250, 2.f);
+                    enemigo2->Scale(3.f, 3.f);
+                    enemigo2->cargar_audio(at4);
+
+                    Enemy* enemigo3 = new Fungus;
+                    enemigo3->Initialize(enemy_anim3, i * 150, 300, 3.f);
+                    enemigo3->Scale(2.5, 2.5);
+
+                    vec_enemigos.push_back(enemigo1);
+                    vec_enemigos.push_back(enemigo2);
+                    vec_enemigos.push_back(enemigo3);
+                    vec_enemigos.push_back(enemigo4);
+                }
+
+                //Cargando fondo animado - level 5
+                std::string aux;
+                for (int i = 0; i < 8; i++)
+                {
+                    aux = "data\\background\\hell_background-" + std::to_string(i) + ".jpg";
+                    sf::Texture t1;
+                    t1.loadFromFile(aux);
+                    vec_textures.push_back(t1);
+                }
                 for (int i = 0; i < 8; i++)
                 {
                     sf::Sprite s1;
@@ -284,7 +319,7 @@ int main()
             }
 
             //DESARROLLO DEL NIVEL
-            for (auto sp : vec_sprites)
+            for (auto &sp : vec_sprites)
             {
                 cargando = false;
                 m5.setLoop(true);
@@ -295,7 +330,7 @@ int main()
                 jugador1->colision_windows(W, H);
                 jugador2->colision_windows(W, H);
 
-                for (auto plat : vec_plataformas)
+                for (auto &plat : vec_plataformas)
                 {
                     plat->draw(App);
                     jugador1->colision_platform(*plat);
@@ -305,7 +340,7 @@ int main()
                         e->colision_platform(*plat);
                     }
                 }
-                for (auto e : vec_enemigos)
+                for (auto &e : vec_enemigos)
                 {
                     e->Draw(App);
                     e->Update();
@@ -351,10 +386,10 @@ int main()
     }
 
     //ELIMINAR OBJETOS Y MEMORIA
-    for (auto plt : vec_plataformas)
+    for (auto &plt : vec_plataformas)
         delete plt;
 
-    for (auto e : vec_enemigos)
+    for (auto &e : vec_enemigos)
         delete e;
 
     delete jugador1, jugador2;

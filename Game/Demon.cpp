@@ -7,7 +7,7 @@ Demon::Demon() : Enemy()
 
 Demon::~Demon()
 {
-    for (auto b : balas)
+    for (auto &b : balas)
         delete b;
 }
 
@@ -68,7 +68,7 @@ void Demon::attack(sf::RenderWindow& app)
 
     if (!disparo.empty())
     {
-        for (auto b : disparo)
+        for (auto &b : disparo)
         {
             b->draw(app);
             b->fire_1();
