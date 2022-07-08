@@ -20,7 +20,7 @@ const int W = 1280;
 const int H = 720;
 
 
-int level = 5; //CAMBIO DE NIVEL
+int level = 1; //CAMBIO DE NIVEL
 
 
 bool cargando = true;
@@ -30,16 +30,16 @@ int main()
     sf::RenderWindow App(sf::VideoMode(W, H, 32), "Juego");
     App.setFramerateLimit(60);
     bool fullscream = false;
-    //Musica - Level 1 -----------------------------------------------
+    //Musica - Level 1 ----
     sf::Music m1;
-    m1.openFromFile("data\\music\\music1.ogg");
+    m1.openFromFile("data\\music\\music-level1.ogg");
     m1.setVolume(6);
 
     //Musica - Level 5
     sf::Music m5;
     m5.openFromFile("data\\music\\the_hell.ogg");
     m5.setVolume(5.5);
-    //Fondo level 1 ----------------------------------------------------------
+    //Fondo level 1 -------
     sf::Texture f1;
     f1.loadFromFile("data\\background\\tatooine_background.jpg");
 
@@ -198,7 +198,7 @@ int main()
             if (cargando == true)
             {
                 jugador1->Initialize_7(p1_idle, p1_run, p1_jump, p1_attack, p1_up, p1_death, b1, 20, 0, 3.5);
-                jugador2->Initialize_7(p2_idle, p2_run, p2_jump, p2_attack, p2_up, p2_death, b2, 10, 0, 3.5);
+                jugador2->Initialize_7(p2_idle, p2_run, p2_jump, p2_attack, p2_up, p2_death, b2, 10, 500, 3.5);
                 jugador1->Scale(2.5, 2.5);
                 jugador2->Scale(2.5, 2.5);
                 jugador1->cargar_audio(at);
@@ -207,14 +207,103 @@ int main()
                 cout << "Cargando una vez elementos en level " << level << endl;
                 m1.play();
 
-                double xF1{ 0.2 }, yF1{ 0.2 }; //variables para la plateforma
+                double xF1{ 0.2 }, yF1{ 0.2 }; //variables para la plateforma              
+                //plat 1
+                for (int i = 0; i < 2; i++)
+                {
+                    Platform* piso_plat1 = new Tatooine;
+                    piso_plat1->cargar_textura(level_tatooine);
+                    piso_plat1->generar_bloque_1();
+                    piso_plat1->scale_platform(xF1, yF1);
+                    piso_plat1->position(0 + (102.4 * i), 220);
+                    vec_plataformas.push_back(piso_plat1);
+                }
+                Platform* piso_plat1a = new Tatooine;
+                piso_plat1a->cargar_textura(level_tatooine);
+                piso_plat1a->generar_bloque_2();
+                piso_plat1a->scale_platform(xF1, yF1);
+                piso_plat1a->position(204.8, 220);
+                vec_plataformas.push_back(piso_plat1a);
 
-                Platform* piso_level1 = new Tatooine;
-                piso_level1->cargar_textura(level_tatooine);
-                piso_level1->generar_bloque_1();
-                piso_level1->scale_platform(xF1, yF1);
-                piso_level1->position(0, 220);
-                vec_plataformas.push_back(piso_level1);
+                //plat 2
+                for (int i = 0; i < 2; i++)
+                {
+                    Platform* piso_plat2 = new Tatooine;
+                    piso_plat2->cargar_textura(level_tatooine);
+                    piso_plat2->generar_bloque_1();
+                    piso_plat2->scale_platform(xF1, yF1);
+                    piso_plat2->position(0 + (102.4 * i), 630);
+                    vec_plataformas.push_back(piso_plat2);
+                }
+                Platform* piso_plat2a = new Tatooine;
+                piso_plat2a->cargar_textura(level_tatooine);
+                piso_plat2a->generar_bloque_2();
+                piso_plat2a->scale_platform(xF1, yF1);
+                piso_plat2a->position(204.8, 650);
+                vec_plataformas.push_back(piso_plat2a);
+                //plat 3
+                Platform* piso_plat3 = new Tatooine;
+                piso_plat3->cargar_textura(level_tatooine);
+                piso_plat3->generar_bloque_4();
+                piso_plat3->scale_platform(xF1, yF1);
+                piso_plat3->position(350, 580);
+                vec_plataformas.push_back(piso_plat3);
+                //plat 4
+                Platform* piso_plat4 = new Tatooine;
+                piso_plat4->cargar_textura(level_tatooine);
+                piso_plat4->generar_bloque_4();
+                piso_plat4->scale_platform(xF1, yF1);
+                piso_plat4->position(440, 300);
+                vec_plataformas.push_back(piso_plat4);
+                //plat 5
+                Platform* piso_plat5 = new Tatooine;
+                piso_plat5->cargar_textura(level_tatooine);
+                piso_plat5->generar_bloque_3();
+                piso_plat5->scale_platform(xF1, yF1);
+                piso_plat5->position(600, 500);
+                vec_plataformas.push_back(piso_plat5);
+                //plat 6
+                Platform* piso_plat6 = new Tatooine;
+                piso_plat6->cargar_textura(level_tatooine);
+                piso_plat6->generar_bloque_3();
+                piso_plat6->scale_platform(xF1, yF1);
+                piso_plat6->position(790, 250);
+                vec_plataformas.push_back(piso_plat6);
+                //plat 7
+                Platform* piso_plat7 = new Tatooine;
+                piso_plat7->cargar_textura(level_tatooine);
+                piso_plat7->generar_bloque_3();
+                piso_plat7->scale_platform(xF1, yF1);
+                piso_plat7->position(800, 400);
+                vec_plataformas.push_back(piso_plat7);
+                //plat 8
+                Platform* piso_plat8 = new Tatooine;
+                piso_plat8->cargar_textura(level_tatooine);
+                piso_plat8->generar_bloque_3();
+                piso_plat8->scale_platform(xF1, yF1);
+                piso_plat8->position(790, 600);
+                vec_plataformas.push_back(piso_plat8);
+                //plat 9
+                Platform* piso_plat9 = new Tatooine;
+                piso_plat9->cargar_textura(level_tatooine);
+                piso_plat9->generar_bloque_3();
+                piso_plat9->scale_platform(xF1, yF1);
+                piso_plat9->position(1090, 200);
+                vec_plataformas.push_back(piso_plat9);
+                //plat 10
+                Platform* piso_plat10 = new Tatooine;
+                piso_plat10->cargar_textura(level_tatooine);
+                piso_plat10->generar_bloque_3();
+                piso_plat10->scale_platform(xF1, yF1);
+                piso_plat10->position(1080, 550);
+                vec_plataformas.push_back(piso_plat10);
+                //plat 11
+                Platform* piso_plat11 = new Tatooine;
+                piso_plat11->cargar_textura(level_tatooine);
+                piso_plat11->generar_bloque_4();
+                piso_plat11->scale_platform(xF1, yF1);
+                piso_plat11->position(1080, 350);
+                vec_plataformas.push_back(piso_plat11);
             }
 
             //DESARROLLO DEL NIVEL
