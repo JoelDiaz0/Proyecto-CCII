@@ -353,7 +353,7 @@ int main()
             if (cargando == true){ 
                 double xF1{ 1.2 }, yF1{ 1.2 };
                 jugador1->Initialize_7(p1_idle, p1_run, p1_jump, p1_attack, p1_up, p1_death, b1, 620, 0, 3.5);
-                jugador2->Initialize_7(p2_idle, p2_run, p2_jump, p2_attack, p2_up, p2_death, b2, 660, 0, 3.5);
+                jugador2->Initialize_7(p2_idle, p2_run, p2_jump, p2_attack, p2_up, p2_death, b2, 660, 20, 3.5);
                 jugador1->Scale(2.5, 2.5);
                 jugador2->Scale(2.5, 2.5);
                 jugador1->cargar_audio(at);
@@ -366,7 +366,7 @@ int main()
                     piso_montana1->cargar_textura(piso_montana);
                     piso_montana1->generar_bloque_1();
                     piso_montana1->scale_platform(xF1, yF1);
-                    piso_montana1->position(400 + (48 * i),120);
+                    piso_montana1->position(400 + (58 * i),120);
                     vec_plataformas.push_back(piso_montana1);
                 }
    
@@ -382,6 +382,7 @@ int main()
 
              jugador1->colision_windows(W, H);
              jugador2->colision_windows(W, H);
+
              for (auto plat : vec_plataformas)
              {
                  plat->draw(App);

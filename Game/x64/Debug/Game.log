@@ -37,12 +37,12 @@ D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(311,45): warning C4244: 'a
 D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(368,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(368,51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(369,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(426,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(437,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(446,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(453,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(459,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(464,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(468,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(473,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(427,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(438,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(447,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(454,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(460,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(465,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(469,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\Game\main.cpp(474,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Game.vcxproj -> D:\DIEGO\PROYECTO CC\0707\Proyecto-CCII\x64\Debug\Game.exe
