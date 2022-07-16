@@ -7,6 +7,7 @@
 #include "Fungus.h"
 #include "BloodMonster.h"
 
+#include "menu.h"
 #include "Hell.h"
 #include "Tatooine.h"
 #include "montana.h"
@@ -21,7 +22,7 @@ const int H = 720;
 
 
 //<<<<<<< Updated upstream
-int level = 3; //CAMBIO DE NIVEL
+int level = 0; //CAMBIO DE NIVEL
 //=======
 //  //CAMBIO DE NIVEL
 //>>>>>>> Stashed changes
@@ -193,11 +194,13 @@ int main()
                 break;
             }
         }
-
+       
         if (level == 0)
-        {
-            //MENU
-
+        { 
+            Menu* menu = new Menu();
+            menu->run_menu(App,level);
+            delete menu;
+            menu = nullptr;
         }
 
         else if (level == 1)
@@ -342,7 +345,7 @@ int main()
 
         else if (level == 2)
         {
-            //KEVIN - FONDO DEL MAR
+            //KEVIN - FONDO DEL MAR | Coming soon...
         }
         ////////NIVEL 3//////////////////////////////////
         /////////////////////////////////////////////////

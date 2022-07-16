@@ -7,8 +7,10 @@ class Menu {
 	int pos;
 	bool pressed, theselect;
 	
-	sf::RenderWindow * window;
-	sf::RectangleShape * winclose;
+	//Boxes
+	sf::RectangleShape* winclose;
+	std::vector<sf::RectangleShape> levels;
+
 	sf::Font * font;
 	sf::Texture * image;
 	sf::Sprite * bg;
@@ -25,10 +27,10 @@ class Menu {
 	
 protected:
 	void set_values();
-	void loop_events();
-	void draw_all();
+	void loop_events(sf::RenderWindow& window, int& level);
+	void draw_all(sf::RenderWindow& window);
 public:
 	Menu();
 	~Menu();
-	void run_menu();
+	void run_menu(sf::RenderWindow& window, int & level);
 };

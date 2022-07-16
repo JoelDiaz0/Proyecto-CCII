@@ -197,6 +197,15 @@
     <Image Include="data\background\hell_background-7.jpg">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="data\menu\menu-controles.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\menu\menu-game.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\menu\menu-puntuaciones.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -276,6 +285,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Baskic8.otf">
+      <Filter>Archivos de recursos</Filter>
+    </Font>
+    <Font Include="data\menu\ethn.otf">
       <Filter>Archivos de recursos</Filter>
     </Font>
   </ItemGroup>

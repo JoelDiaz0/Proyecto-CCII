@@ -1,7 +1,6 @@
 #include "menu.h"
 
 Menu::Menu(){
-	window = new sf::RenderWindow();
 	winclose = new sf::RectangleShape();
 	font = new sf::Font();
 	image = new sf::Texture();
@@ -11,7 +10,6 @@ Menu::Menu(){
 }
 
 Menu::~Menu(){
-	delete window;
 	delete winclose;
 	delete font;
 	delete image;
@@ -19,9 +17,6 @@ Menu::~Menu(){
 }
 	
 void Menu::set_values(){
-	window->create(sf::VideoMode(1280,720), "Menu SFML", sf::Style::Titlebar | sf::Style::Close);
-	window->setPosition(sf::Vector2i(0,0));
-	
 	pos = 0;
 	pressed = theselect = false;
 	font->loadFromFile("./data/menu/ethn.otf");
@@ -48,35 +43,44 @@ void Menu::set_values(){
 	pos = 1;
 	
 	//PUNTUACIONES
-	//Load hightscores (se cargarian de un archuvo externo)
-	options = {"Puntuaciones","- Ply\t1000","- Ply\t1000","- Ply\t1000","- Ply\t1000","- Ply\t1000"}; //Por defecto
-	scores.resize(6);
-	coords = {{500,100},{520,150},{520,180},{520,210},{520,240},{520,270}};
-	sizes = {28,24,24,24,24,24};
-	
-	for (std::size_t i{}; i < scores.size(); ++i){
-		scores[i].setFont(*font); 
-		scores[i].setString(options[i]); 
-		scores[i].setCharacterSize(sizes[i]);
-		scores[i].setOutlineColor(sf::Color::Black);
-		scores[i].setPosition(coords[i]);
+	//Load hightscores (Archivo de datos del juego 'coming soon...')
+	//Podria cargar los puntajes en un map (player, score)
+	options = {"Ply\t1000","Ply\t1000","Ply\t1000","Ply\t1000","Ply\t1000"}; //Default
+	scores.resize(5);
+	std::pair<int, float> textData = std::make_pair(0, 250); //Index texto,cords en Y
+
+	for (auto & i : scores){
+		i.setFont(*font); 
+		i.setString(options[textData.first]); 
+		i.setCharacterSize(24);
+		i.setOutlineColor(sf::Color::Black);
+		i.setPosition({720,textData.second});
+		textData.first ++;
+		textData.second += 50;
 	}
 	
 	//Close Button 
 	winclose->setSize(sf::Vector2f(23,26));
 	winclose->setPosition(1178,39);
 	winclose->setFillColor(sf::Color::Transparent);
+	//Level buttons
+	levels.resize(5);
+	int c = 400;
+	for (auto& i : levels) {
+		i.setSize(sf::Vector2f(100, 100));
+		i.setPosition(c, 360);
+		i.setFillColor(sf::Color::Black);
+		c += 150;
+	}
 }
 
-void Menu::loop_events(){
+void Menu::loop_events(sf::RenderWindow& window, int& level){
 	sf::Event event;
-	while(window->pollEvent(event)){
-		if( event.type == sf::Event::Closed){
-			window->close();
-		}
+	while(window.pollEvent(event)){
+		if( event.type == sf::Event::Closed) window.close();
 		
-		pos_mouse = sf::Mouse::getPosition(*window);
-		mouse_coord = window->mapPixelToCoords(pos_mouse);
+		pos_mouse = sf::Mouse::getPosition(window);
+		mouse_coord = window.mapPixelToCoords(pos_mouse);
 		
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && !pressed){
 			if( pos < 4){
@@ -102,27 +106,37 @@ void Menu::loop_events(){
 		
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && !theselect){
 			theselect = true;
-			if( pos == 1)std::cout << "JUGAR\n";//RUN GAME
-			if( pos == 4)window->close();
+			if(pos == 4) window.close();
 		}
 		
 		if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-			if(winclose->getGlobalBounds().contains(mouse_coord)){
-				window->close();
+			if(winclose->getGlobalBounds().contains(mouse_coord)) window.close();
+			//Level boxes interaction (Para jugar niveles del 1 al 5)
+			if (pos == 1) {
+				if (levels.at(0).getGlobalBounds().contains(mouse_coord)) level = 1;
+				if (levels.at(1).getGlobalBounds().contains(mouse_coord)) level = 2;
+				if (levels.at(2).getGlobalBounds().contains(mouse_coord)) level = 3;
+				if (levels.at(3).getGlobalBounds().contains(mouse_coord)) level = 4;
+				if (levels.at(4).getGlobalBounds().contains(mouse_coord)) level = 5;
 			}
 		}
 	}
 }
 
-void Menu::draw_all(){
-	window->clear();
-	window->draw(*bg);
+void Menu::draw_all(sf::RenderWindow& window){
+	window.clear();
+	window.draw(*bg);
 	for(auto t : texts){
-		window->draw(t); 
+		window.draw(t); 
+	}
+	if (pos == 1 && theselect) {
+		for (auto l : levels) {
+			window.draw(l);
+		}
 	}
 	if(pos==2 && theselect){
 		for(auto t : scores){
-			window->draw(t); 
+			window.draw(t); 
 		}
 	}
 	if(pos==3 && theselect){
@@ -133,13 +147,12 @@ void Menu::draw_all(){
 		image->loadFromFile("./data/menu/menu-game.png");
 		bg->setTexture(*image);
 	}
-	
-	window->display();
+	window.display();
 }
 
-void Menu::run_menu(){
-	while(window->isOpen()){
-		loop_events();
-		draw_all();
+void Menu::run_menu(sf::RenderWindow& window, int& level){
+	while(window.isOpen() && level == 0){
+		loop_events(window,level);
+		draw_all(window);
 	}
 }

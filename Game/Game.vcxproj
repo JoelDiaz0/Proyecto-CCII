@@ -171,6 +171,9 @@
     <Image Include="data\background\hell_background-6.jpg" />
     <Image Include="data\background\hell_background-7.jpg" />
     <Image Include="data\background\hell_graphics.png" />
+    <Image Include="data\menu\menu-controles.png" />
+    <Image Include="data\menu\menu-game.png" />
+    <Image Include="data\menu\menu-puntuaciones.png" />
     <Image Include="data\sprites\bala_2.png" />
     <Image Include="data\sprites\bloodmonster.png" />
     <Image Include="data\sprites\buller_fire_1.png" />
@@ -218,6 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Baskic8.otf" />
+    <Font Include="data\menu\ethn.otf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
