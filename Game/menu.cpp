@@ -5,7 +5,6 @@ Menu::Menu(){
 	font = new sf::Font();
 	image = new sf::Texture();
 	bg = new sf::Sprite();
-	
 	set_values();
 }
 
@@ -45,7 +44,16 @@ void Menu::set_values(){
 	//PUNTUACIONES
 	//Load hightscores (Archivo de datos del juego 'coming soon...')
 	//Podria cargar los puntajes en un map (player, score)
-	options = {"Ply\t1000","Ply\t1000","Ply\t1000","Ply\t1000","Ply\t1000"}; //Default
+	std::fstream userdata("userdata.txt"); //Extraer niveles desbloqueados y puntuaciones
+	int lvl; //PERMISOS DE NIVEL "Niveles desbloqueados"
+	if (userdata.is_open()) { 
+		std::string tp;
+		userdata >> lvl;
+		while (std::getline(userdata, tp)) std::cout << tp << "\n"; 
+		userdata.close(); 
+	}
+	//std::cout << lvl; Probando lectura de datos
+	options = {"Ply\t0000","Ply\t0000","Ply\t0000","Ply\t0000","Ply\t0000"}; //Default
 	scores.resize(5);
 	std::pair<int, float> textData = std::make_pair(0, 250); //Index texto,cords en Y
 
@@ -54,24 +62,26 @@ void Menu::set_values(){
 		i.setString(options[textData.first]); 
 		i.setCharacterSize(24);
 		i.setOutlineColor(sf::Color::Black);
-		i.setPosition({720,textData.second});
+		i.setPosition({760,textData.second});
 		textData.first ++;
 		textData.second += 50;
 	}
-	
-	//Close Button 
-	winclose->setSize(sf::Vector2f(23,26));
-	winclose->setPosition(1178,39);
-	winclose->setFillColor(sf::Color::Transparent);
+
+	//Niveles desbloqueados (Cargados del archivo 'userdata') 
 	//Level buttons
 	levels.resize(5);
-	int c = 400;
+	int c = 450;
 	for (auto& i : levels) {
 		i.setSize(sf::Vector2f(100, 100));
-		i.setPosition(c, 360);
+		i.setPosition(c, 300);
 		i.setFillColor(sf::Color::Black);
 		c += 150;
 	}
+
+	//Close Button 
+	winclose->setSize(sf::Vector2f(23, 26));
+	winclose->setPosition(1178, 39);
+	winclose->setFillColor(sf::Color::Transparent);
 }
 
 void Menu::loop_events(sf::RenderWindow& window, int& level){
@@ -129,22 +139,18 @@ void Menu::draw_all(sf::RenderWindow& window){
 	for(auto t : texts){
 		window.draw(t); 
 	}
-	if (pos == 1 && theselect) {
-		for (auto l : levels) {
-			window.draw(l);
-		}
-	}
-	if(pos==2 && theselect){
-		for(auto t : scores){
-			window.draw(t); 
-		}
-	}
-	if(pos==3 && theselect){
-		image->loadFromFile("./data/menu/menu-controles.png");
+	if (pos == 1) {
+		for (auto l : levels) window.draw(l);
+		image->loadFromFile("./data/menu/menu-game.png");
 		bg->setTexture(*image);
 	}
-	else{
-		image->loadFromFile("./data/menu/menu-game.png");
+	if(pos == 2){
+		for(auto t : scores) window.draw(t); 
+		image->loadFromFile("./data/menu/menu-puntuaciones.png");
+		bg->setTexture(*image);
+	}
+	if(pos == 3){
+		image->loadFromFile("./data/menu/menu-controles.png");
 		bg->setTexture(*image);
 	}
 	window.display();

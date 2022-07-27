@@ -126,6 +126,12 @@ int main()
     sf::Sprite fondo1;
     fondo1.setTexture(f1);
 
+    // level 2 
+    sf::Texture level_underwater;
+    level_underwater.loadFromFile("./data/background/underwater-bg.png");
+    sf::Sprite fondo2;
+    fondo2.setTexture(level_underwater);
+
     //Textura level 5
     sf::Texture level_hell; 
     level_hell.loadFromFile("data\\background\\hell_graphics.png");
@@ -346,6 +352,23 @@ int main()
         else if (level == 2)
         {
             //KEVIN - FONDO DEL MAR | Coming soon...
+            cargando = false;
+            m1.setLoop(true);
+
+            App.clear();
+            App.draw(fondo2);
+
+            jugador1->colision_windows(W, H);
+            jugador2->colision_windows(W, H);
+
+            jugador1->draw_1(App);
+            jugador1->Update();
+            jugador1->attack_1(App);
+            jugador2->draw_2(App);
+            jugador2->Update();
+            jugador2->attack_2(App);
+
+            App.display();
         }
         ////////NIVEL 3//////////////////////////////////
         /////////////////////////////////////////////////
