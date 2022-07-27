@@ -1,19 +1,17 @@
 #include "Bullet.h"
 
-Bullet::Bullet(Animation& anim, float vs)
+Bullet::Bullet(Animation& anim, float vsx)
 {
-	pos_x = 0;
-	pos_y = 0;
 	this->anim = anim;
-	this->vsx = vs;
+	this->vsx = vsx;
 	this->vsy = 0.f;
 	this->tam_x = 1.f;
 	this->tam_y = 1.f;
+	this->anim.sp.setPosition(0.f, 0.f);
 }
 
 Bullet::~Bullet()
 {
-
 }
 
 bool Bullet::colision_window(int width, int height)
@@ -29,7 +27,7 @@ void Bullet::orientacion(bool ori_derecha, bool more_sprites)
 		anim.rectSourceSprite.top = anim.tamSprite_y;
 }
 
-void Bullet::position(int pos_x, int pos_y)
+void Bullet::setPosition(float pos_x, float pos_y)
 {
 	anim.sp.setPosition(pos_x, pos_y);
 }
@@ -39,9 +37,9 @@ void Bullet::fire_1()
 	anim.sp.move(vsx, vsy);
 }
 
-void Bullet::angle_sin(int angulo)
+void Bullet::setAngle_sin(int angulo)
 {
-	vsy = vsx / 3 * sin(angulo);
+	vsy = vsx / 3.f * sin(angulo);
 }
 
 void Bullet::draw(sf::RenderWindow& app)
@@ -55,7 +53,7 @@ void Bullet::update()
 	anim.Update();
 }
 
-void Bullet::scale(float tam_x, float tam_y)
+void Bullet::setScale(float tam_x, float tam_y)
 {
 	this->tam_x = tam_x;
 	this->tam_y = tam_y;

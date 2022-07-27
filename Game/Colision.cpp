@@ -18,13 +18,9 @@ void Colision::colision_pantalla_player(sf::Sprite& s1, int width, int height)
 
 	if (s1.getPosition().x + s1.getGlobalBounds().width > width)
 		s1.setPosition(width - s1.getGlobalBounds().width, s1.getPosition().y);
-	/*
-		if (e1.anim.sp.getPosition().y + e1.anim.sp.getGlobalBounds().height > height)
-		e1.anim.sp.setPosition(e1.anim.sp.getPosition().x, height - e1.anim.sp.getGlobalBounds().height);
-	*/
 }
 
-char Colision::colision_pantalla_enemy(sf::Sprite& s1, float& vsx, float& vsy, int width, int height)
+char Colision::colision_pantalla_enemy(sf::Sprite& s1, int width, int height)
 {
 	if (s1.getPosition().x < 0.f)
 		return 'A';
@@ -34,13 +30,11 @@ char Colision::colision_pantalla_enemy(sf::Sprite& s1, float& vsx, float& vsy, i
 		return 'W';
 }
 
-void Colision::colision_platform_player(sf::Sprite& s1, sf::Sprite& s2, float& vsx, float& vsy, float vsx_aux)
+void Colision::colision_platformMovil_player(sf::Sprite& jugador, sf::Sprite& plataforma)
 {
-	sf::FloatRect playerBounds = s1.getGlobalBounds();
-	sf::FloatRect wallBounds = s2.getGlobalBounds();
+	sf::FloatRect playerBounds = jugador.getGlobalBounds();
+	sf::FloatRect wallBounds = plataforma.getGlobalBounds();
 	nextPos = playerBounds;
-	nextPos.left += vsx;
-	nextPos.top += vsy;
 
 	if (wallBounds.intersects(nextPos))
 	{
@@ -48,14 +42,47 @@ void Colision::colision_platform_player(sf::Sprite& s1, sf::Sprite& s2, float& v
 		if (playerBounds.top > wallBounds.top && playerBounds.top + playerBounds.height > wallBounds.top + wallBounds.height
 			&& playerBounds.left < wallBounds.left + wallBounds.width && playerBounds.left + playerBounds.width > wallBounds.left)
 		{
-			//vsy = 0.f;			
+			jugador.setPosition(playerBounds.left, wallBounds.top + wallBounds.height);
+		}
+		//Botton Colision
+		else if (playerBounds.top < wallBounds.top && playerBounds.top + playerBounds.height < wallBounds.top + wallBounds.height
+			&& playerBounds.top < wallBounds.top + wallBounds.height && playerBounds.top + playerBounds.height > wallBounds.top)
+		{
+			jugador.setPosition(playerBounds.left, wallBounds.top - playerBounds.height);
+		}
+		//Right Colision
+		if (playerBounds.left < wallBounds.left && playerBounds.left + playerBounds.width < wallBounds.left + wallBounds.width
+			&& playerBounds.top < wallBounds.top + 10 + wallBounds.height - 10 && playerBounds.top + playerBounds.height > wallBounds.top + 10)
+		{
+			jugador.setPosition(wallBounds.left - playerBounds.width, playerBounds.top);
+		}
+		//left Colision
+		else if (playerBounds.left > wallBounds.left && playerBounds.left + playerBounds.width > wallBounds.left + wallBounds.width
+			&& playerBounds.top < wallBounds.top + 10 + wallBounds.height - 10 && playerBounds.top + playerBounds.height > wallBounds.top + 10)
+		{
+			jugador.setPosition(wallBounds.left + wallBounds.width, playerBounds.top);
+		}
+	}
+}
+
+void Colision::colision_platform_player(sf::Sprite& s1, sf::Sprite& s2, float& vsx, float& vsy, float vsx_aux)
+{
+	sf::FloatRect playerBounds = s1.getGlobalBounds();
+	sf::FloatRect wallBounds = s2.getGlobalBounds();
+	nextPos = playerBounds;
+
+	if (wallBounds.intersects(nextPos))
+	{
+		//Top Colision
+		if (playerBounds.top > wallBounds.top && playerBounds.top + playerBounds.height > wallBounds.top + wallBounds.height
+			&& playerBounds.left < wallBounds.left + wallBounds.width && playerBounds.left + playerBounds.width > wallBounds.left)
+		{			
 			s1.setPosition(playerBounds.left, wallBounds.top + wallBounds.height);
 		}
 		//Botton Colision
 		else if (playerBounds.top < wallBounds.top && playerBounds.top + playerBounds.height < wallBounds.top + wallBounds.height
 			&& playerBounds.top < wallBounds.top + wallBounds.height && playerBounds.top + playerBounds.height > wallBounds.top)
 		{
-			//vsy = 0.f;
 			s1.setPosition(playerBounds.left, wallBounds.top - playerBounds.height);
 		}
 		//Right Colision
@@ -75,8 +102,7 @@ void Colision::colision_platform_player(sf::Sprite& s1, sf::Sprite& s2, float& v
 	}
 	else
 	{
-		vsx = 3.15;
-		//vsy = 3.15;
+		vsx = 3.15f;
 	}
 }
 
@@ -84,10 +110,7 @@ void Colision::colision_platform_enemy(sf::Sprite& s1, sf::Sprite& s2, float& vs
 {
 	sf::FloatRect EnemyBounds = s1.getGlobalBounds();
 	sf::FloatRect wallBounds = s2.getGlobalBounds();
-
 	nextPos = EnemyBounds;
-	nextPos.left += vsx;
-	nextPos.top += vsy;
 
 	if (wallBounds.intersects(nextPos))
 	{
@@ -133,19 +156,6 @@ bool Colision::enemy_final_colision(sf::Sprite& e1, sf::Sprite& plt1, float& vsx
 	return false;
 }
 
-bool Colision::colision_entity_entity(sf::Sprite& e1, sf::Sprite e2, float& vsx, float& vsy)
-{
-	sf::FloatRect e1_Bounds = e1.getGlobalBounds();
-	sf::FloatRect e2_Bounds = e2.getGlobalBounds();
-	nextPos = e2_Bounds;
-	nextPos.left += vsx;
-	nextPos.top += vsy;
-
-	if (e1_Bounds.intersects(nextPos))
-		return true;
-	return false;
-}
-
 bool Colision::colision_bullet_window(sf::Sprite b1, int width, int height)
 {
 	if (b1.getPosition().x < 0.f || b1.getPosition().y < 0.f || b1.getPosition().x + b1.getGlobalBounds().width > width
@@ -154,6 +164,41 @@ bool Colision::colision_bullet_window(sf::Sprite b1, int width, int height)
 		return true;
 	}
 	return false;
+}
+
+bool Colision::colision_entity_entity(sf::Sprite& e1, sf::Sprite& e2)
+{
+	sf::FloatRect e2Bounds = e2.getGlobalBounds();
+	sf::FloatRect e1Bounds = e1.getGlobalBounds();
+	nextPos = e2Bounds;
+	if (e1Bounds.intersects(nextPos))
+	{
+		//Top Colision
+		if (e2Bounds.top > e1Bounds.top && e2Bounds.top + e2Bounds.height > e1Bounds.top + e1Bounds.height
+			&& e2Bounds.left < e1Bounds.left + e1Bounds.width && e2Bounds.left + e2Bounds.width > e1Bounds.left)
+		{
+			return true;
+		}
+		//Botton Colision
+		else if (e2Bounds.top < e1Bounds.top && e2Bounds.top + e2Bounds.height < e1Bounds.top + e1Bounds.height
+			&& e2Bounds.top < e1Bounds.top + e1Bounds.height && e2Bounds.top + e2Bounds.height > e1Bounds.top)
+		{
+			return true;
+		}
+		//Right Colision
+		if (e2Bounds.left < e1Bounds.left && e2Bounds.left + e2Bounds.width < e1Bounds.left + e1Bounds.width
+			&& e2Bounds.top < e1Bounds.top + e1Bounds.height && e2Bounds.top + e2Bounds.height > e1Bounds.top)
+		{
+			return true;
+		}
+		//left Colision
+		else if (e2Bounds.left > e1Bounds.left && e2Bounds.left + e2Bounds.width > e1Bounds.left + e1Bounds.width
+			&& e2Bounds.top < e1Bounds.top + e1Bounds.height && e2Bounds.top + e2Bounds.height > e1Bounds.top)
+		{
+			return true;
+		}
+	}
+    return false;
 }
 
 

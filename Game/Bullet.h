@@ -2,29 +2,25 @@
 #include <iostream>
 #include "Animation.h"
 #include "Colision.h"
-
 class Bullet
 {
 public:
 	friend class Enemy;
 	friend class Player;
-
-	Bullet(Animation& anim, float vs);
+	friend class Entity; //Colision con entidades
+	Bullet(Animation& anim, float vsx);
 	~Bullet();
-	void position(int x, int y);
-	bool colision_window(int width, int height);
-	void scale(float tam_x, float tam_y);
-	void fire_1();
-	void angle_sin(int angulo);
-	void draw(sf::RenderWindow& app);
 	void update();
+	void draw(sf::RenderWindow& app);
 	void orientacion(bool ori_derecha = true, bool more_sprites = false);
-
+	void fire_1();
+	void setPosition(float pos_x, float pos_y);
+	void setScale(float tam_x, float tam_y);	
+	void setAngle_sin(int angulo);
+	bool colision_window(int width, int height);
 private:
 	Animation anim;
-	float vsx, vsy;
-	int pos_x, pos_y;
-	float tam_x, tam_y;
 	Colision c1;
+	float vsx, vsy, tam_x, tam_y;
 };
 

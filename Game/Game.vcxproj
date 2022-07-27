@@ -110,7 +110,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-main-d.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-main-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,7 +129,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-main-d.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-main-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -140,26 +140,47 @@
     <ClCompile Include="Demon.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Fallen_Block.cpp" />
     <ClCompile Include="Fungus.cpp" />
+    <ClCompile Include="Harpy.cpp" />
     <ClCompile Include="Hell.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Key.cpp" />
+    <ClCompile Include="Lava.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mallet.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="montana.cpp" />
+    <ClCompile Include="Muerte.cpp" />
+    <ClCompile Include="Pendulum.cpp" />
     <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Platform_Movil.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Portal.cpp" />
+    <ClCompile Include="Puntos.cpp" />
+    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="Spear.cpp" />
+    <ClCompile Include="Spike.cpp" />
+    <ClCompile Include="Spike_Run.cpp" />
+    <ClCompile Include="Suriken.cpp" />
     <ClCompile Include="Tatooine.cpp" />
     <ClCompile Include="Throwingfire.cpp" />
+    <ClCompile Include="Traps.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\music\level1.ogg" />
     <None Include="data\music\level2.ogg" />
+    <None Include="data\music\music-level1.ogg" />
     <None Include="data\music\music1.ogg" />
     <None Include="data\music\the_hell.ogg" />
     <None Include="data\sound\attack_fire_1.ogg" />
     <None Include="data\sound\attack_thunder.ogg" />
     <None Include="data\sound\bala_1.ogg" />
     <None Include="data\sound\damage.ogg" />
+    <None Include="data\sound\dead.ogg" />
     <None Include="data\sound\FlameAtack.ogg" />
+    <None Include="data\sound\revivir.ogg" />
+    <None Include="data\sound\score.ogg" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />
@@ -175,7 +196,9 @@
     <Image Include="data\menu\menu-game.png" />
     <Image Include="data\menu\menu-puntuaciones.png" />
     <Image Include="data\sprites\bala_2.png" />
+    <Image Include="data\sprites\block.png" />
     <Image Include="data\sprites\bloodmonster.png" />
+    <Image Include="data\sprites\brick.png" />
     <Image Include="data\sprites\buller_fire_1.png" />
     <Image Include="data\sprites\buller_fire_2.png" />
     <Image Include="data\sprites\buller_thunder.png" />
@@ -183,8 +206,17 @@
     <Image Include="data\sprites\demon_walk.png" />
     <Image Include="data\sprites\Enemigo1A.png" />
     <Image Include="data\sprites\Enemigo2.png" />
+    <Image Include="data\sprites\FlyingPlatfrom.png" />
     <Image Include="data\sprites\fondo.jpg" />
     <Image Include="data\sprites\fungus.png" />
+    <Image Include="data\sprites\harpy.png" />
+    <Image Include="data\sprites\item_muerte.png" />
+    <Image Include="data\sprites\item_puntos.png" />
+    <Image Include="data\sprites\item_resucitar.png" />
+    <Image Include="data\sprites\lava.png" />
+    <Image Include="data\sprites\llave.png" />
+    <Image Include="data\sprites\mazo.png" />
+    <Image Include="data\sprites\MovingPlatfrom.png" />
     <Image Include="data\sprites\nature-paltformer.png" />
     <Image Include="data\sprites\p1.png" />
     <Image Include="data\sprites\p1_attack.png" />
@@ -200,7 +232,15 @@
     <Image Include="data\sprites\p2_jump.png" />
     <Image Include="data\sprites\p2_run.png" />
     <Image Include="data\sprites\p2_up.png" />
+    <Image Include="data\sprites\pendulo.png" />
+    <Image Include="data\sprites\portal.png" />
+    <Image Include="data\sprites\Spear.png" />
+    <Image Include="data\sprites\spike.png" />
+    <Image Include="data\sprites\Spike_B.png" />
+    <Image Include="data\sprites\spike_run.png" />
+    <Image Include="data\sprites\suriken.png" />
     <Image Include="data\sprites\throwingfire.png" />
+    <Image Include="data\sprites\Trap_Spike_Run.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -210,18 +250,38 @@
     <ClInclude Include="Demon.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Fallen_Block.h" />
     <ClInclude Include="Fungus.h" />
+    <ClInclude Include="Harpy.h" />
     <ClInclude Include="Hell.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Key.h" />
+    <ClInclude Include="Lava.h" />
+    <ClInclude Include="Mallet.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="montana.h" />
+    <ClInclude Include="Muerte.h" />
+    <ClInclude Include="Pendulum.h" />
     <ClInclude Include="Platform.h" />
+    <ClInclude Include="Platform_Movil.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Portal.h" />
+    <ClInclude Include="Puntos.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="Spear.h" />
+    <ClInclude Include="Spike.h" />
+    <ClInclude Include="Spike_Run.h" />
+    <ClInclude Include="Suriken.h" />
     <ClInclude Include="Tatooine.h" />
     <ClInclude Include="Throwingfire.h" />
+    <ClInclude Include="Traps.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Baskic8.otf" />
     <Font Include="data\menu\ethn.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="userdata.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -20,12 +20,10 @@ void Animation::Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, in
     this->tamSprite_y = tamSprite_y;
     this->moveSpeed = moveSpeed;
     this->num_Sprites = num_Sprites;
-
     rectSourceSprite.width = tamSprite_x;
     rectSourceSprite.height = tamSprite_y;
     rectSourceSprite.top = 0;
     rectSourceSprite.left = 0;
-
     sp.setTextureRect(rectSourceSprite);
 }
 
@@ -40,6 +38,24 @@ void Animation::Update()
         sp.setTextureRect(rectSourceSprite);
         time_anim.restart();
     }
+}
+
+void Animation::Update_Una_Vez()
+{
+    if (time_anim.getElapsedTime().asSeconds() > moveSpeed)
+    {
+        if (rectSourceSprite.left < tamSprite_x * (num_Sprites - 1))
+            rectSourceSprite.left += tamSprite_x;
+        else
+            rectSourceSprite.left = tamSprite_x * (num_Sprites - 1);         
+        sp.setTextureRect(rectSourceSprite);
+        time_anim.restart();
+    }
+}
+
+void Animation::Reset()
+{
+    rectSourceSprite.left = 0;
 }
 
 void Animation::Draw(sf::RenderWindow& app)

@@ -1,27 +1,34 @@
 #include "BloodMonster.h"
 
-BloodMonster::BloodMonster()
+BloodMonster::BloodMonster() : Enemy()
 {
-    life = 15;
+    nombre = "bloodmonster";
+    life = 10;
 }
 
 BloodMonster::~BloodMonster()
 {
 }
 
-void BloodMonster::attack(sf::SoundBuffer& s1, sf::RenderWindow& app)
-{
-}
-
 void BloodMonster::move()
 {
-    if (!stop)
-        anim.sp.move(vsx, 9.8);
+    if (life > 0)
+    {
+        if (!stop)
+            anim.sp.move(vsx, 9.8f);
+    }
+}
+
+void BloodMonster::attack(sf::RenderWindow& app)
+{
 }
 
 void BloodMonster::Draw(sf::RenderWindow& app)
 {
-    anim.sp.setScale(sf::Vector2f(tam_x, tam_y));
-    anim.Draw(app);
-    anim.Update();
+    if (life > 0)
+    {
+        anim.sp.setScale(sf::Vector2f(tam_x, tam_y));
+        anim.Draw(app);
+        anim.Update();
+    }
 }

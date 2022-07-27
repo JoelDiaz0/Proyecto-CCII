@@ -6,11 +6,9 @@ class BloodMonster : public Enemy
 public:
 	BloodMonster();
 	~BloodMonster();
-	void move();
-	void attack(sf::SoundBuffer& s1, sf::RenderWindow& app);
-	void Draw(sf::RenderWindow& app);
-private:
-
+	void move() override;
+	void attack(sf::RenderWindow& app) override;
+	void Draw(sf::RenderWindow& app) override;
 };
 
 

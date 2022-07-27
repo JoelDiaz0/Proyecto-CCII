@@ -1,17 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Archivos de encabezado">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Archivos de encabezado\Enemigos">
       <UniqueIdentifier>{ac029202-bc18-4ab7-af4c-78146b99b5a8}</UniqueIdentifier>
@@ -22,189 +14,317 @@
     <Filter Include="Archivos de encabezado\Plataforma">
       <UniqueIdentifier>{8cc0382f-3b0e-4c85-87ad-25874d6567b7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\Enemigos">
-      <UniqueIdentifier>{ab55fb69-540e-4bea-848d-12db281670ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Balas">
-      <UniqueIdentifier>{ac08c593-b963-4c3e-8e83-e7eb11c2d750}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Plataforma">
-      <UniqueIdentifier>{8f1e16fd-53bd-44b2-b801-26758cf2ae52}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Menu">
-      <UniqueIdentifier>{ab01c9de-98e2-4d19-a539-4895ba08613b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\Menu">
       <UniqueIdentifier>{dfd65d35-7004-4c77-9e8b-7d8e97111e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Items">
+      <UniqueIdentifier>{db4705bf-452c-4aaa-abb6-5d2e48ddf062}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Trampas">
+      <UniqueIdentifier>{a70407dc-cd6f-4cb8-ad1b-0ac3a4ff410e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de recursos">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de origen">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de origen\Enemigos">
+      <UniqueIdentifier>{ab55fb69-540e-4bea-848d-12db281670ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de origen\Balas">
+      <UniqueIdentifier>{ac08c593-b963-4c3e-8e83-e7eb11c2d750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de origen\Plataforma">
+      <UniqueIdentifier>{8f1e16fd-53bd-44b2-b801-26758cf2ae52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de origen\Menu">
+      <UniqueIdentifier>{ab01c9de-98e2-4d19-a539-4895ba08613b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de origen\Items">
+      <UniqueIdentifier>{652c12c1-bc98-4fc7-800d-500047887a8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Archivos de origen\Trampas">
+      <UniqueIdentifier>{47bee130-58b7-4e62-9ca9-42ae1a19cfb7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Colision.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>Archivos de origen\Enemigos</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Enemigos</Filter>
     </ClCompile>
     <ClCompile Include="Demon.cpp">
-      <Filter>Archivos de origen\Enemigos</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Enemigos</Filter>
     </ClCompile>
     <ClCompile Include="Fungus.cpp">
-      <Filter>Archivos de origen\Enemigos</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Enemigos</Filter>
     </ClCompile>
     <ClCompile Include="Throwingfire.cpp">
-      <Filter>Archivos de origen\Enemigos</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Enemigos</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
-      <Filter>Archivos de origen\Balas</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Balas</Filter>
     </ClCompile>
     <ClCompile Include="BloodMonster.cpp">
-      <Filter>Archivos de origen\Enemigos</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Enemigos</Filter>
     </ClCompile>
     <ClCompile Include="Platform.cpp">
-      <Filter>Archivos de origen\Plataforma</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Plataforma</Filter>
     </ClCompile>
     <ClCompile Include="Hell.cpp">
-      <Filter>Archivos de origen\Plataforma</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Plataforma</Filter>
     </ClCompile>
     <ClCompile Include="montana.cpp">
-      <Filter>Archivos de origen\Plataforma</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Plataforma</Filter>
     </ClCompile>
     <ClCompile Include="menu.cpp">
-      <Filter>Archivos de origen\Menu</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Score.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Muerte.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Puntos.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Traps.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Spike.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Lava.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Suriken.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Spike_Run.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Fallen_Block.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Mallet.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Pendulum.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
     </ClCompile>
     <ClCompile Include="Tatooine.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado\Archivos de origen\Plataforma</Filter>
+    </ClCompile>
+    <ClCompile Include="Harpy.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Enemigos</Filter>
+    </ClCompile>
+    <ClCompile Include="Key.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Portal.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform_Movil.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
+    </ClCompile>
+    <ClCompile Include="Spear.cpp">
+      <Filter>Archivos de encabezado\Archivos de origen\Trampas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\sprites\Enemigo2.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\Enemigo1A.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\fondo.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\nature-paltformer.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p1.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p2.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\bala_2.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\bloodmonster.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\buller_fire_1.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\buller_fire_2.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\demon_attack.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\buller_thunder.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\demon_walk.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\fungus.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p1_attack.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p1_death.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p1_idle.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p1_jump.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p1_run.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p1_up.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p2_attack.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p2_death.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p2_idle.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p2_jump.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p2_run.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\p2_up.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\sprites\throwingfire.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-0.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-1.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-2.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-3.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-4.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-5.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-6.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_graphics.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\background\hell_background-7.jpg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\menu\menu-controles.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\menu\menu-game.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
     <Image Include="data\menu\menu-puntuaciones.png">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\item_muerte.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\item_puntos.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\item_resucitar.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\Spear.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\spike.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\Spike_B.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\suriken.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\Trap_Spike_Run.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\lava.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\spike_run.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\pendulo.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\mazo.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\brick.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\block.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\harpy.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\FlyingPlatfrom.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\MovingPlatfrom.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\llave.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Image>
+    <Image Include="data\sprites\portal.png">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -250,45 +370,109 @@
     <ClInclude Include="menu.h">
       <Filter>Archivos de encabezado\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Tatooine.h">
+    <ClInclude Include="Score.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Muerte.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Puntos.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Traps.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Spike.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Lava.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Suriken.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Spike_Run.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Fallen_Block.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Mallet.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Pendulum.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Tatooine.h">
+      <Filter>Archivos de encabezado\Plataforma</Filter>
+    </ClInclude>
+    <ClInclude Include="Harpy.h">
+      <Filter>Archivos de encabezado\Enemigos</Filter>
+    </ClInclude>
+    <ClInclude Include="Key.h">
+      <Filter>Archivos de encabezado\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform_Movil.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
+    </ClInclude>
+    <ClInclude Include="Spear.h">
+      <Filter>Archivos de encabezado\Trampas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\music\music1.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\music\the_hell.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\music\level2.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\music\level1.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\sound\FlameAtack.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\sound\damage.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\sound\bala_1.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\sound\attack_thunder.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
     <None Include="data\sound\attack_fire_1.ogg">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </None>
+    <None Include="data\sound\dead.ogg">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </None>
+    <None Include="data\sound\score.ogg">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </None>
+    <None Include="data\music\music-level1.ogg" />
+    <None Include="data\sound\revivir.ogg" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Baskic8.otf">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Font>
     <Font Include="data\menu\ethn.otf">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="userdata.txt">
+      <Filter>Archivos de encabezado\Archivos de recursos</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,36 +1,21 @@
 #pragma once
 #include "Entity.h"
-#include "Colision.h"
-#include "Platform.h"
-#include "Bullet.h"
-#include <iostream>
-
+#include "Player.h"
 class Enemy : public Entity
 {
 public:
-	friend class Colision;
+	friend class Player; //Se necesita para la detectar la colision entre Enemigo y Jugador
 	Enemy();
 	~Enemy();
-
 	void colision_windows(int width, int height);
 	void colision_platform(Platform& pl1);
-
-	virtual void Draw(sf::RenderWindow& app);
-	virtual void move();
-	virtual void attack(sf::RenderWindow& app);
-
-	bool colision_bullet_entity(Bullet& b1);
-
-	//void colision_end_platform(Platform& plt1, bool more_sprite = false);
-
+	void colision_player_bullet(Player& p1);
+	virtual void Draw(sf::RenderWindow& app) = 0;
+	virtual void move() = 0;
+	virtual void attack(sf::RenderWindow& app) = 0;
 protected:
-	bool isFire;
-	bool reload;
-	bool stop;
-	std::vector<Bullet*> disparo;
-	sf::Clock time_attack;
-	sf::Clock wait_attack;
-	sf::Clock wait_move;
-	sf::Clock stop_move;
+	bool isFire, reload, stop, unaVez;
+	std::string nombre;
+	sf::Clock time_attack, wait_move, wait_attack, stop_move, colision_wait;
 };
 

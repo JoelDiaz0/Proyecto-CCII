@@ -1,15 +1,2 @@
-﻿  menu.cpp
-C:\Users\VICENTE\source\repos\Proyecto-CCII\Game\menu.cpp(38,37): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\VICENTE\source\repos\Proyecto-CCII\Game\menu.cpp(71,17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\utility(247,61): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-          and
-          [
-              _Ty2=float
-          ]
-C:\Users\VICENTE\source\repos\Proyecto-CCII\Game\menu.cpp(50): message : see reference to function template instantiation 'std::pair<int,float>::pair<int,int,0>(std::pair<int,int> &&) noexcept' being compiled
-C:\Users\VICENTE\source\repos\Proyecto-CCII\Game\menu.cpp(50): message : see reference to function template instantiation 'std::pair<int,float>::pair<int,int,0>(std::pair<int,int> &&) noexcept' being compiled
-  Game.vcxproj -> C:\Users\VICENTE\source\repos\Proyecto-CCII\x64\Debug\Game.exe
+﻿  Entity.cpp
+  Game.vcxproj -> C:\Users\USUARIO\source\repos\Proyecto-CCII\x64\Debug\Game.exe
