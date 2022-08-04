@@ -8,6 +8,13 @@ Para el curso de Ciencia de la Computacion II
 - 🕹 Videojuego en Plataforma 2D.
 - 👥 Multiplayer.
 
+## Integrantes
+- 👨‍💻 Apaza Andaluz, Diego 
+- 👨‍💻 Chambi Tapia, Kevin
+- 👨‍💻 Diaz Castro, Berly
+- 👨‍💻 Pacherres Muñoz, Peter
+- 👨‍🚀 Solis Zamata, Axel
+
 ## Concepto de juego
 Juego plataformero desarrollado en C++, inspirado en las mecánicas del juego give up, donde el jugador pasará por una serie de niveles con obstáculos con dificultad escalable.
 

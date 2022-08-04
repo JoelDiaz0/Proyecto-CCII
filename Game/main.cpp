@@ -172,12 +172,18 @@ int main()
     level_tatooine.loadFromFile("data\\background\\tatooine_graphics.png");
     sf::Sprite fondo1;
     fondo1.setTexture(f1);
+
     // level 2 
     sf::Texture level_underwater;
     level_underwater.loadFromFile("./data/background/underwater-bg.png");
     sf::Sprite fondo2;
     fondo2.setTexture(level_underwater);
+
     //level 5
+
+
+    //Textura level 5
+
     sf::Texture level_hell; 
     level_hell.loadFromFile("data\\background\\hell_graphics.png");
     //level 3 montana textura
@@ -393,6 +399,7 @@ int main()
 
             jugador1->colision_windows(pantalla.W, pantalla.H);
             jugador2->colision_windows(pantalla.W, pantalla.H);
+
 
             jugador1->draw_1(App);
             jugador1->Update();
