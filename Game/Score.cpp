@@ -55,6 +55,8 @@ bool Score::operator>=(const Score& s1) const
 	return false;
 }
 
+long Score::getTotal() { return total; }
+
 auto Score::calculo()
 {
 	total = ((items + enemigos_asesinados * 100) - (muertes * 50));

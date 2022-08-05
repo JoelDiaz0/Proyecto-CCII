@@ -12,19 +12,19 @@ class Menu {
 	//Boxes
 	sf::RectangleShape* winclose;
 	std::vector<sf::RectangleShape> levels;
-
+	//Loadfiles
 	sf::Font * font;
 	sf::Texture * image;
 	sf::Sprite * bg;
-	
+	//Mouse
 	sf::Vector2i pos_mouse;
 	sf::Vector2f mouse_coord;
-	
-	std::vector<const char *> options;
+	//Texts
+	std::vector<std::string> options;
 	std::vector<sf::Vector2f> coords;
 	std::vector<sf::Text> texts;
 	std::vector<std::size_t> sizes;
-	
+	std::vector<std::pair<std::string, int>> puntuaciones;
 	std::vector<sf::Text> scores;
 	
 protected:
@@ -32,7 +32,7 @@ protected:
 	void loop_events(sf::RenderWindow& window, int& level);
 	void draw_all(sf::RenderWindow& window);
 public:
-	Menu();
+	Menu(std::vector<std::pair<std::string, int>> puntuaciones);
 	~Menu();
 	void run_menu(sf::RenderWindow& window, int & level);
 };

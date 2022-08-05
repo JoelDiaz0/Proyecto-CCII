@@ -1,10 +1,11 @@
 #include "menu.h"
 
-Menu::Menu(){
+Menu::Menu(std::vector<std::pair<std::string, int>> _puntuaciones){
 	winclose = new sf::RectangleShape();
 	font = new sf::Font();
 	image = new sf::Texture();
 	bg = new sf::Sprite();
+	puntuaciones = _puntuaciones;
 	set_values();
 }
 
@@ -40,23 +41,15 @@ void Menu::set_values(){
 	}
 	texts[1].setOutlineThickness(4);
 	pos = 1;
-	
-	//PUNTUACIONES
-	//Load hightscores (Archivo de datos del juego 'coming soon...')
-	//Podria cargar los puntajes en un map (player, score)
-	std::fstream userdata("userdata.txt"); //Extraer niveles desbloqueados y puntuaciones
-	int lvl; //PERMISOS DE NIVEL "Niveles desbloqueados"
-	if (userdata.is_open()) { 
-		std::string tp;
-		userdata >> lvl;
-		while (std::getline(userdata, tp)) std::cout << tp << "\n"; 
-		userdata.close(); 
-	}
-	//std::cout << lvl; Probando lectura de datos
+
 	options = {"Ply\t0000","Ply\t0000","Ply\t0000","Ply\t0000","Ply\t0000"}; //Default
+	if (puntuaciones.size() > 0) {
+		options.clear();
+		for (auto& i : puntuaciones) options.push_back(i.first + "\t" + std::to_string(i.second));
+	}
+	//Puntajes
 	scores.resize(5);
 	std::pair<int, float> textData = std::make_pair(0, 250); //Index texto,cords en Y
-
 	for (auto & i : scores){
 		i.setFont(*font); 
 		i.setString(options[textData.first]); 
@@ -74,7 +67,7 @@ void Menu::set_values(){
 	for (auto& i : levels) {
 		i.setSize(sf::Vector2f(100, 100));
 		i.setPosition(c, 300);
-		i.setFillColor(sf::Color::Black);
+		i.setFillColor(sf::Color::Color(43, 117, 106, 255));
 		c += 150;
 	}
 

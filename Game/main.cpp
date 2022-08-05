@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <algorithm>
 #include <vector>
 #include <iostream>
 #include "Demon.h"
@@ -33,12 +34,24 @@ struct window
 }pantalla;
 bool cargando = true; //CARGAR ENEMIGOS Y PLATAFORMAS
 int level = 0; //CAMBIO DE NIVEL
-
+bool sortbysec(const std::pair<std::string, int>& a, const std::pair<std::string, int>& b);//Comparador de pares de puntuacion
 int main()
 {
     sf::RenderWindow App(sf::VideoMode(pantalla.W, pantalla.H, 32), "Juego");
     App.setFramerateLimit(60);
     bool fullscream = false;
+
+    //PUNTUACIONES
+    std::fstream userdata("userdata.txt"); //Extraer niveles desbloqueados y puntuaciones
+    int maxUnlockedLevel{}; //PERMISOS DE NIVEL "Niveles desbloqueados"
+    std::vector<std::pair<std::string, int>> puntuaciones;
+    puntuaciones.resize(5);
+    if (userdata.is_open()) {
+        std::string tp;
+        userdata >> maxUnlockedLevel;
+        for (auto& i : puntuaciones) userdata >> i.first >> i.second;
+        userdata.close();
+    }
 
     //Musica - Level 1 
     sf::Music m1, m5;
@@ -248,7 +261,7 @@ int main()
        
         if (level == 0)
         { 
-            Menu* menu = new Menu();
+            Menu* menu = new Menu(puntuaciones);
             menu->run_menu(App,level);
             delete menu;
             menu = nullptr;
@@ -390,7 +403,7 @@ int main()
 
         else if (level == 2)
         {
-            //KEVIN - FONDO DEL MAR | Coming soon...
+            //KEVIN - FONDO DEL MAR 
             cargando = false;
             m1.setLoop(true);
 
@@ -399,7 +412,6 @@ int main()
 
             jugador1->colision_windows(pantalla.W, pantalla.H);
             jugador2->colision_windows(pantalla.W, pantalla.H);
-
 
             jugador1->draw_1(App);
             jugador1->Update();
@@ -691,7 +703,6 @@ int main()
     }
 
     //ELIMINAR OBJETOS Y LIBERAR MEMORIA
-
     cout << "Jugador1:\n";
     cout << jugador1->puntaje << endl;
     cout << "Jugador2:\n";
@@ -703,6 +714,34 @@ int main()
         cout << "Jugador1 y Jugador2 tienen el mismo puntaje\n";
     else
         cout << "Jugador2 tienen el mayor puntaje\n";
+
+    //Puntuaciones escritura en el archivo 'userdata.txt'
+    long p1_score = jugador1->puntaje.getTotal();
+    long p2_score = jugador2->puntaje.getTotal();
+    std::string pName{};
+    puntuaciones.resize(7);
+    if (p1_score > puntuaciones.back().second) {
+        cout << "Nombre jugador 1: "; std::cin >> pName;
+        puntuaciones.push_back(std::make_pair(pName, p1_score));
+    }
+    if (p2_score > puntuaciones.back().second) {
+        cout << "Nombre jugador 2: "; std::cin >> pName;
+        puntuaciones.push_back(std::make_pair(pName, p2_score));
+    }
+   
+    std::sort(puntuaciones.begin(), puntuaciones.end(),sortbysec);
+    puntuaciones.resize(5);
+
+    for (auto i : puntuaciones) cout << i.first << " " << i.second << endl;
+
+    //Escribir los datos
+    userdata.open("userdata.txt");
+    if (userdata.is_open()){
+        userdata << maxUnlockedLevel <<"\n";
+        for(auto i:puntuaciones) userdata << i.first << " " << i.second << "\n";
+        userdata.close();
+    }
+    
 
     for (auto &plt : vec_plataformas)
         delete plt;
@@ -718,6 +757,4 @@ int main()
     return 0;
 }
 
-
-
-
+bool sortbysec(const std::pair<std::string, int>& a,const std::pair<std::string, int>& b){return (a.second > b.second);}

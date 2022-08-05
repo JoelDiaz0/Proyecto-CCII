@@ -19,6 +19,7 @@ public:
 	bool operator<=(const Score& t1) const;
 	bool operator>=(const Score& t1) const;
 	friend std::ostream& operator<<(std::ostream& o, Score& s1);
+	long getTotal();
 private:
 	auto calculo();
 	int muertes;
