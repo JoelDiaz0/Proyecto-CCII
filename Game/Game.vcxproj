@@ -140,6 +140,7 @@
     <ClCompile Include="Demon.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Excepcion.cpp" />
     <ClCompile Include="Fallen_Block.cpp" />
     <ClCompile Include="Fungus.cpp" />
     <ClCompile Include="Harpy.cpp" />
@@ -250,6 +251,7 @@
     <ClInclude Include="Demon.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Excepcion.h" />
     <ClInclude Include="Fallen_Block.h" />
     <ClInclude Include="Fungus.h" />
     <ClInclude Include="Harpy.h" />
