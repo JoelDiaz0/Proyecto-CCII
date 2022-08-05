@@ -26,9 +26,18 @@
 #include "Fallen_Block.h"
 #include "Platform_Movil.h"
 #include "Excepcion.h"
+#include "lluvia.h"
 
 using std::cout;
 using std::endl;
+
+template<typename T>
+void llamar(std::vector<T*> clases, sf::RenderWindow& app);
+template<typename T>
+void llamar(std::vector<T*> clases, sf::RenderWindow& app, int a);
+
+
+
 struct window
 {
      int W = 1280;
@@ -36,7 +45,7 @@ struct window
 }pantalla;
 
 bool cargando = true; //CARGAR ENEMIGOS Y PLATAFORMAS
-int level = 7; //CAMBIO DE NIVEL
+int level = 0; //CAMBIO DE NIVEL
 bool sortbysec(const std::pair<std::string, int>& a, const std::pair<std::string, int>& b);//Comparador de pares de puntuacion
 int main()
 {
@@ -210,6 +219,23 @@ int main()
    //PISOS DEL NIVEL 3
     sf::Texture piso_montana;
     piso_montana.loadFromFile("data\\sprites\\nivel_3\\piso1.png");
+    //LLUVIA DEL NIVEL 3
+    std::vector<lluvia*> lluvias;
+    for (int i = 0; i < 40; i++) {
+        lluvia* ll1 = new lluvia();
+        ll1->set_lluvia();
+        ll1->posicion_scale(3, 3);
+        lluvias.push_back(ll1);
+    }
+    std::vector<lluvia*> lluvias_Acidas;
+    for (int i = 0; i < 40; i++) {
+        lluvia* ll1 = new lluvia();
+        ll1->set_lluvia(1);
+        ll1->posicion_scale(3, 3);
+        lluvias_Acidas.push_back(ll1);
+    }
+
+
 
     //Cargando texturas y creando animaciones para los ENEMIGOS
     sf::Texture tex_fungus, tex_bloodmonster, tex_demon_gun, tex_demon_walk, tex_throwigfire, tex_harpy;
@@ -474,6 +500,10 @@ int main()
                 jugador2->Update();
                 jugador2->attack_2(App);
                 jugador2->draw_bullet(App);
+
+                llamar<lluvia>(lluvias, App);
+                llamar<lluvia>(lluvias_Acidas, App, 1);
+
                 App.display();
             }
 
@@ -763,8 +793,29 @@ int main()
         delete i;
     for (auto& t : vec_trampas)
         delete t;
+    for (auto& a : lluvias)
+        delete a;
+    for (auto& a : lluvias_Acidas)
+        delete a;
+
     delete jugador1, jugador2;
     return 0;
 }
 
 bool sortbysec(const std::pair<std::string, int>& a,const std::pair<std::string, int>& b){return (a.second > b.second);}
+
+
+template<typename T>
+void llamar(std::vector<T*> clases, sf::RenderWindow& app) {
+    for (auto llu : clases) {
+        llu->movimiento();
+        llu->dibujar(app);
+    }
+}
+template<typename T>
+void llamar(std::vector<T*> clases, sf::RenderWindow& app, int a) {
+    for (auto llu : clases) {
+        llu->movimiento(4.0f, 8.0f);
+        llu->dibujar(app);
+    }
+}

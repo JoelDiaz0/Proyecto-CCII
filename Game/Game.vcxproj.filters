@@ -35,6 +35,7 @@
     <ClCompile Include="Throwingfire.cpp" />
     <ClCompile Include="Traps.cpp" />
     <ClCompile Include="Excepcion.cpp" />
+    <ClCompile Include="lluvia.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -70,6 +71,7 @@
     <ClInclude Include="Throwingfire.h" />
     <ClInclude Include="Traps.h" />
     <ClInclude Include="Excepcion.h" />
+    <ClInclude Include="lluvia.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />

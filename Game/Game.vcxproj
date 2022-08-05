@@ -148,6 +148,7 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Key.cpp" />
     <ClCompile Include="Lava.cpp" />
+    <ClCompile Include="lluvia.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mallet.cpp" />
     <ClCompile Include="menu.cpp" />
@@ -259,6 +260,7 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="Key.h" />
     <ClInclude Include="Lava.h" />
+    <ClInclude Include="lluvia.h" />
     <ClInclude Include="Mallet.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="montana.h" />
