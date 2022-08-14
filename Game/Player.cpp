@@ -127,12 +127,13 @@ void Player::attack_1(sf::RenderWindow& app)
 {
     if (life > 0)
     {
-        if (isFire && timeFire.getElapsedTime().asSeconds() > 1.0)
+        if (isFire && timeFire.getElapsedTime().asSeconds() > 1.5)
         {
             s1.setVolume(15);
             s1.play();
-            Bullet* bala1 = new Bullet(anim7, 7.5f);
-            bala1->setScale(2.5f, 2.5f);
+            Bullet* bala1 = new Bullet_Thunder();
+            bala1->Initialize(8.5f);
+            bala1->setScale(3.5f, 3.0f);
 
             if (Ori == 'A')
             {
@@ -254,7 +255,8 @@ void Player::attack_2(sf::RenderWindow& app)
         {
             s1.setVolume(15);
             s1.play();
-            Bullet* bala1 = new Bullet(anim7, 6.5);
+            Bullet* bala1 = new Bullet_Fire();
+            bala1->Initialize(6.5f);
             bala1->setScale(2.f, 2.f);
 
             if (Ori == 'A')

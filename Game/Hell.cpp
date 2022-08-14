@@ -8,6 +8,14 @@ Hell::~Hell()
 {
 }
 
+sf::Texture Hell::tex_platform;
+
+void Hell::initialize()
+{
+	tex_platform.loadFromFile("data\\background\\hell_graphics.png");
+	sp_p.setTexture(tex_platform);
+}
+
 void Hell::generar_bloque_1()
 {
 	recortarSprite(0, 0, 76, 33);
@@ -31,4 +39,6 @@ void Hell::generar_bloque_4()
 	recortarSprite(0, 0, 34, 44);
 	sp_p.setTextureRect(rect);
 }
+
+
 

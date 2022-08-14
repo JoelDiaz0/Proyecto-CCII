@@ -160,7 +160,7 @@ void Entity::draw_bullet(sf::RenderWindow& app)
 	{
 		for (auto& b : balas)
 		{
-			b->fire_1();
+			b->move();
 			b->draw(app);
 			b->update();
 		}

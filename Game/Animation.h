@@ -6,6 +6,8 @@ class Animation
 public:
 	friend class Entity;
 	friend class Player;
+	friend class Punk_1;
+	friend class Punk_2;
 	friend class Enemy;
 	friend class Colision;
 	friend class Platform_Movil;
@@ -22,9 +24,16 @@ public:
 	friend class Portal;
 	friend class Traps;
 	friend class Spike_Run;
+	friend class Spear;
+	friend class Lava;
+	friend class Spike;
+	friend class Suriken;
 	friend class Mallet;
 	friend class Pendulum;
 	friend class Fallen_Block;
+
+
+
 	Animation();
 	~Animation();
 	void Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, int num_Sprites, double moveSpeed);

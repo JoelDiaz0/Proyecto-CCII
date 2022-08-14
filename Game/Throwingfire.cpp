@@ -66,7 +66,8 @@ void Throwingfire::attack(sf::RenderWindow& app)
             s1.setVolume(15);
             s1.play();
 
-            Bullet* bala1 = new Bullet(anim2, 7.5f);
+            Bullet* bala1 = new Bullet_Fire2();
+            bala1->Initialize(7.5f);
             bala1->setScale(3.f, 3.f);
 
             if (Ori == 'A')

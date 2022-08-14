@@ -8,6 +8,14 @@ Tatooine::~Tatooine()
 {
 }
 
+sf::Texture Tatooine::tex_platform;
+
+void Tatooine::initialize()
+{
+	tex_platform.loadFromFile("data\\background\\tatooine_background.jpg");
+	sp_p.setTexture(tex_platform);
+}
+
 void Tatooine::generar_bloque_1() //genera plataforma
 {
 	recortarSprite(0, 0, 512, 512);

@@ -8,8 +8,20 @@ Platform_Movil::Platform_Movil() : Traps()
 	nombre = "platform_movil";
 }
 
+sf::Texture Platform_Movil::tex_traps;
+
 Platform_Movil::~Platform_Movil()
 {
+}
+
+void Platform_Movil::Inicialize(float pos_x, float pos_y, float vsx, float vsy)
+{
+	tex_traps.loadFromFile("data\\sprites\\FlyingPlatfrom.png");
+	this->vsx = vsx;
+	this->vsy = vsy;
+	this->anim.Initialize(tex_traps, 30, 11, 8, 0.055);
+	this->anim.sp.setPosition(pos_x, pos_y);
+	no_anim = false;
 }
 
 void Platform_Movil::update()
@@ -47,3 +59,5 @@ void Platform_Movil::colision_platform_window(Platform& plt, int width, int heig
 		}
 	}
 }
+
+

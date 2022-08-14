@@ -7,6 +7,15 @@ montana::~montana()
 {
 }
 
+
+sf::Texture montana::tex_platform;
+
+void montana::initialize()
+{
+	tex_platform.loadFromFile("data\\sprites\\nivel_3\\piso1.png");
+	sp_p.setTexture(tex_platform);
+}
+
 void montana::generar_bloque_1()
 {
 	recortarSprite(0, 0, 48, 48);

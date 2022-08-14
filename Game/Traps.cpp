@@ -17,24 +17,6 @@ Traps::~Traps()
 {
 }
 
-void Traps::Inicialize(Animation& anim, float pos_x, float pos_y, float vsx, float vsy)
-{
-	this->anim = anim;
-	this->vsx = vsx;
-	this->vsy = vsy;
-	this->anim.sp.setPosition(pos_x, pos_y);
-	no_anim = false;
-}
-
-void Traps::Inicialize(sf::Texture& t1, float pos_x, float pos_y, float vsx, float vsy)
-{
-	this->vsx = vsx;
-	this->vsy = vsy;
-	this->sp.setTexture(t1);
-	this->sp.setPosition(pos_x, pos_y);
-	no_anim = true;
-}
-
 void Traps::draw(sf::RenderWindow& app)
 {
 	if (!no_anim)

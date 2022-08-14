@@ -2,6 +2,9 @@
 #include "Entity.h"
 #include "Enemy.h"
 #include "Score.h"
+#include "Bullet_Fire.h"
+#include "Bullet_Thunder.h"
+
 class Player : public Entity
 {
 public:

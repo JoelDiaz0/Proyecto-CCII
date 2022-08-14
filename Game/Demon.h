@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "Enemy.h"
-
 class Demon : public Enemy 
 {
 public:

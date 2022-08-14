@@ -27,12 +27,15 @@ void Demon::attack(sf::RenderWindow& app)
             {
                 s2.play();
                 s2.setLoop(true);
-                Bullet* bala1 = new Bullet(anim3, 4.5f * extra_vs);
+                Bullet* bala1 = new Bullet();
+                bala1->Initialize(4.5f * extra_vs);
                 bala1->setScale(2.5f, 2.5f);
                 bala1->setAngle_sin(15);
-                Bullet* bala2 = new Bullet(anim3, 4.5f * extra_vs);
+                Bullet* bala2 = new Bullet();
+                bala2->Initialize(4.5f * extra_vs);
                 bala2->setScale(2.5f, 2.5f);
-                Bullet* bala3 = new Bullet(anim3, 4.5f * extra_vs);
+                Bullet* bala3 = new Bullet();
+                bala3->Initialize(4.5f * extra_vs);
                 bala3->setScale(2.5f, 2.5f);
                 bala3->setAngle_sin(-15);
                 if (Ori == 'A')

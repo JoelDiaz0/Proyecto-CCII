@@ -36,6 +36,13 @@
     <ClCompile Include="Traps.cpp" />
     <ClCompile Include="Excepcion.cpp" />
     <ClCompile Include="lluvia.cpp" />
+    <ClCompile Include="Scenery_Hell.cpp" />
+    <ClCompile Include="Scenery.cpp" />
+    <ClCompile Include="SceneryBuilder.cpp" />
+    <ClCompile Include="SceneryDirector.cpp" />
+    <ClCompile Include="Bullet_Fire.cpp" />
+    <ClCompile Include="Bullet_Fire2.cpp" />
+    <ClCompile Include="Bullet_Thunder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -72,6 +79,13 @@
     <ClInclude Include="Traps.h" />
     <ClInclude Include="Excepcion.h" />
     <ClInclude Include="lluvia.h" />
+    <ClInclude Include="Scenery_Hell.h" />
+    <ClInclude Include="Scenery.h" />
+    <ClInclude Include="SceneryBuilder.h" />
+    <ClInclude Include="SceneryDirector.h" />
+    <ClInclude Include="Bullet_Fire.h" />
+    <ClInclude Include="Bullet_Fire2.h" />
+    <ClInclude Include="Bullet_Thunder.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />

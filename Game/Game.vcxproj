@@ -136,6 +136,9 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BloodMonster.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Bullet_Fire.cpp" />
+    <ClCompile Include="Bullet_Fire2.cpp" />
+    <ClCompile Include="Bullet_Thunder.cpp" />
     <ClCompile Include="Colision.cpp" />
     <ClCompile Include="Demon.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -160,6 +163,10 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Portal.cpp" />
     <ClCompile Include="Puntos.cpp" />
+    <ClCompile Include="Scenery.cpp" />
+    <ClCompile Include="SceneryBuilder.cpp" />
+    <ClCompile Include="SceneryDirector.cpp" />
+    <ClCompile Include="Scenery_Hell.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="Spear.cpp" />
     <ClCompile Include="Spike.cpp" />
@@ -248,6 +255,9 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="BloodMonster.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Bullet_Fire.h" />
+    <ClInclude Include="Bullet_Fire2.h" />
+    <ClInclude Include="Bullet_Thunder.h" />
     <ClInclude Include="Colision.h" />
     <ClInclude Include="Demon.h" />
     <ClInclude Include="Enemy.h" />
@@ -271,6 +281,10 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Portal.h" />
     <ClInclude Include="Puntos.h" />
+    <ClInclude Include="Scenery.h" />
+    <ClInclude Include="SceneryBuilder.h" />
+    <ClInclude Include="SceneryDirector.h" />
+    <ClInclude Include="Scenery_Hell.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="Spear.h" />
     <ClInclude Include="Spike.h" />

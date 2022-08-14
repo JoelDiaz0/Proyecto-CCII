@@ -8,6 +8,18 @@ Spike_Run::~Spike_Run()
 {
 }
 
+sf::Texture Spike_Run::tex_traps;
+
+void Spike_Run::Inicialize(float pos_x, float pos_y, float vsx, float vsy)
+{
+	tex_traps.loadFromFile("data\\sprites\\spike_run.png");
+	this->vsx = vsx;
+	this->vsy = vsy;
+	this->anim.Initialize(tex_traps, 31, 25, 4, 0.075);
+	this->anim.sp.setPosition(pos_x, pos_y);
+	no_anim = false;
+}
+
 void Spike_Run::update()
 {
 	anim.Update();
@@ -46,4 +58,6 @@ void Spike_Run::colision_platform_window(Platform& plt, int width, int height)
 		}
 	}
 }
+
+
 

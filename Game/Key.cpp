@@ -12,6 +12,18 @@ Key::~Key()
 }
 
 int Key::cantidad = 0;
+sf::Texture Key::tex_item;
+
+void Key::inicialize(float pos_x, float pos_y)
+{
+	tex_item.loadFromFile("data\\sprites\\llave.png");
+	this->anim = anim;
+	this->anim.Initialize(tex_item, 35, 100, 2, 0.15);
+	this->anim.sp.setPosition(pos_x, pos_y);
+	sb1.loadFromFile("data\\sound\\llave.ogg");
+	s1.setBuffer(sb1);
+	s1.setVolume(25.f);
+}
 
 void Key::effect(Player& p1)
 {
@@ -26,3 +38,5 @@ void Key::effect(Player& p1)
 		}
 	}
 }
+
+

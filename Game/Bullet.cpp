@@ -1,9 +1,8 @@
 #include "Bullet.h"
 
-Bullet::Bullet(Animation& anim, float vsx)
+Bullet::Bullet()
 {
-	this->anim = anim;
-	this->vsx = vsx;
+	this->vsx = 0.f;
 	this->vsy = 0.f;
 	this->tam_x = 1.f;
 	this->tam_y = 1.f;
@@ -12,6 +11,15 @@ Bullet::Bullet(Animation& anim, float vsx)
 
 Bullet::~Bullet()
 {
+}
+
+sf::Texture Bullet::tex_bala_normal;
+
+void Bullet::Initialize(float vsx, float vsy)
+{
+	tex_bala_normal.loadFromFile("data\\sprites\\bala_2.png");
+	this->anim.Initialize(tex_bala_normal, 15, 15, 4, 0.075);
+	this->vsx = vsx;
 }
 
 bool Bullet::colision_window(int width, int height)
@@ -32,7 +40,7 @@ void Bullet::setPosition(float pos_x, float pos_y)
 	anim.sp.setPosition(pos_x, pos_y);
 }
 
-void Bullet::fire_1()
+void Bullet::move()
 {
 	anim.sp.move(vsx, vsy);
 }

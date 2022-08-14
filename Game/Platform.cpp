@@ -5,7 +5,6 @@ Platform::Platform()
 	scale_x = 1.f;
 	scale_y = 1.f;
 	lock = true;
-	Noanim = true;
 	sp_p.setPosition(0.f, 0.f);
 }
 
@@ -13,10 +12,6 @@ Platform::~Platform()
 {
 }
 
-void Platform::initialize(sf::Texture& tx)
-{
-	sp_p.setTexture(tx);
-}
 
 void Platform::setScale(float scale_x, float scale_y)
 {
