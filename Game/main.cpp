@@ -466,9 +466,27 @@ int main()
                         piso_plat_2->setPosition(1270 - (58 * i), 550);
                         vec_plataformas.push_back(piso_plat_2);
                     }
+                    //TRAMPA
+                    Traps* trampa_spikerun = new Spike_Run;
+                    trampa_spikerun->Inicialize(pantalla.W / 2.f, pantalla.H - 200.f, 10.0f, 0.f);
+                    trampa_spikerun->setScale(2.5f, 2.5f);
+                    vec_trampas.push_back(trampa_spikerun);
+                    //ENEMIGO
+                    Enemy* enemigo_blodmonster = new BloodMonster;
+
+                    enemigo_blodmonster->initialize(0.f, 200.f, 2.f);
+                    enemigo_blodmonster->setScale(2.5f, 2.5f);
+              
+                    vec_enemigos.push_back(enemigo_blodmonster);
+                    for (int i = 0; i < 2; i++) {
+                        Enemy* enemigo_harpy = new Harpy;
+                        enemigo_harpy->initialize(1100 * i, 200, 2.5f);
+                        enemigo_harpy->setScale(1.5f, 1.5f);
+                        vec_enemigos.push_back(enemigo_harpy);
+                    }
                     //PORTAL
                     Item* item_portal = new Portal;
-                    item_portal->inicialize(1000, 600);
+                    item_portal->inicialize(1200, 600);
                     item_portal->setScale(1.5f, 1.5f);
                     vec_items.push_back(item_portal);
                     CARGANDO = false;
@@ -554,13 +572,13 @@ int main()
                     jugador1->attack();
                     jugador1->update();
                     jugador1->draw_bullets(App);
-                    jugador1->revivir(0.f, 0.f);
+                    jugador1->revivir(620.f, 0.f);
                     jugador2->draw(App);
                     jugador2->control();
                     jugador2->attack();
                     jugador2->update();
                     jugador2->draw_bullets(App);
-                    jugador2->revivir(0.f, 0.f);
+                    jugador2->revivir(660.f, 0.f);
 
                     llamar<lluvia>(lluvias, App);
                     llamar<lluvia>(lluvias_Acidas, App, 1);
