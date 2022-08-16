@@ -627,13 +627,11 @@ int main()
                         vec_plataformas.push_back(Suelo3);
                     }
 
-                    //Plataformas extras para el spawn
-                    Platform* SueloExtra = new SpaceSus;
-                    SueloExtra->initialize();
-                    SueloExtra->generar_bloque_4();
-                    SueloExtra->setScale(4, 1.5);
-                    SueloExtra->setPosition(20, 557);
-                    vec_plataformas.push_back(SueloExtra);
+                     //Muerte por Caida
+                    Traps* trampa_spike = new Spike;
+                    trampa_spike->Inicialize(0, pantalla.H + 10.f);
+                    trampa_spike->setScale(40.5f, 2.5f);
+                    vec_trampas.push_back(trampa_spike);
 
                     //Plataforma movible
                     Traps* plataforma_movil2 = new Platform_Movil;
@@ -702,6 +700,7 @@ int main()
 
                     for (auto& plat : vec_plataformas)
                     {
+                        plat->draw(App);
                         jugador1->colision_platform(*plat);
                         jugador2->colision_platform(*plat);
                         jugador1->colision_bullets(*plat, pantalla.W, pantalla.H);
@@ -715,6 +714,7 @@ int main()
                     }
                     for (auto& plat : vec_unlock_plataformas)
                     {
+                        plat->draw(App);
                         jugador1->colision_platform(*plat);
                         jugador2->colision_platform(*plat);
                         jugador1->colision_bullets(*plat, pantalla.W, pantalla.H);
@@ -761,13 +761,13 @@ int main()
                     jugador1->attack();
                     jugador1->update();
                     jugador1->draw_bullets(App);
-                    jugador1->revivir(0.f, 0.f);
+                    jugador1->revivir(520, 400);
                     jugador2->draw(App);
                     jugador2->control();
                     jugador2->attack();
                     jugador2->update();
                     jugador2->draw_bullets(App);
-                    jugador2->revivir(0.f, 0.f);
+                    jugador2->revivir(700, 400);
 
                     App.display();
 
