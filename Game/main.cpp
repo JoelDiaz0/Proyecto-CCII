@@ -5,6 +5,7 @@
 #include <iostream>
 #include <deque>
 #include <list>
+#include <memory>
 #include "menu.h"
 //Enemigos
 #include "Demon.h"
@@ -16,6 +17,7 @@
 #include "Hell.h"
 #include "Tatooine.h"
 #include "montana.h"
+#include "montana2.h"
 //Items
 #include "Muerte.h"
 #include "Key.h"
@@ -35,6 +37,7 @@
 #include "SceneryDirector.h"
 #include "Scenery_Tatooine.h"
 #include "Scenery_Hell.h"
+#include "Scenary_LLuvia.h"
 //Otros
 #include "Excepcion.h"
 #include "lluvia.h"
@@ -92,7 +95,7 @@ int main()
     std::deque<Enemy*> vec_enemigos;
     std::list<Platform*> vec_plataformas;
     std::list<Platform*> vec_unlock_plataformas; //plataformas que se pueden eliminar al recoger la llave
-
+    std::list< std::shared_ptr<Platform>> vec_plataformas_smartpoint;
     //Cargando texturas y creando animaciones para las SONIDOS
     sf::SoundBuffer sonido_rayo, sonido_fuego1, sonido_danio, sonido_fuego2, sonido_bala, sonido_muerte, sonido_item, sonido_revivir, sonido_llave, sonido_portal;
     sonido_rayo.loadFromFile("data\\sound\\attack_thunder.ogg");
@@ -190,7 +193,7 @@ int main()
     SceneryDirector* escenario = new SceneryDirector; //Patron Builder
     SceneryBuilder* escenario_infierno = new Scenery_Hell;
     SceneryBuilder* escenario_tatooine = new Scenery_Tatooine;
-
+    SceneryBuilder* escenario_montana = new Scenary_Lluvia;
     //static bool Coordeb{ false }; //Crea el booleano para activar y desactivar el "modo debug" 
     //FUNCION PRINCIPAL
     while (App.isOpen())
@@ -382,10 +385,90 @@ int main()
             case 3: {
                 //DIEGO - MONTAÑA
                 if (CARGANDO) {
+                    cout << "Cargando una vez elementos en level " << LEVEL << endl;
                     CARGANDO = false;
                     EJECUTANDO = true;
-                    llamar<lluvia>(lluvias, App);
-                    llamar<lluvia>(lluvias_Acidas, App, 1);
+                    float xF1{ 1.2 }, yF1{ 1.2 };
+                    jugador1->setPosition(620.0f, 0.0f);
+                    jugador2->setPosition(660.0f, 0.0f);
+
+                    escenario->setBuilder(escenario_montana);
+                    escenario->construir_Scenary();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        //Platform* piso_plat1 = new montana;
+                        std::shared_ptr<Platform> piso_plat1 = std::make_shared<montana>();
+                        piso_plat1->initialize();
+                        piso_plat1->generar_bloque_1();
+                        piso_plat1->setScale(xF1, yF1);
+                        piso_plat1->setPosition(552 + (58 * i), 100);
+                        vec_plataformas_smartpoint.push_back(piso_plat1);
+                    }
+                    for (int i = 0; i < 8; i++)
+                    {
+                        //Platform* piso_plat1 = new montana;
+                        std::shared_ptr<Platform> piso_plat_2 = std::make_shared<montana2>();
+                        piso_plat_2->initialize();
+                        piso_plat_2->generar_bloque_1();
+                        piso_plat_2->setScale(xF1, yF1);
+                        piso_plat_2->setPosition(0 + (58 * i), 250);
+                        vec_plataformas_smartpoint.push_back(piso_plat_2);
+                    }
+                    for (int i = 0; i < 8; i++)
+                    {
+                        //Platform* piso_plat1 = new montana;
+                        std::shared_ptr<Platform> piso_plat_2 = std::make_shared<montana2>();
+                        piso_plat_2->initialize();
+                        piso_plat_2->generar_bloque_1();
+                        piso_plat_2->setScale(xF1, yF1);
+                        piso_plat_2->setPosition(1270 - (58 * i), 250);
+                        vec_plataformas_smartpoint.push_back(piso_plat_2);
+                    }
+                    for (int i = 0; i < 4; i++)
+                    {
+                        //Platform* piso_plat1 = new montana;
+                        std::shared_ptr<Platform> piso_plat1 = std::make_shared<montana>();
+                        piso_plat1->initialize();
+                        piso_plat1->generar_bloque_1();
+                        piso_plat1->setScale(xF1, yF1);
+                        piso_plat1->setPosition(552 + (58 * i), 450);
+                        vec_plataformas_smartpoint.push_back(piso_plat1);
+                    }
+                    for (int i = 0; i < 26; i++)
+                    {
+                        //Platform* piso_plat1 = new montana;
+                        std::shared_ptr<Platform> piso_plat_2 = std::make_shared<montana2>();
+                        piso_plat_2->initialize();
+                        piso_plat_2->generar_bloque_1();
+                        piso_plat_2->setScale(xF1, yF1);
+                        piso_plat_2->setPosition(0 + (58 * i), 700);
+                        vec_plataformas_smartpoint.push_back(piso_plat_2);
+                    }
+                    for (int i = 0; i < 6; i++)
+                    {
+                        //Platform* piso_plat1 = new montana;
+                        std::shared_ptr<Platform> piso_plat_2 = std::make_shared<montana2>();
+                        piso_plat_2->initialize();
+                        piso_plat_2->generar_bloque_1();
+                        piso_plat_2->setScale(xF1, yF1);
+                        piso_plat_2->setPosition(0 + (58 * i), 550);
+                        vec_plataformas_smartpoint.push_back(piso_plat_2);
+                    }
+                    for (int i = 0; i < 6; i++)
+                    {
+                        //Platform* piso_plat1 = new montana;
+                        std::shared_ptr<Platform> piso_plat_2 = std::make_shared<montana2>();
+                        piso_plat_2->initialize();
+                        piso_plat_2->generar_bloque_1();
+                        piso_plat_2->setScale(xF1, yF1);
+                        piso_plat_2->setPosition(1270 - (58 * i), 550);
+                        vec_plataformas_smartpoint.push_back(piso_plat_2);
+                    }
+                    //PORTAL
+                    Item* item_portal = new Portal;
+                    item_portal->inicialize(1000, 600);
+                    item_portal->setScale(1.5f, 1.5f);
+                    vec_items.push_back(item_portal);
                     break;
                 }
             }
@@ -524,10 +607,24 @@ int main()
 
             escenario->draw_scenary(App);
             escenario->reproducir_musica();
+            if (LEVEL == 3) {
+                llamar<lluvia>(lluvias, App);
+                llamar<lluvia>(lluvias_Acidas, App, 1);
+            }
 
             jugador1->colision_windows(pantalla.W, pantalla.H);
             jugador2->colision_windows(pantalla.W, pantalla.H);
             for (auto& plat : vec_plataformas)
+            {
+                plat->draw(App);
+                jugador1->colision_platform(*plat);
+                jugador2->colision_platform(*plat);
+                for (auto& e : vec_enemigos)
+                    e->colision_platform(*plat);
+                for (auto& t : vec_trampas)
+                    t->colision_platform_window(*plat, pantalla.W, pantalla.H);
+            }
+            for (auto& plat : vec_plataformas_smartpoint)
             {
                 plat->draw(App);
                 jugador1->colision_platform(*plat);

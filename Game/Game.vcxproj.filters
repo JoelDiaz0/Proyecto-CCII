@@ -44,6 +44,8 @@
     <ClCompile Include="Bullet_Fire2.cpp" />
     <ClCompile Include="Bullet_Thunder.cpp" />
     <ClCompile Include="Scenery_Tatooine.cpp" />
+    <ClCompile Include="Scenary_LLuvia.cpp" />
+    <ClCompile Include="montana2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -88,6 +90,9 @@
     <ClInclude Include="Bullet_Fire2.h" />
     <ClInclude Include="Bullet_Thunder.h" />
     <ClInclude Include="Scenery_Tatooine.h" />
+    <ClInclude Include="Aleatoio.h" />
+    <ClInclude Include="Scenary_LLuvia.h" />
+    <ClInclude Include="montana2.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />

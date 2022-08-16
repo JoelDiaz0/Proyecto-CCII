@@ -156,6 +156,7 @@
     <ClCompile Include="Mallet.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="montana.cpp" />
+    <ClCompile Include="montana2.cpp" />
     <ClCompile Include="Muerte.cpp" />
     <ClCompile Include="Pendulum.cpp" />
     <ClCompile Include="Platform.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Portal.cpp" />
     <ClCompile Include="Puntos.cpp" />
+    <ClCompile Include="Scenary_LLuvia.cpp" />
     <ClCompile Include="Scenery_Tatooine.cpp" />
     <ClCompile Include="Scenery.cpp" />
     <ClCompile Include="SceneryBuilder.cpp" />
@@ -253,6 +255,7 @@
     <Image Include="data\sprites\Trap_Spike_Run.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aleatoio.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="BloodMonster.h" />
     <ClInclude Include="Bullet.h" />
@@ -275,6 +278,7 @@
     <ClInclude Include="Mallet.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="montana.h" />
+    <ClInclude Include="montana2.h" />
     <ClInclude Include="Muerte.h" />
     <ClInclude Include="Pendulum.h" />
     <ClInclude Include="Platform.h" />
@@ -282,6 +286,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Portal.h" />
     <ClInclude Include="Puntos.h" />
+    <ClInclude Include="Scenary_LLuvia.h" />
     <ClInclude Include="Scenery_Tatooine.h" />
     <ClInclude Include="Scenery.h" />
     <ClInclude Include="SceneryBuilder.h" />
