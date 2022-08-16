@@ -19,6 +19,7 @@
 #include "montana.h"
 #include "montana2.h"
 #include "SpaceSus.h"
+#include "Aqua.h"
 //Items
 #include "Muerte.h"
 #include "Key.h"
@@ -34,12 +35,14 @@
 #include "Mallet.h"
 #include "Fallen_Block.h"
 #include "Platform_Movil.h"
+#include "Erizo.h"
 //Escenarios (Patron de diseño builder)
 #include "SceneryDirector.h"
 #include "Scenery_Tatooine.h"
 #include "Scenery_Hell.h"
 #include "Scenary_LLuvia.h"
 #include "Scenery_Space.h"
+#include "Scenery_Aqua.h"
 //Otros
 #include "Excepcion.h"
 #include "lluvia.h"
@@ -116,6 +119,7 @@ int main()
     SceneryBuilder* escenario_tatooine = new Scenery_Tatooine;
     SceneryBuilder* escenario_montana = new Scenary_Lluvia;
     SceneryBuilder* escenario_space = new Scenery_Space;
+    SceneryBuilder* escenario_aqua = new Scenery_Aqua;
 
     //static bool Coordeb{ false }; //Crea el booleano para activar y desactivar el "modo debug" 
     //FUNCION PRINCIPAL
@@ -154,7 +158,7 @@ int main()
         }
         try { // ->Uso del manejo de excepcion
             if (LEVEL == 0) {
-                Menu* menu = new Menu(puntuaciones);
+                Menu* menu = new Menu(puntuaciones,maxUnlockedLevel);
                 menu->run_menu(App, LEVEL);
                 delete menu;
                 menu = nullptr;
@@ -369,8 +373,161 @@ int main()
                 }
             }
             else if (LEVEL == 2) {
+                if (CARGANDO) {
+                    cout << "Cargando una vez elementos en level " << LEVEL << endl;
+                    jugador1->setPosition(20.f, 400);
+                    jugador2->setPosition(25.f, 400);
 
+                    Platform* piso_plat1 = new Aqua(0, 440);
+                    piso_plat1->generar_bloque_1();
+                    vec_plataformas.push_back(piso_plat1);
 
+                    set<pair<float, float>> coords = { {1165,170},{875,650},{1150,650} };
+                    for (auto i : coords) {
+                        Platform* piso_plat2 = new Aqua(i.first, i.second);
+                        piso_plat2->generar_bloque_2();
+                        vec_plataformas.push_back(piso_plat2);
+                    }
+
+                    coords = {
+                        {180,470},{265,525},{320,525},{425,600},{480,600},{580,555},{685,540},{840,570} //Planta Baja
+                        ,{-25,375},{145,295},{350,320},{405,320},{460,320},{585,280},{720,240},{775,240},{900,265},{1025,365},{1030,210}   //Planta superior
+                    };
+                    for (auto i : coords) {
+                        Platform* piso_plat3 = new Aqua(i.first, i.second);
+                        piso_plat3->generar_bloque_3();
+                        vec_plataformas.push_back(piso_plat3);
+                    }
+
+                    Platform* piso_plat4 = new Aqua(1040, 580);
+                    piso_plat4->generar_bloque_4();
+                    vec_plataformas.push_back(piso_plat4);
+
+                    Platform* aqua_wall = new Aqua(1025, 55);
+                    aqua_wall->generar_bloque_4();
+                    vec_unlock_plataformas.push_back(aqua_wall);
+                    //Creando Items
+                    Item* item_puntos = new Puntos;
+                    item_puntos->inicialize(1050, 320);
+                    item_puntos->setScale(0.85f, 0.85f);
+                    vec_items.push_back(item_puntos);
+                    Item* item_llave = new Key;
+                    item_llave->inicialize(1205, 600);
+                    item_llave->setScale(0.55f, 0.55f);
+                    vec_items.push_back(item_llave);
+                    Item* item_portal = new Portal;
+                    item_portal->inicialize(pantalla.W - 100.f, 20.f);
+                    item_portal->setScale(1.5f, 1.5f);
+                    vec_items.push_back(item_portal);
+
+                    for (int i = 0; i <= 840; i += 60) {
+                        Traps* trampa_erizo = new Erizo(i, 650);
+                        vec_trampas.push_back(trampa_erizo);
+
+                        Traps* trampa_spike = new Spike;
+                        trampa_spike->Inicialize(i + 300, 30);
+                        trampa_spike->setScale(2.5f, 2.5f);
+                        trampa_spike->setRotate(180);
+                        vec_trampas.push_back(trampa_spike);
+                    }
+
+                    coords = { {710,305},{750,305},{790,305},{770,570},{1010,655},{1050,655},{1090,655} };
+                    for (auto i : coords) {
+                        Traps* trampa_spike = new Erizo(i.first, i.second);
+                        vec_trampas.push_back(trampa_spike);
+                    }
+                    escenario->setBuilder(escenario_aqua);
+                    escenario->construir_Scenary();
+                    CARGANDO = false;
+                }
+                else {
+                    App.clear();
+                    escenario->draw_scenary(App);
+                    escenario->reproducir_musica();
+                    jugador1->colision_windows(pantalla.W, pantalla.H);
+                    jugador2->colision_windows(pantalla.W, pantalla.H);
+
+                    for (auto& plat : vec_plataformas)
+                    {
+                        plat->draw(App);
+                        jugador1->colision_platform(*plat);
+                        jugador2->colision_platform(*plat);
+                        jugador1->colision_bullets(*plat, pantalla.W, pantalla.H);
+                        jugador2->colision_bullets(*plat, pantalla.W, pantalla.H);
+                        for (auto& e : vec_enemigos) {
+                            e->colision_platform(*plat);
+                            e->colision_bullets(*plat, pantalla.W, pantalla.H);
+                        }
+                        for (auto& t : vec_trampas)
+                            t->colision_platform_window(*plat, pantalla.W, pantalla.H);
+                    }
+                    for (auto& plat : vec_unlock_plataformas)
+                    {
+                        plat->draw(App);
+                        jugador1->colision_platform(*plat);
+                        jugador2->colision_platform(*plat);
+                        jugador1->colision_bullets(*plat, pantalla.W, pantalla.H);
+                        jugador2->colision_bullets(*plat, pantalla.W, pantalla.H);
+                        for (auto& e : vec_enemigos) {
+                            e->colision_platform(*plat);
+                            e->colision_bullets(*plat, pantalla.W, pantalla.H);
+                        }
+                        for (auto& t : vec_trampas)
+                            t->colision_platform_window(*plat, pantalla.W, pantalla.H);
+                        for (auto& i : vec_items)
+                            i->unlock_platform(*plat);
+                    }
+                    for (auto& e : vec_enemigos)
+                    {
+                        e->Draw(App);
+                        e->update();
+                        e->move();
+                        e->colision_windows(pantalla.W, pantalla.H);
+                        e->attack(App);
+                        e->draw_bullets(App);
+                        e->colision_player_bullet(*jugador1);
+                        e->colision_player_bullet(*jugador2);
+                        jugador1->colision_enemy(*e);
+                        jugador2->colision_enemy(*e);
+                    }
+                    for (auto& i : vec_items)
+                    {
+                        i->draw(App);
+                        i->update();
+                        i->effect(*jugador1);
+                        i->effect(*jugador2);
+                    }
+                    for (auto& t : vec_trampas)
+                    {
+                        t->draw(App);
+                        t->move();
+                        t->effect(*jugador1);
+                        t->effect(*jugador2);
+                        t->update();
+                    }
+                    jugador1->draw(App);
+                    jugador1->control();
+                    jugador1->attack();
+                    jugador1->update();
+                    jugador1->draw_bullets(App);
+                    jugador1->revivir(0.f, 0.f);
+                    jugador2->draw(App);
+                    jugador2->control();
+                    jugador2->attack();
+                    jugador2->update();
+                    jugador2->draw_bullets(App);
+                    jugador2->revivir(0.f, 0.f);
+
+                    if (detectar_portal(vec_items)) {
+                        LEVEL = 3;
+                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
+                        borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
+                        escenario->parar_musica();
+                        CARGANDO = true;
+                    }
+
+                    App.display();
+                }
             }
             else if (LEVEL == 3) {
                 if (CARGANDO) {

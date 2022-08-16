@@ -24,15 +24,17 @@ class Menu {
 	std::vector<sf::Vector2f> coords;
 	std::vector<sf::Text> texts;
 	std::vector<std::size_t> sizes;
+	//PUNTUACIONES
 	std::vector<std::pair<std::string, int>> puntuaciones;
 	std::vector<sf::Text> scores;
+	int maxLvl;
 	
 protected:
 	void set_values();
 	void loop_events(sf::RenderWindow& window, int& level);
 	void draw_all(sf::RenderWindow& window);
 public:
-	Menu(std::vector<std::pair<std::string, int>> puntuaciones);
+	Menu(std::vector<std::pair<std::string, int>> puntuaciones, int l);
 	~Menu();
 	void run_menu(sf::RenderWindow& window, int & level);
 };

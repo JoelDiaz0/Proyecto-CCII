@@ -133,6 +133,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Proyecto-CCII\Game\Aqua.cpp" />
+    <ClCompile Include="..\..\Proyecto-CCII\Game\Erizo.cpp" />
+    <ClCompile Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="BloodMonster.cpp" />
     <ClCompile Include="Bullet.cpp" />
@@ -199,6 +202,7 @@
     <None Include="data\sound\score.ogg" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\Proyecto-CCII\Game\data\background\water-graphics.png" />
     <Image Include="data\background\hell_background-0.jpg" />
     <Image Include="data\background\hell_background-1.jpg" />
     <Image Include="data\background\hell_background-2.jpg" />
@@ -259,6 +263,9 @@
     <Image Include="data\sprites\Trap_Spike_Run.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Proyecto-CCII\Game\Aqua.h" />
+    <ClInclude Include="..\..\Proyecto-CCII\Game\Erizo.h" />
+    <ClInclude Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.h" />
     <ClInclude Include="Aleatoio.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="BloodMonster.h" />

@@ -1,11 +1,12 @@
 #include "menu.h"
 
-Menu::Menu(std::vector<std::pair<std::string, int>> _puntuaciones){
+Menu::Menu(std::vector<std::pair<std::string, int>> _puntuaciones, int l){
 	winclose = new sf::RectangleShape();
 	font = new sf::Font();
 	image = new sf::Texture();
 	bg = new sf::Sprite();
 	puntuaciones = _puntuaciones;
+	maxLvl = l;
 	set_values();
 }
 
@@ -117,10 +118,10 @@ void Menu::loop_events(sf::RenderWindow& window, int& level){
 			//Level boxes interaction (Para jugar niveles del 1 al 5)
 			if (pos == 1) {
 				if (levels.at(0).getGlobalBounds().contains(mouse_coord)) level = 1;
-				if (levels.at(1).getGlobalBounds().contains(mouse_coord)) level = 2;
-				if (levels.at(2).getGlobalBounds().contains(mouse_coord)) level = 3;
-				if (levels.at(3).getGlobalBounds().contains(mouse_coord)) level = 4;
-				if (levels.at(4).getGlobalBounds().contains(mouse_coord)) level = 5;
+				if (levels.at(1).getGlobalBounds().contains(mouse_coord) && maxLvl > 1) level = 2;
+				if (levels.at(2).getGlobalBounds().contains(mouse_coord) && maxLvl > 2) level = 3;
+				if (levels.at(3).getGlobalBounds().contains(mouse_coord) && maxLvl > 3) level = 4;
+				if (levels.at(4).getGlobalBounds().contains(mouse_coord) && maxLvl > 4) level = 5;
 			}
 		}
 	}

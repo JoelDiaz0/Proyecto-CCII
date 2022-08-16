@@ -50,6 +50,9 @@
     <ClCompile Include="SpaceSus.cpp" />
     <ClCompile Include="Punk_1.cpp" />
     <ClCompile Include="Punk_2.cpp" />
+    <ClCompile Include="..\..\Proyecto-CCII\Game\Aqua.cpp" />
+    <ClCompile Include="..\..\Proyecto-CCII\Game\Erizo.cpp" />
+    <ClCompile Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -101,6 +104,9 @@
     <ClInclude Include="SpaceSus.h" />
     <ClInclude Include="Punk_1.h" />
     <ClInclude Include="Punk_2.h" />
+    <ClInclude Include="..\..\Proyecto-CCII\Game\Aqua.h" />
+    <ClInclude Include="..\..\Proyecto-CCII\Game\Erizo.h" />
+    <ClInclude Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />
@@ -161,6 +167,7 @@
     <Image Include="data\sprites\suriken.png" />
     <Image Include="data\sprites\throwingfire.png" />
     <Image Include="data\sprites\Trap_Spike_Run.png" />
+    <Image Include="..\..\Proyecto-CCII\Game\data\background\water-graphics.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Baskic8.otf" />
