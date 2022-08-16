@@ -163,6 +163,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Portal.cpp" />
     <ClCompile Include="Puntos.cpp" />
+    <ClCompile Include="Scenery_Tatooine.cpp" />
     <ClCompile Include="Scenery.cpp" />
     <ClCompile Include="SceneryBuilder.cpp" />
     <ClCompile Include="SceneryDirector.cpp" />
@@ -281,6 +282,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Portal.h" />
     <ClInclude Include="Puntos.h" />
+    <ClInclude Include="Scenery_Tatooine.h" />
     <ClInclude Include="Scenery.h" />
     <ClInclude Include="SceneryBuilder.h" />
     <ClInclude Include="SceneryDirector.h" />

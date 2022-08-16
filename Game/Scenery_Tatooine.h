@@ -12,4 +12,3 @@ public:
 	void buildFondo() const;
 	void buildVolumen() const;
 };
-

@@ -43,6 +43,7 @@
     <ClCompile Include="Bullet_Fire.cpp" />
     <ClCompile Include="Bullet_Fire2.cpp" />
     <ClCompile Include="Bullet_Thunder.cpp" />
+    <ClCompile Include="Scenery_Tatooine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -86,6 +87,7 @@
     <ClInclude Include="Bullet_Fire.h" />
     <ClInclude Include="Bullet_Fire2.h" />
     <ClInclude Include="Bullet_Thunder.h" />
+    <ClInclude Include="Scenery_Tatooine.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />

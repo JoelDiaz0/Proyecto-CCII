@@ -189,6 +189,7 @@ int main()
 
     SceneryDirector* escenario = new SceneryDirector; //Patron Builder
     SceneryBuilder* escenario_infierno = new Scenery_Hell;
+    SceneryBuilder* escenario_tatooine = new Scenery_Tatooine;
 
     //static bool Coordeb{ false }; //Crea el booleano para activar y desactivar el "modo debug" 
     //FUNCION PRINCIPAL
@@ -361,9 +362,9 @@ int main()
                     Traps* trampa_pinchos(trampa_spike); //Constructor Copia
                     trampa_pinchos->Inicialize(990, 720);
 
-
+                    
                     //---------
-                    escenario->setBuilder(escenario_tattoine);
+                    escenario->setBuilder(escenario_tatooine);
                     escenario->construir_Scenary();
                     break;
                 }
