@@ -68,7 +68,7 @@ void Menu::set_values(){
 	for (auto& i : levels) {
 		i.setSize(sf::Vector2f(100, 100));
 		i.setPosition(c, 300);
-		i.setFillColor(sf::Color::Color(43, 117, 106, 255));
+		i.setFillColor(sf::Color::Transparent);
 		c += 150;
 	}
 

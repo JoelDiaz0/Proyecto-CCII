@@ -278,6 +278,25 @@ int main()
                     vec_trampas.push_back(trampa_spike);
                     Traps* trampa_pinchos(trampa_spike); //Constructor Copia
                     trampa_pinchos->Inicialize(990, 720);
+                    Traps* trampa_spike2 = new Spike;
+                    trampa_spike2->Inicialize(550, 270);
+                    trampa_spike2->setScale(2.5f, 2.5f);
+                    vec_trampas.push_back(trampa_spike2);
+                    Traps* trampa_spike3 = new Spike;
+                    trampa_spike3->Inicialize(210, 625);
+                    trampa_spike3->setScale(2.5f, 2.5f);
+                    vec_trampas.push_back(trampa_spike3);
+                    //Enemigo
+                    Enemy* enemigo_harpy10 = new Harpy;
+                    enemigo_harpy10->initialize(500, 430, 2.5f, 3.f);
+                    enemigo_harpy10->setScale(1.0f, 1.0f);
+                    vec_enemigos.push_back(enemigo_harpy10);
+
+                    Enemy* enemigo_harpy11 = new Harpy;
+                    enemigo_harpy11->initialize(800, 100.f, 2.5f, 3.f);
+                    enemigo_harpy11->setScale(1.0f, 1.0f);
+                    vec_enemigos.push_back(enemigo_harpy11);                  
+
                     //---------
                     escenario->setBuilder(escenario_tatooine);
                     escenario->construir_Scenary();
@@ -362,7 +381,7 @@ int main()
                     jugador2->revivir(0.f, 0.f);
 
                     if (detectar_portal(vec_items)) {
-                        LEVEL = 3;
+                        LEVEL = 2;
                         borrar_balas(*jugador1, *jugador2, vec_enemigos);
                         borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
                         escenario->parar_musica();
