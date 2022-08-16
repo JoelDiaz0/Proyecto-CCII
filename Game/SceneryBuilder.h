@@ -12,6 +12,7 @@ public:
 	virtual void buildVolumen() const = 0;
 	void draw(sf::RenderWindow& app);
 	void reproducir_musica();
+	void stop_music();
 protected:
 	Scenary* escena;
 	bool unaVez;

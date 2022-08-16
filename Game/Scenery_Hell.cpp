@@ -25,5 +25,5 @@ void Scenery_Hell::buildFondo() const
 
 void Scenery_Hell::buildVolumen() const
 {
-	escena->setVolumen(10.f);
+	escena->setVolumen(20.f);
 }

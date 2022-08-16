@@ -163,6 +163,8 @@
     <ClCompile Include="Platform_Movil.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Portal.cpp" />
+    <ClCompile Include="Punk_1.cpp" />
+    <ClCompile Include="Punk_2.cpp" />
     <ClCompile Include="Puntos.cpp" />
     <ClCompile Include="Scenary_LLuvia.cpp" />
     <ClCompile Include="Scenery_Space.cpp" />
@@ -287,6 +289,8 @@
     <ClInclude Include="Platform_Movil.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Portal.h" />
+    <ClInclude Include="Punk_1.h" />
+    <ClInclude Include="Punk_2.h" />
     <ClInclude Include="Puntos.h" />
     <ClInclude Include="Scenary_LLuvia.h" />
     <ClInclude Include="Scenery_Space.h" />

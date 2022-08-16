@@ -25,12 +25,15 @@ void Muerte::effect(Player& p1)
 {
 	if (!recogido)
 	{
-		if (p1.c1.colision_entity_entity(anim.sp, p1.anim.sp)) //Detecta colision entre Item y Jugador
+		if (p1.c1.colision_entity_entity(anim.sp, p1.anim_1.sp)) //Detecta colision entre Item y Jugador
 		{
 			s1.play();
+			p1.s0_1.play();
 			recogido = true;
 			p1.puntaje.muertes++;
 			p1.life--;
+			p1.resucitar = true;
+			p1.time_dead.restart();
 		}
 	}
 }

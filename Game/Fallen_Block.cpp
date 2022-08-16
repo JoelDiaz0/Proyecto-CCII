@@ -40,7 +40,7 @@ void Fallen_Block::colision_platform_window(Platform& plt, int width, int height
 		}	
 	}
 
-	if (anim.sp.getPosition().x + anim.tamSprite_x > width || anim.sp.getPosition().y + anim.tamSprite_y > height || anim.sp.getPosition().x < 0 || anim.sp.getPosition().y < 0)
+	if (sp.getPosition().x + tam_x > width || sp.getPosition().y + tam_y > height || sp.getPosition().x < 0 || sp.getPosition().y < 0)
 	{
 		if (time_wait.getElapsedTime().asSeconds() > 0.1)
 		{

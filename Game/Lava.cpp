@@ -15,7 +15,7 @@ void Lava::Inicialize(float pos_x, float pos_y, float vsx, float vsy)
 	tex_traps.loadFromFile("data\\sprites\\lava.png");
 	this->vsx = vsx;
 	this->vsy = vsy;
-	this->anim.Initialize(tex_traps, 64, 13, 2, 0.08);
+	this->anim.Initialize(tex_traps, 64, 13, 2, 0.1);
 	this->anim.sp.setPosition(pos_x, pos_y);
 	no_anim = false;
 }

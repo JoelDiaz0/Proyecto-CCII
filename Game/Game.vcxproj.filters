@@ -48,6 +48,8 @@
     <ClCompile Include="montana2.cpp" />
     <ClCompile Include="Scenery_Space.cpp" />
     <ClCompile Include="SpaceSus.cpp" />
+    <ClCompile Include="Punk_1.cpp" />
+    <ClCompile Include="Punk_2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -97,6 +99,8 @@
     <ClInclude Include="montana2.h" />
     <ClInclude Include="Scenery_Space.h" />
     <ClInclude Include="SpaceSus.h" />
+    <ClInclude Include="Punk_1.h" />
+    <ClInclude Include="Punk_2.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />

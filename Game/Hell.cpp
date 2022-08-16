@@ -24,7 +24,7 @@ void Hell::generar_bloque_1()
 
 void Hell::generar_bloque_2()
 {
-	recortarSprite(0, 33, 95, 16);
+	recortarSprite(0, 33, 32, 16);
 	sp_p.setTextureRect(rect);
 }
 

@@ -69,9 +69,9 @@ void Traps::effect(Player& p1)
 		{
 			if (p1.life > 0)
 			{
-				if (c1.colision_entity_entity(anim.sp, p1.anim.sp))
+				if (c1.colision_entity_entity(anim.sp, p1.anim_1.sp))
 				{
-					p1.s2.play();
+					p1.s0_1.play();
 					p1.life--;
 					p1.puntaje.muertes++;
 					p1.resucitar = true;
@@ -80,7 +80,7 @@ void Traps::effect(Player& p1)
 			}
 		}
 		else
-			c1.colision_platformMovil_player(p1.anim.sp, anim.sp);
+			c1.colision_platformMovil_player(p1.anim_1.sp, anim.sp);
 	}
 	else
 	{
@@ -88,9 +88,9 @@ void Traps::effect(Player& p1)
 		{
 			if (p1.life > 0)
 			{
-				if (c1.colision_entity_entity(sp, p1.anim.sp))
+				if (c1.colision_entity_entity(sp, p1.anim_1.sp))
 				{
-					p1.s2.play();
+					p1.s0_1.play();
 					p1.life--;
 					p1.puntaje.muertes++;
 					p1.resucitar = true;
@@ -99,7 +99,7 @@ void Traps::effect(Player& p1)
 			}
 		}
 		else
-			c1.colision_platformMovil_player(p1.anim.sp, sp);
+			c1.colision_platformMovil_player(p1.anim_1.sp, sp);
 	}
 }
 

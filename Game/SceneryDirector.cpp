@@ -2,6 +2,7 @@
 
 SceneryDirector::SceneryDirector()
 {
+	crear_escenario = nullptr;
 }
 
 SceneryDirector::~SceneryDirector()
@@ -29,6 +30,11 @@ void SceneryDirector::draw_scenary(sf::RenderWindow& app)
 void SceneryDirector::reproducir_musica()
 {
 	this->crear_escenario->reproducir_musica();
+}
+
+void SceneryDirector::parar_musica()
+{
+	this->crear_escenario->stop_music();
 }
 
 

@@ -2,6 +2,8 @@
 
 Bullet_Fire::Bullet_Fire() : Bullet()
 {
+	this->name = "bala_fuego_1";
+	this->damage = 15;
 }
 
 Bullet_Fire::~Bullet_Fire()

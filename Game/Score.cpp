@@ -15,42 +15,42 @@ Score::~Score()
 
 bool Score::operator==(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 50) == (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 150))
+	if ((items + enemigos_asesinados * 100) - (muertes * 30) == (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
 		return true;
 	return false;
 }
 
 bool Score::operator!=(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 50) != (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 150))
+	if ((items + enemigos_asesinados * 100) - (muertes * 30) != (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
 		return true;
 	return false;
 }
 
 bool Score::operator<(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 50) < (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 150))
+	if ((items + enemigos_asesinados * 100) - (muertes * 30) < (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
 		return true;
 	return false;
 }
 
 bool Score::operator>(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 50) > (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 150))
+	if ((items + enemigos_asesinados * 100) - (muertes * 30) > (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
 		return true;
 	return false;
 }
 
 bool Score::operator<=(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 50) <= (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 150))
+	if ((items + enemigos_asesinados * 100) - (muertes * 30) <= (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
 		return true;
 	return false;
 }
 
 bool Score::operator>=(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 50) >= (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 150))
+	if ((items + enemigos_asesinados * 100) - (muertes * 30) >= (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
 		return true;
 	return false;
 }
@@ -59,7 +59,7 @@ long Score::getTotal() { return total; }
 
 auto Score::calculo()
 {
-	total = ((items + enemigos_asesinados * 100) - (muertes * 50));
+	total = ((items + enemigos_asesinados * 100) - (muertes * 30));
 	return total;
 }
 

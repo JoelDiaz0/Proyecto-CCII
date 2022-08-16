@@ -2,10 +2,25 @@
 Fungus::Fungus() : Enemy()
 {
 	nombre = "fungus";
-	life = 2;
+	life = 10;
 }
 
 Fungus::~Fungus()
+{
+}
+
+sf::Texture Fungus::tex_enemy_1;
+
+void Fungus::initialize(float pos_x, float pos_y, float vsx, float vsy = 0.f)
+{
+	tex_enemy_1.loadFromFile("data\\sprites\\fungus.png");
+	anim_1.Initialize(tex_enemy_1, 17, 20, 3, 0.055);
+	this->vsx = vsx;
+	this->vsy = vsy;
+	anim_1.sp.setPosition(pos_x, pos_y);
+}
+
+void Fungus::update()
 {
 }
 
@@ -30,9 +45,9 @@ void Fungus::move()
 	if (life > 0)
 	{
 		if (!isFire)
-			anim.sp.move(vsx, vsy * 2);
+			anim_1.sp.move(vsx, vsy * 2);
 		else if (isFire)
-			anim.sp.move(vsx * 2.f, -vsy * 3);
+			anim_1.sp.move(vsx * 2.f, -vsy * 3);
 	}
 }
 
@@ -40,8 +55,8 @@ void Fungus::Draw(sf::RenderWindow& app)
 {
 	if (life > 0)
 	{
-		anim.sp.setScale(sf::Vector2f(tam_x, tam_y));
-		anim.Draw(app);
-		anim.Update();
+		anim_1.sp.setScale(sf::Vector2f(tam_x, tam_y));
+		anim_1.Draw(app);
+		anim_1.Update();
 	}
 }

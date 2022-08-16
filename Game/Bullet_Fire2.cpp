@@ -1,7 +1,9 @@
 #include "Bullet_Fire2.h"
 
-Bullet_Fire2::Bullet_Fire2()
+Bullet_Fire2::Bullet_Fire2() : Bullet()
 {
+	this->name = "bala_fuego_2";
+	this->damage = 10;
 }
 
 Bullet_Fire2::~Bullet_Fire2()

@@ -1,42 +1,53 @@
 #pragma once
-#include "Entity.h"
-#include "Enemy.h"
-#include "Score.h"
+#include <SFML/Audio.hpp>
 #include "Bullet_Fire.h"
 #include "Bullet_Thunder.h"
-
-class Player : public Entity
+#include "Platform.h"
+#include "Colision.h"
+#include "Enemy.h"
+#include "Score.h"
+#include <list>
+class Player
 {
 public:
 	friend class Enemy; //Se necesita para detectar colision entre Jugador y Enemigo
-	friend class Puntos; //Se necesita para detectar Colision
+	friend class Puntos; //Se necesita para detectar Colision entre Jugador e Items
 	friend class Revivir;
 	friend class Muerte;
 	friend class Traps;
 	friend class Key;
 	friend class Portal;
 	friend class Platform_Movil;
+	friend void borrar_balas(Player& p1, Player& p2, std::vector<Enemy*>& enemigos);
 	Player();
 	~Player();
-	void draw_1(sf::RenderWindow& app);
-	void draw_2(sf::RenderWindow& app);
-	void attack_1(sf::RenderWindow& app);
-	void attack_2(sf::RenderWindow& app);
-	void resusitar(float pos_x,float pos_y);
+	virtual void initialize(float pos_x, float pos_y, float vsx, float vsy = 4.5f) = 0;
+	virtual void draw(sf::RenderWindow& app) = 0;
+	virtual void update() = 0;
+	virtual void control() = 0;
+	virtual void attack() = 0;
+	virtual void revivir(float pos_x, float pos_y) = 0;
+	void draw_bullets(sf::RenderWindow& app);
+	void colision_bullets(Platform& plt, int width, int height);
 	void colision_enemy(Enemy& e1);
 	void colision_platform(Platform& pl1);
-	void colision_windows(int width, int height);	
+	void colision_windows(int width, int height);
+	void setScale(float tam_x, float tam_y);
+	void setPosition(float pos_x, float pos_y);
+	float getPosition_x();
+	float getPosition_y();
+	char getOrientacion();
 	Score puntaje;
-private:
-	void orientacion_p1();
-	void move_p1();
-	void orientacion_p2();
-	void move_p2();
-private:
-	float vsx_aux;
-	bool isFire, jump, waitJump, stop, resucitar;
+	std::list<Bullet*> balas;
+
+protected:
+	Animation anim_1;
+	Colision c1;
 	sf::Clock time_Jump, wait_Jump, timeFire, time_stop, time_dead;
+	sf::Sound s0_1, s0_2;
+	sf::SoundBuffer sb0_1, sb0_2;
+	float tam_x, tam_y, vsx, vsy, vsx_aux;
+	bool isFire, jump, waitJump, stop, resucitar;
+	int life;
+	char Ori;
 };
-
-
-

@@ -5,7 +5,8 @@ class Item
 public:
 	friend class Player; //Se necesita para detectar colision con el jugador
 	friend class Platform;
-	friend bool terminar_level(std::vector<Item*>& portal);
+	friend bool detectar_portal(std::vector<Item*>& portal);
+	friend bool detectar_llave(std::vector<Item*>& llave);
 	Item();
 	~Item();
 	virtual void inicialize(float pos_x, float pos_y) = 0;

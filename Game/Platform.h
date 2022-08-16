@@ -11,6 +11,7 @@ public:
 	friend class Fallen_Block; //Se usa para detectar Colision con Trampa Fallen_Block
 	friend class Item; 
 	friend class Platform_Movil;
+	friend class Bullet;
 	Platform();
 	~Platform();
 	virtual void initialize() = 0;

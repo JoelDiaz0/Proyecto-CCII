@@ -9,6 +9,7 @@ public:
 	void construir_Scenary();
 	void draw_scenary(sf::RenderWindow& app);
 	void reproducir_musica();
+	void parar_musica();
 private:
 	SceneryBuilder* crear_escenario;
 };

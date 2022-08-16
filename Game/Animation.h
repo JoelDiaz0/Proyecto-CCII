@@ -4,7 +4,7 @@
 class Animation
 {
 public:
-	friend class Entity;
+	friend class Entity; //Colision
 	friend class Player;
 	friend class Punk_1;
 	friend class Punk_2;
@@ -31,16 +31,13 @@ public:
 	friend class Mallet;
 	friend class Pendulum;
 	friend class Fallen_Block;
-
-
-
 	Animation();
 	~Animation();
 	void Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, int num_Sprites, double moveSpeed);
+	void Draw(sf::RenderWindow& app);
 	void Update();
 	void Update_Una_Vez();
 	void Reset();
-	void Draw(sf::RenderWindow& app);
 private:
 	double moveSpeed{};
 	int tamSprite_x{}, tamSprite_y{}, num_Sprites{};

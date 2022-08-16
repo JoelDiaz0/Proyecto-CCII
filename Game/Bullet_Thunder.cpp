@@ -2,6 +2,8 @@
 
 Bullet_Thunder::Bullet_Thunder() : Bullet()
 {
+	name = "bala_rayo";
+	damage = 5;
 }
 
 Bullet_Thunder::~Bullet_Thunder()

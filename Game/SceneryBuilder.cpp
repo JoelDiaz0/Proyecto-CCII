@@ -24,3 +24,10 @@ void SceneryBuilder::reproducir_musica()
 	unaVez = true;
 	escena->musica.setLoop(true);
 }
+
+void SceneryBuilder::stop_music()
+{
+	escena->musica.stop();
+	unaVez = false;
+}
+
