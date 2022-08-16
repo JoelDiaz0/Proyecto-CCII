@@ -46,6 +46,8 @@
     <ClCompile Include="Scenery_Tatooine.cpp" />
     <ClCompile Include="Scenary_LLuvia.cpp" />
     <ClCompile Include="montana2.cpp" />
+    <ClCompile Include="Scenery_Space.cpp" />
+    <ClCompile Include="SpaceSus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -93,6 +95,8 @@
     <ClInclude Include="Aleatoio.h" />
     <ClInclude Include="Scenary_LLuvia.h" />
     <ClInclude Include="montana2.h" />
+    <ClInclude Include="Scenery_Space.h" />
+    <ClInclude Include="SpaceSus.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />
