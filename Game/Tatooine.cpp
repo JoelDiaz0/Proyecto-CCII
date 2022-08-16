@@ -12,7 +12,7 @@ sf::Texture Tatooine::tex_platform;
 
 void Tatooine::initialize()
 {
-	tex_platform.loadFromFile("data\\background\\tatooine_background.jpg");
+	tex_platform.loadFromFile("data\\background\\tatooine_graphics.png");
 	sp_p.setTexture(tex_platform);
 }
 

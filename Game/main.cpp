@@ -33,6 +33,7 @@
 #include "Platform_Movil.h"
 //Escenarios (Patron de diseño builder)
 #include "SceneryDirector.h"
+#include "Scenery_Tatooine.h"
 #include "Scenery_Hell.h"
 //Otros
 #include "Excepcion.h"
@@ -243,8 +244,9 @@ int main()
                     jugador1->setPosition(20.f, 0.f);
                     jugador2->setPosition(10.f, 500.f);
 
-                    m1.play();
-                    float xF1{ 0.2f }, yF1{ 0.2f }; //variables para la plateforma              
+                    //m1.play();
+                    float xF1{ 0.2f }, yF1{ 0.2f }; //variables para la plateforma
+                    //Creacion de Plataforma
                     //plat 1
                     for (int i = 0; i < 2; i++)
                     {
@@ -341,6 +343,28 @@ int main()
                     piso_plat11->setScale(xF1, yF1);
                     piso_plat11->setPosition(1080.f, 350.f);
                     vec_plataformas.push_back(piso_plat11);
+
+
+                    //Portal
+
+                    Item* item_portal2 = new Portal;
+                    item_portal2->inicialize(pantalla.W - 100.f, 400.f);
+                    item_portal2->setScale(1.5f, 1.5f);
+                    vec_items.push_back(item_portal2);
+                    //pinchos
+
+                    Traps* trampa_spike = new Spike;
+                    trampa_spike->Inicialize(80, 80);
+                    trampa_spike->setScale(2.5f, 2.5f);
+                    vec_trampas.push_back(trampa_spike);
+
+                    Traps* trampa_pinchos(trampa_spike); //Constructor Copia
+                    trampa_pinchos->Inicialize(990, 720);
+
+
+                    //---------
+                    escenario->setBuilder(escenario_tattoine);
+                    escenario->construir_Scenary();
                     break;
                 }
 
