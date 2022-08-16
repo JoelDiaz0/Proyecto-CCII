@@ -18,6 +18,7 @@
 #include "Tatooine.h"
 #include "montana.h"
 #include "montana2.h"
+#include "SpaceSus.h"
 //Items
 #include "Muerte.h"
 #include "Key.h"
@@ -38,6 +39,7 @@
 #include "Scenery_Tatooine.h"
 #include "Scenery_Hell.h"
 #include "Scenary_LLuvia.h"
+#include "Scenery_Space.h"
 //Otros
 #include "Excepcion.h"
 #include "lluvia.h"
@@ -477,6 +479,107 @@ int main()
                 if (CARGANDO) {
                     CARGANDO = false;
                     EJECUTANDO = true;
+                    //level 4
+                    SceneryBuilder* escenario_space = new Scenery_Space;
+                    jugador1->setPosition(520, 400);
+                    jugador2->setPosition(700, 400);
+                    //Creación de plataformas estáticas
+                    for (int i = 0; i < 16; i++) {
+                        Platform* Suelo = new SpaceSus;
+                        Suelo->initialize();
+                        Suelo->generar_bloque_3();
+                        Suelo->setScale(1.8, 1.5);
+                        Suelo->setPosition(160 + i * 60, 557);
+                        vec_plataformas.push_back(Suelo);
+                    }
+
+                    for (int i = 0; i < 8; i++) {
+                        Platform* Suelo2 = new SpaceSus;
+                        Suelo2->initialize();
+                        Suelo2->generar_bloque_4();
+                        Suelo2->setScale(1.8, 1.5);
+                        Suelo2->setPosition(400 + i * 60, 300);
+                        vec_plataformas.push_back(Suelo2);
+                    }
+
+                    for (int i = 0; i < 4; i++) {
+                        Platform* Suelo3 = new SpaceSus;
+                        Suelo3->initialize();
+                        Suelo3->generar_bloque_3();
+                        Suelo3->setScale(1.8, 1.5);
+                        Suelo3->setPosition(520 + i * 60, 150);
+                        vec_plataformas.push_back(Suelo3);
+                    }
+
+                    //Plataformas extras para el spawn
+                    Platform* SueloExtra = new SpaceSus;
+                    SueloExtra->initialize();
+                    SueloExtra->generar_bloque_4();
+                    SueloExtra->setScale(4, 1.5);
+                    SueloExtra->setPosition(20, 557);
+                    vec_plataformas.push_back(SueloExtra);
+
+                    //Plataforma movible
+                    Traps* plataforma_movil2 = new Platform_Movil;
+                    plataforma_movil2->Inicialize(277, 0, 0.f, 3.5f);
+                    plataforma_movil2->setScale(3.f, 3.f);
+                    vec_trampas.push_back(plataforma_movil2);
+
+                    Traps* plataforma_movil3 = new Platform_Movil;
+                    plataforma_movil3->Inicialize(930, 466, 0.f, 3.5f);
+                    plataforma_movil3->setScale(3.f, 3.f);
+                    vec_trampas.push_back(plataforma_movil3);
+
+                    //Items
+                    Item* item_llave = new Key;
+                    item_llave->inicialize(636, 240);
+                    item_llave->setScale(0.55f, 0.55f);
+                    vec_items.push_back(item_llave);
+
+                    //Paredes desbloqueables
+                    for (int i = 0; i < 2; i++)
+                    {
+                        Platform* Muro = new SpaceSus;
+                        Muro->initialize();
+                        Muro->generar_bloque_1();
+                        Muro->setScale(2.f, 2.f);
+                        Muro->setPosition(520, 86 - 60 * i);
+                        vec_unlock_plataformas.push_back(Muro);
+
+                        Platform* Muro2 = new SpaceSus;
+                        Muro2->initialize();
+                        Muro2->generar_bloque_1();
+                        Muro2->setScale(2.f, 2.f);
+                        Muro2->setPosition(700, 86 - 60 * i);
+                        vec_unlock_plataformas.push_back(Muro2);
+                    }
+
+                    //600 150
+                    //Portal END
+                    Item* item_portal = new Portal;
+                    item_portal->inicialize(600, 0);
+                    item_portal->setScale(1.5f, 1.5f);
+                    vec_items.push_back(item_portal);
+
+                    //Enemigos
+
+
+                    Enemy* enemigo_harpy = new Harpy;
+                    enemigo_harpy->Initialize(anim_harpy, 0, 230, 2.5f);
+                    enemigo_harpy->setScale(1.5f, 1.5f);
+                    enemigo_harpy->cargar_audio(sonido_danio);
+                    vec_enemigos.push_back(enemigo_harpy);
+                    Enemy* enemigo_harpy2 = new Harpy;
+                    enemigo_harpy2->Initialize(anim_harpy, 900, 230, 2.5f);
+                    enemigo_harpy2->setScale(1.5f, 1.5f);
+                    enemigo_harpy2->cargar_audio(sonido_danio);
+                    vec_enemigos.push_back(enemigo_harpy2);
+
+                    //2 enemigos eliminados para evitar dificultad innecesaria
+                    //Construccion de escenario
+                    escenario->setBuilder(escenario_space);
+                    escenario->construir_Scenary();
+                    break;
                 }
                 break;
             }
@@ -689,28 +792,31 @@ int main()
                 cout << "Termino el juego\n";
                 exit(0);
             }
+
+            //debug. 
+            //if (Coordeb == true) {
+            //    sf::Text mousePosX, mousePosY; 
+            //    sf::Font font;
+            //    font.loadFromFile("data\\fonts\\Baskic8.otf"); //Fuente custom ya que quitaron el defaultfont en sfml
+            //    //Este codigo podría ser usado para el SCORE
+            //
+            //   auto drawText = [&](sf::Text& t, std::string str, int value, int x, int y, int size, sf::Font& f, const sf::Color& c) { //Lambda porque no quería modificar otros archivos
+            //        t.setString(str + std::to_string(value));        //Pone un texto y luego agrega un valor numérico convertido a texto                                                                  
+            //        t.setPosition(x, y); //Posición del texto
+            //        t.setCharacterSize(size); //Tamanio de caracteres
+            //        t.setFont(f); //font custom
+            //        t.setFillColor(c);  //Color de texto
+            //        App.draw(t); //Hace aparecer el texto
+            //    };
+            //
+            //    drawText(mousePosX, std::string("Pos X mouse: "), sf::Mouse::getPosition(App).x, 1040, 85, 30, font, sf::Color::Black);
+            //    drawText(mousePosX, std::string("Pos Y mouse: "), sf::Mouse::getPosition(App).y, 1040, 125, 30, font, sf::Color::Black);
+            //}      
+
             App.display();
         }
 
-        //debug. Si quiere ser usado, debe pegarse arriba de "App.display()" dentro del nivel en el que se quiera usar.
-        //if (Coordeb == true) {
-        //    sf::Text mousePosX, mousePosY; 
-        //    sf::Font font;
-        //    font.loadFromFile("data\\fonts\\Baskic8.otf"); //Fuente custom ya que quitaron el defaultfont en sfml
-        //    //Este codigo podría ser usado para el SCORE
-        //
-        //   auto drawText = [&](sf::Text& t, std::string str, int value, int x, int y, int size, sf::Font& f, const sf::Color& c) { //Lambda porque no quería modificar otros archivos
-        //        t.setString(str + std::to_string(value));        //Pone un texto y luego agrega un valor numérico convertido a texto                                                                  
-        //        t.setPosition(x, y); //Posición del texto
-        //        t.setCharacterSize(size); //Tamanio de caracteres
-        //        t.setFont(f); //font custom
-        //        t.setFillColor(c);  //Color de texto
-        //        App.draw(t); //Hace aparecer el texto
-        //    };
-        //
-        //    drawText(mousePosX, std::string("Pos X mouse: "), sf::Mouse::getPosition(App).x, 1040, 85, 30, font, sf::Color::Black);
-        //    drawText(mousePosX, std::string("Pos Y mouse: "), sf::Mouse::getPosition(App).y, 1040, 125, 30, font, sf::Color::Black);
-        //}      
+        
     }
 
     cout << "Jugador1:\n";

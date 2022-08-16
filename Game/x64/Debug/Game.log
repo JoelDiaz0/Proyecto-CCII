@@ -1,11 +1,1 @@
-﻿  main.cpp
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(391,36): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(391,48): warning C4305: 'initializing': truncation from 'double' to 'float'
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(404,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(414,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(424,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(434,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(444,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(454,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\Game\main.cpp(464,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Game.vcxproj -> D:\DIEGO\CC LAB\PROYECTO\Proyecto-CCII\x64\Debug\Game.exe
+﻿  Game.vcxproj -> C:\Users\User\Desktop\El futuro es hoy, oiste viejo\DimeLaDefinicionDeLocura\Proyecto-CCII\x64\Debug\Game.exe
