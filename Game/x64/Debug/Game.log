@@ -1,4 +1,59 @@
-﻿  main.cpp
+﻿  Aqua.cpp
+  Erizo.cpp
+C:\Users\user\source\repos\Proyecto-CCII\Game\Erizo.cpp(4,17): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Scenery_Aqua.cpp
+  Animation.cpp
+  BloodMonster.cpp
+  Bullet.cpp
+C:\Users\user\source\repos\Proyecto-CCII\Game\Bullet.cpp(63,18): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  Bullet_Fire.cpp
+  Bullet_Fire2.cpp
+  Bullet_Thunder.cpp
+  Colision.cpp
+  Demon.cpp
+  Enemy.cpp
+  Entity.cpp
+  Excepcion.cpp
+  Fallen_Block.cpp
+  Fungus.cpp
+  Harpy.cpp
+  Hell.cpp
+  Item.cpp
+  Key.cpp
+  Generando código...
+C:\Users\user\source\repos\Proyecto-CCII\Game\Colision.cpp(31): warning C4715: 'Colision::colision_pantalla_enemy': no todas las rutas de acceso de control devuelven un valor
+  Compilando...
+  Lava.cpp
+  Mallet.cpp
+  Muerte.cpp
+  Pendulum.cpp
+  Platform.cpp
+  Platform_Movil.cpp
+  Player.cpp
+  Portal.cpp
+  Punk_1.cpp
+  Punk_2.cpp
+  Puntos.cpp
+  Scenary_LLuvia.cpp
+  Scenery.cpp
+  SceneryBuilder.cpp
+  SceneryDirector.cpp
+  Scenery_Hell.cpp
+  Scenery_Space.cpp
+  Scenery_Tatooine.cpp
+  Score.cpp
+  SpaceSus.cpp
+  Generando código...
+  Compilando...
+  Spear.cpp
+  Spike.cpp
+  Spike_Run.cpp
+  Suriken.cpp
+  Tatooine.cpp
+  Throwingfire.cpp
+  Traps.cpp
+  lluvia.cpp
+  main.cpp
 C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(443,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(447,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\user\source\repos\Proyecto-CCII\Game\main.cpp(582,53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
@@ -47,4 +102,22 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.3132
           [
               _Ty2=float
           ]
+  menu.cpp
+C:\Users\user\source\repos\Proyecto-CCII\Game\menu.cpp(39,37): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\user\source\repos\Proyecto-CCII\Game\menu.cpp(70,17): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\utility(247,61): warning C4244: 'inicializando': conversión de '_Ty' a '_Ty2'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+C:\Users\user\source\repos\Proyecto-CCII\Game\menu.cpp(53): message : Vea la referencia a la creación de una instancia de la función plantilla "std::pair<int,float>::pair<int,int,0>(std::pair<int,int> &&) noexcept" que se está compilando
+C:\Users\user\source\repos\Proyecto-CCII\Game\menu.cpp(53): message : Vea la referencia a la creación de una instancia de la función plantilla "std::pair<int,float>::pair<int,int,0>(std::pair<int,int> &&) noexcept" que se está compilando
+  montana.cpp
+  montana2.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\user\source\repos\Proyecto-CCII\x64\Debug\Game.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   Game.vcxproj -> C:\Users\user\source\repos\Proyecto-CCII\x64\Debug\Game.exe

@@ -19,6 +19,12 @@ Para el curso de Ciencia de la Computacion II
 ## Concepto de juego
 Juego de plataforma desarrollado en C++, inspirado en las mecánicas del juego give up, donde el jugador pasará por una serie de niveles con obstáculos con dificultad escalable.
 
+## Objetivo general
+Poner en practica lo aprendido durante el semestre sobre el lenguaje de programacion C++ entorno a la realizacion de un videojuego.
+
+## Objetivo especifico
+Desarrollar un videojuego del tipo plataforma en 2D, apta para 2 jugadores y con distintos enemigos y obstáculos que superar, utilizando todos los temas aprendidos en este semestre.
+
 ## Recursos
 - C++ 
   - Modificación de acceso y asignación dinámica de memoria..
@@ -38,14 +44,17 @@ Juego de plataforma desarrollado en C++, inspirado en las mecánicas del juego g
 ---
 ## [Readme de Organizacion](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/docs/markdown/ReadmeDeOrganizacion.md)
 ---
-## Imagenes del videojuego
+## [Imagenes del videojuego](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/docs/markdown/ImagenesVideojuego.md)
+---
+## [Presentacion del software (Diapositivas)](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/Presentaci%C3%B3nSoftwareCC2_DimensionTravelers.pdf)
+___
 
-![Menu](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/docs/imagenes/menu.png)
-![lvl1](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/docs/imagenes/level1.png)
-![lvl5](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/docs/imagenes/level5.png)
+## Video de presentacion del software (Diapositivas)
 
+[![vPresentacion](https://img.youtube.com/vi/r6VaFAxkAik/0.jpg)](https://www.youtube.com/watch?v=r6VaFAxkAik)
 
-
+___
+## [Videos Complementarios](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/docs/markdown/VideosComplementarios.md)
 
 
 

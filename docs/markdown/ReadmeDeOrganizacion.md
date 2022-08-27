@@ -21,3 +21,6 @@ Estan agrupados segun su utilidad:
 - sprites
     - Imagenes de las animacion de los diversos elementos del videojuego.
 
+>Diagrama de Secuencia de los archivos
+___
+![Diagrama](https://github.com/JoelDiaz0/Proyecto-CCII/blob/master/docs/imagenes/diagrama.png)
