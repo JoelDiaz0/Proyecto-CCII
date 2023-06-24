@@ -105,6 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,19 +134,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Proyecto-CCII\Game\Aqua.cpp" />
-    <ClCompile Include="..\..\Proyecto-CCII\Game\Erizo.cpp" />
-    <ClCompile Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.cpp" />
+    <ClCompile Include="Alien.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Aqua.cpp" />
     <ClCompile Include="BloodMonster.cpp" />
+    <ClCompile Include="Buceo.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Bullet_Demon.cpp" />
     <ClCompile Include="Bullet_Fire.cpp" />
     <ClCompile Include="Bullet_Fire2.cpp" />
     <ClCompile Include="Bullet_Thunder.cpp" />
     <ClCompile Include="Colision.cpp" />
     <ClCompile Include="Demon.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyDeath.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Erizo.cpp" />
     <ClCompile Include="Excepcion.cpp" />
     <ClCompile Include="Fallen_Block.cpp" />
     <ClCompile Include="Fungus.cpp" />
@@ -161,6 +165,8 @@
     <ClCompile Include="montana.cpp" />
     <ClCompile Include="montana2.cpp" />
     <ClCompile Include="Muerte.cpp" />
+    <ClCompile Include="Oruga.cpp" />
+    <ClCompile Include="Ovni.cpp" />
     <ClCompile Include="Pendulum.cpp" />
     <ClCompile Include="Platform.cpp" />
     <ClCompile Include="Platform_Movil.cpp" />
@@ -169,7 +175,9 @@
     <ClCompile Include="Punk_1.cpp" />
     <ClCompile Include="Punk_2.cpp" />
     <ClCompile Include="Puntos.cpp" />
+    <ClCompile Include="PuntosSobrecarga.cpp" />
     <ClCompile Include="Scenary_LLuvia.cpp" />
+    <ClCompile Include="Scenery_Aqua.cpp" />
     <ClCompile Include="Scenery_Space.cpp" />
     <ClCompile Include="Scenery_Tatooine.cpp" />
     <ClCompile Include="Scenery.cpp" />
@@ -181,10 +189,12 @@
     <ClCompile Include="Spear.cpp" />
     <ClCompile Include="Spike.cpp" />
     <ClCompile Include="Spike_Run.cpp" />
+    <ClCompile Include="Submarino.cpp" />
     <ClCompile Include="Suriken.cpp" />
     <ClCompile Include="Tatooine.cpp" />
     <ClCompile Include="Throwingfire.cpp" />
     <ClCompile Include="Traps.cpp" />
+    <ClCompile Include="UnknowBall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\music\level1.ogg" />
@@ -198,6 +208,9 @@
     <None Include="data\sound\damage.ogg" />
     <None Include="data\sound\dead.ogg" />
     <None Include="data\sound\FlameAtack.ogg" />
+    <None Include="data\sound\gore.ogg" />
+    <None Include="data\sound\llave.ogg" />
+    <None Include="data\sound\portal.ogg" />
     <None Include="data\sound\revivir.ogg" />
     <None Include="data\sound\score.ogg" />
   </ItemGroup>
@@ -216,6 +229,7 @@
     <Image Include="data\menu\menu-game.png" />
     <Image Include="data\menu\menu-puntuaciones.png" />
     <Image Include="data\sprites\bala_2.png" />
+    <Image Include="data\sprites\bala_demoniaca.png" />
     <Image Include="data\sprites\block.png" />
     <Image Include="data\sprites\bloodmonster.png" />
     <Image Include="data\sprites\brick.png" />
@@ -226,6 +240,7 @@
     <Image Include="data\sprites\demon_walk.png" />
     <Image Include="data\sprites\Enemigo1A.png" />
     <Image Include="data\sprites\Enemigo2.png" />
+    <Image Include="data\sprites\explosion.png" />
     <Image Include="data\sprites\FlyingPlatfrom.png" />
     <Image Include="data\sprites\fondo.jpg" />
     <Image Include="data\sprites\fungus.png" />
@@ -254,6 +269,7 @@
     <Image Include="data\sprites\p2_up.png" />
     <Image Include="data\sprites\pendulo.png" />
     <Image Include="data\sprites\portal.png" />
+    <Image Include="data\sprites\sea-urchin.png" />
     <Image Include="data\sprites\Spear.png" />
     <Image Include="data\sprites\spike.png" />
     <Image Include="data\sprites\Spike_B.png" />
@@ -263,20 +279,23 @@
     <Image Include="data\sprites\Trap_Spike_Run.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Proyecto-CCII\Game\Aqua.h" />
-    <ClInclude Include="..\..\Proyecto-CCII\Game\Erizo.h" />
-    <ClInclude Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.h" />
     <ClInclude Include="Aleatoio.h" />
+    <ClInclude Include="Alien.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Aqua.h" />
     <ClInclude Include="BloodMonster.h" />
+    <ClInclude Include="Buceo.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Bullet_Demon.h" />
     <ClInclude Include="Bullet_Fire.h" />
     <ClInclude Include="Bullet_Fire2.h" />
     <ClInclude Include="Bullet_Thunder.h" />
     <ClInclude Include="Colision.h" />
     <ClInclude Include="Demon.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyDeath.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Erizo.h" />
     <ClInclude Include="Excepcion.h" />
     <ClInclude Include="Fallen_Block.h" />
     <ClInclude Include="Fungus.h" />
@@ -291,6 +310,8 @@
     <ClInclude Include="montana.h" />
     <ClInclude Include="montana2.h" />
     <ClInclude Include="Muerte.h" />
+    <ClInclude Include="Oruga.h" />
+    <ClInclude Include="Ovni.h" />
     <ClInclude Include="Pendulum.h" />
     <ClInclude Include="Platform.h" />
     <ClInclude Include="Platform_Movil.h" />
@@ -299,7 +320,9 @@
     <ClInclude Include="Punk_1.h" />
     <ClInclude Include="Punk_2.h" />
     <ClInclude Include="Puntos.h" />
+    <ClInclude Include="PuntosSobrecarga.h" />
     <ClInclude Include="Scenary_LLuvia.h" />
+    <ClInclude Include="Scenery_Aqua.h" />
     <ClInclude Include="Scenery_Space.h" />
     <ClInclude Include="Scenery_Tatooine.h" />
     <ClInclude Include="Scenery.h" />
@@ -311,10 +334,12 @@
     <ClInclude Include="Spear.h" />
     <ClInclude Include="Spike.h" />
     <ClInclude Include="Spike_Run.h" />
+    <ClInclude Include="Submarino.h" />
     <ClInclude Include="Suriken.h" />
     <ClInclude Include="Tatooine.h" />
     <ClInclude Include="Throwingfire.h" />
     <ClInclude Include="Traps.h" />
+    <ClInclude Include="UnknowBall.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Baskic8.otf" />

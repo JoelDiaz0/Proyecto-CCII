@@ -31,9 +31,17 @@ public:
 	friend class Mallet;
 	friend class Pendulum;
 	friend class Fallen_Block;
+	friend class EnemyDeath;
+	friend class Buceo;
+	friend class Submarino;
+	friend class PuntosSobrecarga;
+	friend class Ovni;
+	friend class Oruga;
+	friend class Alien;
+	friend class UnknowBall;
 	Animation();
 	~Animation();
-	void Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, int num_Sprites, double moveSpeed);
+	void Initialize(sf::Texture& t1,const int& tamSprite_x,const int& tamSprite_y, const int& num_Sprites, const double& moveSpeed);
 	void Draw(sf::RenderWindow& app);
 	void Update();
 	void Update_Una_Vez();

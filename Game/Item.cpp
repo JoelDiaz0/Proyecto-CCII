@@ -6,7 +6,7 @@ Item::Item()
 	tam_y = 1.f;
 	recogido = false;
 	sound_wait = false;
-	nombre = "item";
+	tipo_item = TIPO_ITEM::NONE;
 }
 
 Item::~Item()
@@ -41,12 +41,26 @@ void Item::setScale(float tam_x, float tam_y)
 
 void Item::unlock_platform(Platform& plt)
 {
-	if (this->nombre == "key")
+	if (this->tipo_item == TIPO_ITEM::KEY)
 	{
-		if (recogido)
-		{
-			plt.lock = false;
+		if (recogido) {
+			plt.lock = false;		
 		}
 	}
+}
+
+int Item::get_size_sprite_x() const
+{
+	return anim.rectSourceSprite.width;
+}
+
+int Item::get_size_sprite_y() const
+{
+	return anim.rectSourceSprite.height;
+}
+
+Item::TIPO_ITEM Item::get_tipo_item()
+{
+	return tipo_item;
 }
 

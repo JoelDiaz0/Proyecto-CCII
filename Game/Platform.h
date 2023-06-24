@@ -21,7 +21,10 @@ public:
 	virtual void generar_bloque_4() = 0;
 	void setPosition(float pos_x, float pos_y);
 	void setScale(float scale_x, float scale_y);
+	int getTamSprite_X();
+	int getTamSprite_Y();
 	void draw(sf::RenderWindow& app);
+	bool locked() const;
 protected:
 	void recortarSprite(int posx, int posy, int tamx, int tamy);
 protected:

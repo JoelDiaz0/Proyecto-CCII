@@ -10,6 +10,8 @@ public:
 	void move() override;
 	void attack(sf::RenderWindow& app) override;
 	void Draw(sf::RenderWindow& app) override;
+	int get_puntaje_enemigo() override;
+	TIPO_ENEMIGO get_tipo_enemigo() override;
 private:
 	static sf::Texture tex_enemy_1;
 	sf::Clock time_attack, wait_attack;

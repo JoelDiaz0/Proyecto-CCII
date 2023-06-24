@@ -2,12 +2,13 @@
 
 Harpy::Harpy() : Enemy()
 {
-    nombre = "harpy";
+    tipo_enemigo = TIPO_ENEMIGO::HARPY;
     life = 20;
 }
 
 Harpy::~Harpy()
 {
+
 }
 
 sf::Texture Harpy::tex_enemy_1;
@@ -53,4 +54,14 @@ void Harpy::Draw(sf::RenderWindow& app)
         anim_1.Draw(app);
         anim_1.Update();
     }
+}
+
+int Harpy::get_puntaje_enemigo()
+{
+    return 75;
+}
+
+Enemy::TIPO_ENEMIGO Harpy::get_tipo_enemigo()
+{
+    return tipo_enemigo;
 }

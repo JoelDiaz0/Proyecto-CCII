@@ -16,6 +16,8 @@ public:
 	void setRotate(float angulo);
 	void setScale(float tam_x, float tam_y);
 	void setOrigin(float origin_x, float origin_y);	
+	int get_size_sprite_x() const;
+	int get_size_sprite_y() const;
 protected:
 	Animation anim;
 	Colision c1;

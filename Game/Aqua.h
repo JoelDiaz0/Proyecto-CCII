@@ -6,6 +6,7 @@ class Aqua : public Platform
 {
 public:
 	Aqua(float x, float y);
+	Aqua();
 	~Aqua();
 	void initialize();
 	void generar_bloque_1();

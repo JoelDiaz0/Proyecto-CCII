@@ -15,7 +15,7 @@ void Scenary_Lluvia::buildScale() const
 
 void Scenary_Lluvia::buildMusica() const
 {
-	escena->cargar_musica("data\\music\\the_hell.ogg");
+	escena->cargar_musica("data\\music\\level1.ogg");
 }
 
 void Scenary_Lluvia::buildFondo() const
@@ -25,6 +25,6 @@ void Scenary_Lluvia::buildFondo() const
 
 void Scenary_Lluvia::buildVolumen() const
 {
-	escena->setVolumen(10.f);
+	escena->setVolumen(15.f);
 }
 

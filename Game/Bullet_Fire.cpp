@@ -2,7 +2,7 @@
 
 Bullet_Fire::Bullet_Fire() : Bullet()
 {
-	this->name = "bala_fuego_1";
+	tipo_bala = TIPO_BALA::FUEGO_1;
 	this->damage = 15;
 }
 

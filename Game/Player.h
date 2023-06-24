@@ -6,7 +6,8 @@
 #include "Colision.h"
 #include "Enemy.h"
 #include "Score.h"
-#include <list>
+#include "Aqua.h"
+#include <vector>
 class Player
 {
 public:
@@ -18,7 +19,12 @@ public:
 	friend class Key;
 	friend class Portal;
 	friend class Platform_Movil;
+	friend class PuntosSobrecarga;
+
 	friend void borrar_balas(Player& p1, Player& p2, std::vector<Enemy*>& enemigos);
+	friend void ejecutar_nivel(sf::RenderWindow& App, Player* jugador1, Player* jugador2, std::vector<Platform*>& vec_plataformas, std::vector<Platform*>& vec_unlock_plataformas,
+		std::vector<Enemy*>& vec_enemigos, std::vector<Traps*>& vec_trampas, std::vector<Item*>& vec_items);
+
 	Player();
 	~Player();
 	virtual void initialize(float pos_x, float pos_y, float vsx, float vsy = 4.5f) = 0;
@@ -38,7 +44,7 @@ public:
 	float getPosition_y();
 	char getOrientacion();
 	Score puntaje;
-	std::list<Bullet*> balas;
+	std::vector<Bullet*> balas;
 
 protected:
 	Animation anim_1;

@@ -2,7 +2,7 @@
 
 Puntos::Puntos() : Item()
 {
-	nombre = "puntos";
+	tipo_item = TIPO_ITEM::PUNTOS;
 }
 
 Puntos::~Puntos()

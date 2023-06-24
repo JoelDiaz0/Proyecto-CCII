@@ -2,7 +2,7 @@
 
 Key::Key()
 {
-	nombre = "key";
+	tipo_item = TIPO_ITEM::KEY;
 	cantidad++;
 }
 

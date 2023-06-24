@@ -12,11 +12,20 @@ Platform::~Platform()
 {
 }
 
-
 void Platform::setScale(float scale_x, float scale_y)
 {
 	this->scale_x = scale_x;
 	this->scale_y = scale_y;
+}
+
+int Platform::getTamSprite_X()
+{
+	return rect.width;
+}
+
+int Platform::getTamSprite_Y()
+{
+	return rect.height;
 }
 
 void Platform::setPosition(float pos_x, float pos_y)
@@ -39,6 +48,11 @@ void Platform::draw(sf::RenderWindow& app)
 		sp_p.setScale(sf::Vector2f(scale_x, scale_y));
 		app.draw(sp_p);
 	}
+}
+
+bool Platform::locked() const
+{
+	return lock;
 }
 
 

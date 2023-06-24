@@ -2,7 +2,7 @@
 
 Demon::Demon() : Enemy()
 {
-    nombre = "demon";
+    tipo_enemigo = TIPO_ENEMIGO::DEMON;
     life = 100;
 }
 
@@ -27,6 +27,16 @@ void Demon::initialize(float pos_x, float pos_y, float vsx, float vsy)
     s1.setVolume(80.f);
 }
 
+int Demon::get_puntaje_enemigo()
+{
+    return 500;
+}
+
+Enemy::TIPO_ENEMIGO Demon::get_tipo_enemigo()
+{
+    return tipo_enemigo;
+}
+
 void Demon::attack(sf::RenderWindow& app)
 {
     if (life > 0)
@@ -43,16 +53,16 @@ void Demon::attack(sf::RenderWindow& app)
             {
                 s1.play();
                 s1.setLoop(true);
-                Bullet* bala1 = new Bullet();
+                Bullet* bala1 = new Bullet_Demon;
                 bala1->Initialize(4.5f * extra_vs);
-                bala1->setScale(2.5f, 2.5f);
+                bala1->setScale(1.5f, 1.5f);
                 bala1->setAngle_sin(15);
-                Bullet* bala2 = new Bullet();
+                Bullet* bala2 = new Bullet_Demon();
                 bala2->Initialize(4.5f * extra_vs);
-                bala2->setScale(2.5f, 2.5f);
-                Bullet* bala3 = new Bullet();
+                bala2->setScale(1.5f, 1.5f);
+                Bullet* bala3 = new Bullet_Demon();
                 bala3->Initialize(4.5f * extra_vs);
-                bala3->setScale(2.5f, 2.5f);
+                bala3->setScale(1.5f, 1.5f);
                 bala3->setAngle_sin(-15);
                 if (Ori == 'A')
                 {

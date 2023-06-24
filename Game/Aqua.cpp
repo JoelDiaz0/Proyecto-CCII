@@ -1,12 +1,16 @@
 #include "Aqua.h"
 
-Aqua::Aqua(float x, float y) : Platform(){
+Aqua::Aqua(float x, float y) : Platform() {
 	initialize();
-	setScale(.5, .5);
 	setPosition(x, y);
 }
 
-Aqua::~Aqua(){}
+Aqua::Aqua()
+{
+
+}
+
+Aqua::~Aqua() {}
 
 sf::Texture Aqua::tex_platform;
 

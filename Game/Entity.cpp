@@ -18,6 +18,7 @@ Entity::Entity()
 
 Entity::~Entity()
 {
+
 }
 
 float Entity::getPos_x()
@@ -44,7 +45,7 @@ void Entity::Update()
 	anim6.sp.setPosition(anim.sp.getPosition().x, anim.sp.getPosition().y);
 }
 
-void Entity::Initialize(Animation& anim, float x, float y, float vs)
+void Entity::Initialize(Animation& anim, const float& x, const float& y, const float& vs)
 {
 	this->anim = anim;
 	this->vsx = vs;
@@ -52,17 +53,7 @@ void Entity::Initialize(Animation& anim, float x, float y, float vs)
 	this->anim.sp.setPosition(x, y);
 }
 
-void Entity::Initialize_2(Animation& anim, Animation& anim2, float x, float y, float vs)
-{
-	this->anim = anim;
-	this->anim2 = anim2;
-	this->anim3 = anim3;
-	this->vsx = vs;
-	this->vsy = vs;
-	this->anim.sp.setPosition(x, y);
-}
-
-void Entity::Initialize_3(Animation& anim, Animation& anim2, Animation& anim3, float x, float y, float vs)
+void Entity::Initialize(Animation& anim, Animation& anim2, const float& x, const float& y, const float& vs)
 {
 	this->anim = anim;
 	this->anim2 = anim2;
@@ -72,7 +63,17 @@ void Entity::Initialize_3(Animation& anim, Animation& anim2, Animation& anim3, f
 	this->anim.sp.setPosition(x, y);
 }
 
-void Entity::Initialize_4(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, float x, float y, float vs)
+void Entity::Initialize(Animation& anim, Animation& anim2, Animation& anim3, const float& x, const float& y, const float& vs)
+{
+	this->anim = anim;
+	this->anim2 = anim2;
+	this->anim3 = anim3;
+	this->vsx = vs;
+	this->vsy = vs;
+	this->anim.sp.setPosition(x, y);
+}
+
+void Entity::Initialize(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, const float& x, const float& y, const float& vs)
 {
 	this->anim = anim;
 	this->anim2 = anim2;
@@ -83,7 +84,7 @@ void Entity::Initialize_4(Animation& anim, Animation& anim2, Animation& anim3, A
 	this->anim.sp.setPosition(x, y);
 }
 
-void Entity::Initialize_5(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, Animation& anim5, float x, float y, float vs)
+void Entity::Initialize(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, Animation& anim5, const float& x, const float& y, const float& vs)
 {
 	this->anim = anim;
 	this->anim2 = anim2;
@@ -95,7 +96,7 @@ void Entity::Initialize_5(Animation& anim, Animation& anim2, Animation& anim3, A
 	this->anim.sp.setPosition(x, y);
 }
 
-void Entity::Initialize_6(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, Animation& anim5, Animation& anim6, float x, float y, float vs)
+void Entity::Initialize(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, Animation& anim5, Animation& anim6, const float& x, const float& y, const float& vs)
 {
 	this->anim = anim;
 	this->anim2 = anim2;
@@ -109,7 +110,7 @@ void Entity::Initialize_6(Animation& anim, Animation& anim2, Animation& anim3, A
 }
 
 
-void Entity::Initialize_7(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, Animation& anim5, Animation& anim6, Animation& anim7, float x, float y, float vs)
+void Entity::Initialize(Animation& anim, Animation& anim2, Animation& anim3, Animation& anim4, Animation& anim5, Animation& anim6, Animation& anim7, const float& x, const float& y, const float& vs)
 {
 	this->anim = anim;
 	this->anim2 = anim2;
@@ -124,7 +125,7 @@ void Entity::Initialize_7(Animation& anim, Animation& anim2, Animation& anim3, A
 }
 
 
-void Entity::cargar_audio_3(sf::SoundBuffer& sb1, sf::SoundBuffer& sb2, sf::SoundBuffer& sb3)
+void Entity::cargar_audio(sf::SoundBuffer& sb1, sf::SoundBuffer& sb2, sf::SoundBuffer& sb3)
 {
 	s1.setBuffer(sb1);
 	s2.setBuffer(sb2);
@@ -134,7 +135,7 @@ void Entity::cargar_audio_3(sf::SoundBuffer& sb1, sf::SoundBuffer& sb2, sf::Soun
 	s3.setVolume(25.f);
 }
 
-void Entity::cargar_audio_2(sf::SoundBuffer& sb1, sf::SoundBuffer& sb2)
+void Entity::cargar_audio(sf::SoundBuffer& sb1, sf::SoundBuffer& sb2)
 {
 	s1.setBuffer(sb1);
 	s2.setBuffer(sb2);
@@ -148,7 +149,7 @@ void Entity::cargar_audio(sf::SoundBuffer& sb1)
 	s1.setVolume(25.f);
 }
 
-void Entity::setScale(float tam_x, float tam_y)
+void Entity::setScale(const float& tam_x, const float& tam_y)
 {
 	this->tam_x = tam_x;
 	this->tam_y = tam_y;
@@ -173,7 +174,7 @@ void Entity::Draw(sf::RenderWindow& app)
 	anim.Draw(app);
 }
 
-void Entity::setPosition(float pos_x, float pos_y)
+void Entity::setPosition(const float& pos_x, const float& pos_y)
 {
 	anim.sp.setPosition(pos_x, pos_y);
 }

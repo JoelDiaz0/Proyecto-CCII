@@ -2,7 +2,7 @@
 
 Portal::Portal() : Item()
 {
-	nombre = "portal";
+	tipo_item = TIPO_ITEM::PORTAL;
 }
 
 Portal::~Portal()
@@ -29,7 +29,7 @@ void Portal::effect(Player& p1)
 		{
 			s1.play();
 			recogido = true;
-			p1.puntaje.items += 250;
+			p1.puntaje.items += 350;
 		}
 	}
 }

@@ -61,6 +61,17 @@ void Traps::setOrigin(float origin_x, float origin_y)
 	this->origin_y = origin_y;
 }
 
+int Traps::get_size_sprite_x() const
+{
+	return anim.sp.getTextureRect().width;
+}
+
+int Traps::get_size_sprite_y() const
+{
+	return anim.sp.getTextureRect().height;
+}
+
+
 void Traps::effect(Player& p1)
 {
 	if (!no_anim)

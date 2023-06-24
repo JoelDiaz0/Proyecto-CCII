@@ -2,8 +2,8 @@
 
 BloodMonster::BloodMonster() : Enemy()
 {
-    nombre = "bloodmonster";
-    life = 35;
+    tipo_enemigo = TIPO_ENEMIGO::BLOOD_MONSTER;
+    life = 50;
 }
 
 BloodMonster::~BloodMonster()
@@ -19,6 +19,16 @@ void BloodMonster::initialize(float pos_x, float pos_y, float vsx, float vsy = 0
     this->vsx = vsx;
     this->vsy = vsy;
     anim_1.sp.setPosition(pos_x, pos_y);
+}
+
+int BloodMonster::get_puntaje_enemigo()
+{
+    return 100;
+}
+
+Enemy::TIPO_ENEMIGO BloodMonster::get_tipo_enemigo()
+{
+    return tipo_enemigo;
 }
 
 void BloodMonster::move()
@@ -40,12 +50,12 @@ void BloodMonster::Draw(sf::RenderWindow& app)
     {
         anim_1.sp.setScale(sf::Vector2f(tam_x, tam_y));
         anim_1.Draw(app);
-        anim_1.Update();
     }
 }
 
 void BloodMonster::update()
 {
+    anim_1.Update();
 }
 
 

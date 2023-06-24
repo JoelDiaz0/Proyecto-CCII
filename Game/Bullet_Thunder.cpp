@@ -2,7 +2,7 @@
 
 Bullet_Thunder::Bullet_Thunder() : Bullet()
 {
-	name = "bala_rayo";
+	tipo_bala = TIPO_BALA::ELECTRICO;
 	damage = 5;
 }
 

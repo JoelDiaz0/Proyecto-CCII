@@ -9,7 +9,7 @@ Bullet::Bullet()
 	this->anim.sp.setPosition(0.f, 0.f);
 	this->impact = false;
 	this->damage = 5;
-	this->name = "bala_enemigo";
+	tipo_bala = TIPO_BALA::NORMAL;
 }
 
 Bullet::~Bullet()
@@ -23,6 +23,7 @@ void Bullet::Initialize(float vsx, float vsy)
 	tex_bala_normal.loadFromFile("data\\sprites\\bala_2.png");
 	this->anim.Initialize(tex_bala_normal, 15, 15, 4, 0.075);
 	this->vsx = vsx;
+	this->vsy = vsy;
 }
 
 void Bullet::colision_window(int width, int height)
@@ -36,6 +37,11 @@ void Bullet::colision_platform(Platform& plt)
 	if (c1.colision_entity_entity(anim.sp, plt.sp_p)) {
 		impact = true;
 	}
+}
+
+bool Bullet::is_impact() const
+{
+	return impact;
 }
 
 void Bullet::orientacion(bool ori_derecha, bool more_sprites)

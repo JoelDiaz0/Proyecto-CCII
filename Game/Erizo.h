@@ -4,6 +4,7 @@ class Erizo : public Traps
 {
 public:
 	Erizo(float pos_x, float pos_y);
+	Erizo();
 	~Erizo();
 	void update() override;
 	void move() override;
@@ -12,3 +13,5 @@ public:
 private:
 	static sf::Texture tex_traps;
 };
+
+

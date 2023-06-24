@@ -50,9 +50,18 @@
     <ClCompile Include="SpaceSus.cpp" />
     <ClCompile Include="Punk_1.cpp" />
     <ClCompile Include="Punk_2.cpp" />
-    <ClCompile Include="..\..\Proyecto-CCII\Game\Aqua.cpp" />
-    <ClCompile Include="..\..\Proyecto-CCII\Game\Erizo.cpp" />
-    <ClCompile Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.cpp" />
+    <ClCompile Include="Aqua.cpp" />
+    <ClCompile Include="Scenery_Aqua.cpp" />
+    <ClCompile Include="Erizo.cpp" />
+    <ClCompile Include="EnemyDeath.cpp" />
+    <ClCompile Include="Bullet_Demon.cpp" />
+    <ClCompile Include="Buceo.cpp" />
+    <ClCompile Include="Submarino.cpp" />
+    <ClCompile Include="PuntosSobrecarga.cpp" />
+    <ClCompile Include="Oruga.cpp" />
+    <ClCompile Include="Ovni.cpp" />
+    <ClCompile Include="UnknowBall.cpp" />
+    <ClCompile Include="Alien.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -104,9 +113,18 @@
     <ClInclude Include="SpaceSus.h" />
     <ClInclude Include="Punk_1.h" />
     <ClInclude Include="Punk_2.h" />
-    <ClInclude Include="..\..\Proyecto-CCII\Game\Aqua.h" />
-    <ClInclude Include="..\..\Proyecto-CCII\Game\Erizo.h" />
-    <ClInclude Include="..\..\Proyecto-CCII\Game\Scenery_Aqua.h" />
+    <ClInclude Include="Aqua.h" />
+    <ClInclude Include="Scenery_Aqua.h" />
+    <ClInclude Include="Erizo.h" />
+    <ClInclude Include="EnemyDeath.h" />
+    <ClInclude Include="Bullet_Demon.h" />
+    <ClInclude Include="Buceo.h" />
+    <ClInclude Include="Submarino.h" />
+    <ClInclude Include="PuntosSobrecarga.h" />
+    <ClInclude Include="Oruga.h" />
+    <ClInclude Include="Ovni.h" />
+    <ClInclude Include="UnknowBall.h" />
+    <ClInclude Include="Alien.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="data\background\hell_background-0.jpg" />
@@ -168,6 +186,9 @@
     <Image Include="data\sprites\throwingfire.png" />
     <Image Include="data\sprites\Trap_Spike_Run.png" />
     <Image Include="..\..\Proyecto-CCII\Game\data\background\water-graphics.png" />
+    <Image Include="data\sprites\explosion.png" />
+    <Image Include="data\sprites\bala_demoniaca.png" />
+    <Image Include="data\sprites\sea-urchin.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="data\fonts\Baskic8.otf" />
@@ -187,6 +208,9 @@
     <None Include="data\sound\FlameAtack.ogg" />
     <None Include="data\sound\revivir.ogg" />
     <None Include="data\sound\score.ogg" />
+    <None Include="data\sound\gore.ogg" />
+    <None Include="data\sound\llave.ogg" />
+    <None Include="data\sound\portal.ogg" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="userdata.txt" />

@@ -17,12 +17,13 @@ void Mallet::Inicialize(float pos_x, float pos_y, float vsx, float vsy)
 	this->vsy = vsy;
 	this->anim.Initialize(tex_traps, 102, 300, 2, 0.1);
 	this->anim.sp.setPosition(pos_x, pos_y);
+	this->anim.sp.setOrigin( anim.sp.getOrigin().x + 102/2, anim.sp.getOrigin().y + 300/2);
 	no_anim = false;
 }
 
 void Mallet::update()
 {
-	anim.sp.setOrigin(origin_x,origin_y);
+	//anim.sp.setOrigin(origin_x,origin_y);
 	anim.Update();
 }
 

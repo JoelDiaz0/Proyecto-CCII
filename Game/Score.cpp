@@ -6,7 +6,7 @@ Score::Score()
 	enemigos_asesinados = 0;
 	llaves = 0;
 	items = 0;
-	total = 0l;
+	puntos_enemigos = 0;
 }
 
 Score::~Score()
@@ -15,58 +15,75 @@ Score::~Score()
 
 bool Score::operator==(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 30) == (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
+	if (items + puntos_enemigos + 10 * enemigos_asesinados - muertes * 100 == s1.items + s1.puntos_enemigos + 10 * s1.enemigos_asesinados - s1.muertes * 100)
 		return true;
 	return false;
 }
 
 bool Score::operator!=(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 30) != (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
+	if (items + puntos_enemigos + 10 * enemigos_asesinados - muertes * 100 != s1.items + s1.puntos_enemigos + 10 * s1.enemigos_asesinados - s1.muertes * 100)
 		return true;
 	return false;
 }
 
 bool Score::operator<(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 30) < (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
+	if (items + puntos_enemigos + 10 * enemigos_asesinados - muertes * 100 < s1.items + s1.puntos_enemigos + 10 * s1.enemigos_asesinados - s1.muertes * 100)
 		return true;
 	return false;
 }
 
 bool Score::operator>(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 30) > (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
+	if (items + puntos_enemigos + 10 * enemigos_asesinados - muertes * 100 > s1.items + s1.puntos_enemigos + 10 * s1.enemigos_asesinados - s1.muertes * 100)
 		return true;
 	return false;
 }
 
 bool Score::operator<=(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 30) <= (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
+	if (items + puntos_enemigos + 10 * enemigos_asesinados - muertes * 100 <= s1.items + s1.puntos_enemigos + 10 * s1.enemigos_asesinados - s1.muertes * 100)
 		return true;
 	return false;
 }
 
 bool Score::operator>=(const Score& s1) const
 {
-	if ((items + enemigos_asesinados * 100) - (muertes * 30) >= (s1.items + s1.enemigos_asesinados * 100) - (s1.muertes * 30))
+	if (items + puntos_enemigos + 10 * enemigos_asesinados - muertes * 100 >= s1.items + s1.puntos_enemigos + 2 * s1.enemigos_asesinados - s1.muertes * 100)
 		return true;
 	return false;
 }
 
-long Score::getTotal() { return total; }
+int Score::getTotal() 
+{ 
+	return items + puntos_enemigos + (10 * enemigos_asesinados) - muertes * 100;
+}
 
-auto Score::calculo()
+int Score::get_puntos_enemigos()
 {
-	total = ((items + enemigos_asesinados * 100) - (muertes * 30));
-	return total;
+	return puntos_enemigos;
+}
+
+void Score::set_puntos_enemigos(int puntos_enemigos)
+{
+	this->puntos_enemigos = puntos_enemigos;
+}
+
+int Score::get_enemigos_asesinados() const
+{
+	return enemigos_asesinados;
+}
+
+void Score::set_enemigos_asesinados(const int& enemigos_asesinados)
+{
+	this->enemigos_asesinados = enemigos_asesinados;
 }
 
 std::ostream& operator<<(std::ostream& o, Score& s1)
 {
 	o << "Items = " << s1.items << "\nEnemigos Abatidos = " << s1.enemigos_asesinados 
 		<< "\nMuertes = " << s1.muertes << "\nLlaves Recogidas = "<< s1.llaves << "\nPuntaje Total: " << 
-		"(items + enemigos_asesinados * 100) - (muertes * 50) = " << s1.calculo() << "\n";
+		"(items + enemigos_asesinados * 100) - (muertes * 50) = " << s1.getTotal() << "\n";
 	return o;
 }

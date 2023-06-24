@@ -1,22 +1,45 @@
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\animation.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\bullet.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\colision.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\fallen_block.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\item.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\key.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\lava.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\mallet.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\menu.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\muerte.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\pendulum.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\player.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\puntos.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\revivir.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\score.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\spike.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\spike_run.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\suriken.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\traps.obj
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\vc143.idb
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\vc143.pdb
-c:\users\usuario\source\repos\proyecto-ccii\game\x64\debug\game.tlog\cl.command.1.tlog
+d:\ciencia de la computacion\juego\game\x64\debug\vc143.pdb
+d:\ciencia de la computacion\juego\game\x64\debug\vc143.idb
+d:\ciencia de la computacion\juego\game\x64\debug\harpy.obj
+d:\ciencia de la computacion\juego\game\x64\debug\fungus.obj
+d:\ciencia de la computacion\juego\game\x64\debug\fallen_block.obj
+d:\ciencia de la computacion\juego\game\x64\debug\excepcion.obj
+d:\ciencia de la computacion\juego\game\x64\debug\erizo.obj
+d:\ciencia de la computacion\juego\game\x64\debug\entity.obj
+d:\ciencia de la computacion\juego\game\x64\debug\enemydeath.obj
+d:\ciencia de la computacion\juego\game\x64\debug\enemy.obj
+d:\ciencia de la computacion\juego\game\x64\debug\demonsnake.obj
+d:\ciencia de la computacion\juego\game\x64\debug\demon.obj
+d:\ciencia de la computacion\juego\game\x64\debug\colision.obj
+d:\ciencia de la computacion\juego\game\x64\debug\bullet_thunder.obj
+d:\ciencia de la computacion\juego\game\x64\debug\bullet_fire2.obj
+d:\ciencia de la computacion\juego\game\x64\debug\bullet_fire.obj
+d:\ciencia de la computacion\juego\game\x64\debug\bullet_demon.obj
+d:\ciencia de la computacion\juego\game\x64\debug\bullet.obj
+d:\ciencia de la computacion\juego\game\x64\debug\buceo.obj
+d:\ciencia de la computacion\juego\game\x64\debug\bloodmonster.obj
+d:\ciencia de la computacion\juego\game\x64\debug\aqua.obj
+d:\ciencia de la computacion\juego\game\x64\debug\animation.obj
+d:\ciencia de la computacion\juego\game\x64\debug\punk_2.obj
+d:\ciencia de la computacion\juego\game\x64\debug\punk_1.obj
+d:\ciencia de la computacion\juego\game\x64\debug\portal.obj
+d:\ciencia de la computacion\juego\game\x64\debug\player.obj
+d:\ciencia de la computacion\juego\game\x64\debug\platform_movil.obj
+d:\ciencia de la computacion\juego\game\x64\debug\platform.obj
+d:\ciencia de la computacion\juego\game\x64\debug\pendulum.obj
+d:\ciencia de la computacion\juego\game\x64\debug\ovni.obj
+d:\ciencia de la computacion\juego\game\x64\debug\oruga.obj
+d:\ciencia de la computacion\juego\game\x64\debug\muerte.obj
+d:\ciencia de la computacion\juego\game\x64\debug\montana2.obj
+d:\ciencia de la computacion\juego\game\x64\debug\montana.obj
+d:\ciencia de la computacion\juego\game\x64\debug\menu.obj
+d:\ciencia de la computacion\juego\game\x64\debug\mallet.obj
+d:\ciencia de la computacion\juego\game\x64\debug\main.obj
+d:\ciencia de la computacion\juego\game\x64\debug\lluvia.obj
+d:\ciencia de la computacion\juego\game\x64\debug\lava.obj
+d:\ciencia de la computacion\juego\game\x64\debug\key.obj
+d:\ciencia de la computacion\juego\game\x64\debug\item.obj
+d:\ciencia de la computacion\juego\game\x64\debug\hell.obj
+d:\ciencia de la computacion\juego\game\x64\debug\game.tlog\cl.command.1.tlog
+d:\ciencia de la computacion\juego\game\x64\debug\game.tlog\cl.read.1.tlog
+d:\ciencia de la computacion\juego\game\x64\debug\game.tlog\cl.write.1.tlog

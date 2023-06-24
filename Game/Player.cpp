@@ -44,13 +44,18 @@ void Player::draw_bullets(sf::RenderWindow& app)
 {
     if (!balas.empty())
     {
-        for (auto& b : balas)
-        {
-            if (!b->impact)
-            {
-                b->draw(app);
-                b->update();
-                b->move();
+        for (auto i = balas.begin(); i != balas.end(); i++) {
+
+            if (!(*i)->impact) {
+                (*i)->draw(app);
+                (*i)->update();
+                (*i)->move();
+            }
+
+            else {
+                delete (*i);
+                balas.erase(i);
+                break;
             }
         }
     }
@@ -67,10 +72,10 @@ void Player::colision_bullets(Platform& plt, int width, int height)
                 b->colision_window(width, height);
                 b->colision_platform(plt);
             }
-               
         }
     }
 }
+
 
 void Player::colision_enemy(Enemy& e1)
 {

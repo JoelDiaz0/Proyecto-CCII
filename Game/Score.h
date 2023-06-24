@@ -12,6 +12,7 @@ public:
 	friend class Traps;
 	friend class Key;
 	friend class Portal;
+	friend class PuntosSobrecarga;
 	bool operator==(const Score& t1) const;
 	bool operator!=(const Score& t1) const;
 	bool operator<(const Score& t1) const;
@@ -19,14 +20,18 @@ public:
 	bool operator<=(const Score& t1) const;
 	bool operator>=(const Score& t1) const;
 	friend std::ostream& operator<<(std::ostream& o, Score& s1);
-	long getTotal();
+	int getTotal();
+	int get_puntos_enemigos();
+	void set_puntos_enemigos(int puntos_enemigos);
+	int get_enemigos_asesinados() const;
+	void set_enemigos_asesinados(const int& enemigos_asesinados);
+
 private:
-	auto calculo();
 	int muertes;
 	int enemigos_asesinados;
 	int llaves;
 	int items;
-	long total;
+	int puntos_enemigos;
 };
 
 

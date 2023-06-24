@@ -6,11 +6,13 @@
 class Bullet
 {
 public:
+	enum class TIPO_BALA { NORMAL = 0, FUEGO_1, FUEGO_2, ELECTRICO, DEMONIACO };
+public:
 	friend class Enemy;
 	friend class Player;
 	friend class Entity; //Colision con entidades
 	Bullet();
-	~Bullet();
+	virtual ~Bullet();
 	virtual void Initialize(float vsx, float vsy = 0.f);
 	void draw(sf::RenderWindow& app);
 	void update();
@@ -21,9 +23,10 @@ public:
 	void setAngle_sin(int angulo);
 	void colision_window(int width, int height);
 	void colision_platform(Platform& plt);
+	bool is_impact() const;
 protected:
 	static sf::Texture tex_bala_normal;
-	std::string name;
+	TIPO_BALA tipo_bala;
 	Animation anim;
 	Colision c1;
 	float vsx, vsy, tam_x, tam_y;

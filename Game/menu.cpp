@@ -46,7 +46,11 @@ void Menu::set_values(){
 	options = {"Ply\t0000","Ply\t0000","Ply\t0000","Ply\t0000","Ply\t0000"}; //Default
 	if (puntuaciones.size() > 0) {
 		options.clear();
-		for (auto& i : puntuaciones) options.push_back(i.first + "\t" + std::to_string(i.second));
+		int j = 1;
+		for (auto& i : puntuaciones) {
+			options.push_back("LVL " + std::to_string(j) + "  " + i.first + "\t" + std::to_string(i.second));
+			j++;
+		}
 	}
 	//Puntajes
 	scores.resize(5);

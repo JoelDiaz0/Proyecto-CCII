@@ -2,8 +2,8 @@
 
 Throwingfire::Throwingfire() : Enemy()
 {
-    nombre = "throwingfire";
-    life = 75;
+    tipo_enemigo = TIPO_ENEMIGO::THROWING_FIRE;
+    life = 100;
 }
 
 Throwingfire::~Throwingfire()
@@ -22,6 +22,16 @@ void Throwingfire::initialize(float pos_x, float pos_y, float vsx, float vsy)
     sb1.loadFromFile("data\\sound\\FlameAtack.ogg");
     s1.setBuffer(sb1);
     s1.setVolume(40.f);
+}
+
+int Throwingfire::get_puntaje_enemigo()
+{
+    return 200;
+}
+
+Enemy::TIPO_ENEMIGO Throwingfire::get_tipo_enemigo()
+{
+    return tipo_enemigo;
 }
 
 void Throwingfire::move()
@@ -73,7 +83,7 @@ void Throwingfire::attack(sf::RenderWindow& app)
 {
     if (life > 0)
     {
-        if (time_attack.getElapsedTime().asSeconds() > 10.0)
+        if (time_attack.getElapsedTime().asSeconds() > 7.0)
         {
             isFire = true;
             time_attack.restart();
@@ -81,7 +91,7 @@ void Throwingfire::attack(sf::RenderWindow& app)
 
         if (isFire)
         {
-            s1.setVolume(15);
+            s1.setVolume(25.f);
             s1.play();
 
             Bullet* bala1 = new Bullet_Fire2();

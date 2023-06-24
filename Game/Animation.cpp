@@ -5,7 +5,7 @@ Animation::Animation()
     moveSpeed = 0;
     tamSprite_x = 0;
     tamSprite_y = 0,
-        posx = 0;
+    posx = 0;
     posy = 0;
 }
 
@@ -13,7 +13,7 @@ Animation::~Animation()
 {
 }
 
-void Animation::Initialize(sf::Texture& t1, int tamSprite_x, int tamSprite_y, int num_Sprites, double moveSpeed)
+void Animation::Initialize(sf::Texture& t1,const int& tamSprite_x, const int& tamSprite_y, const int& num_Sprites, const double& moveSpeed)
 {
     sp.setTexture(t1);
     this->tamSprite_x = tamSprite_x;

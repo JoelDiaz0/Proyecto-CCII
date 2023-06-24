@@ -2,7 +2,7 @@
 
 Muerte::Muerte() : Item()
 {
-	nombre = "muerte";
+	tipo_item = TIPO_ITEM::MUERTE;
 }
 
 Muerte::~Muerte()
@@ -30,6 +30,7 @@ void Muerte::effect(Player& p1)
 			s1.play();
 			p1.s0_1.play();
 			recogido = true;
+			p1.puntaje.items -= 200;
 			p1.puntaje.muertes++;
 			p1.life--;
 			p1.resucitar = true;
