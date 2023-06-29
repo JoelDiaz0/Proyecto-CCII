@@ -28,6 +28,7 @@ char Colision::colision_pantalla_enemy(sf::Sprite& s1, int width, int height)
 		return 'D';
 	if (s1.getPosition().y < 0.f)
 		return 'W';
+	return ' ';
 }
 
 void Colision::colision_platformMovil_player(sf::Sprite& jugador, sf::Sprite& plataforma)

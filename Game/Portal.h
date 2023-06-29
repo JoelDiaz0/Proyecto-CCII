@@ -5,8 +5,8 @@ class Portal : public Item
 public:
 	Portal();
 	~Portal();
-	void effect(Player& p1) override;
-	void inicialize(float pos_x, float pos_y) override;
+	virtual void effect(Player& p1);
+	virtual void inicialize(float pos_x, float pos_y);
 private:
 	static sf::Texture tex_item;
 	sf::Sound s1;

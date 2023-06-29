@@ -20,6 +20,7 @@ public:
 	friend class Portal;
 	friend class Platform_Movil;
 	friend class PuntosSobrecarga;
+	friend class PortalEnemy;
 
 	friend void borrar_balas(Player& p1, Player& p2, std::vector<Enemy*>& enemigos);
 	friend void ejecutar_nivel(sf::RenderWindow& App, Player* jugador1, Player* jugador2, std::vector<Platform*>& vec_plataformas, std::vector<Platform*>& vec_unlock_plataformas,

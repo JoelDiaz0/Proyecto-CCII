@@ -39,6 +39,7 @@ public:
 	friend class Oruga;
 	friend class Alien;
 	friend class UnknowBall;
+	friend class PortalEnemy;
 	Animation();
 	~Animation();
 	void Initialize(sf::Texture& t1,const int& tamSprite_x,const int& tamSprite_y, const int& num_Sprites, const double& moveSpeed);

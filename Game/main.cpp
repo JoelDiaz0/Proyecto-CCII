@@ -47,13 +47,14 @@
 #include "Scenary_LLuvia.h"
 #include "Scenery_Space.h"
 #include "Scenery_Aqua.h"
+#include "Scenary_Debug.h"
 //Otros
 #include "Excepcion.h"
 #include "EnemyDeath.h"
 #include "PuntosSobrecarga.h"
 #include "Punk_1.h"
 #include "Punk_2.h"
-
+#include "PortalEnemy.h"
 using std::cout;
 using std::endl;
 
@@ -69,8 +70,8 @@ int LEVEL = 0; //CAMBIO DE NIVEL
 EnemyDeath enemigo_muerte_1 = EnemyDeath(true);
 EnemyDeath enemigo_muerte_2 = EnemyDeath(false);
 
-bool sortbysec(const std::pair<std::string, int>& a, const std::pair<std::string, int>& b);//Comparador de pares de puntuacion
 bool detectar_portal(const std::vector<Item*>& portal);
+bool detectar_portal_debug(const std::vector<Item*>& portal_enemy);
 bool detectar_llave(const std::vector<Item*>& llave);
 void borrar_balas(Player& p1, Player& p2, std::vector<Enemy*>& enemigos);
 void borrar_objetos(std::vector<Item*>& items, std::vector<Traps*>& trampas, std::vector<Enemy*>& enemigo, std::vector<Platform*>& plataformas, std::vector<Platform*>& des_plataformas);
@@ -140,6 +141,7 @@ int main()
     SceneryBuilder* escenario_montana = new Scenary_Lluvia;
     SceneryBuilder* escenario_space = new Scenery_Space;
     SceneryBuilder* escenario_aqua = new Scenery_Aqua;
+    SceneryBuilder* escenario_debug = new Scenary_Debug;
 
     //PUNTAJES
     //PANTALLA FINAL
@@ -179,8 +181,30 @@ int main()
 
     bool texto_una_vez = true;
 
-    //static bool Coordeb{ false }; //Crea el booleano para activar y desactivar el "modo debug" 
-    //FUNCION PRINCIPAL
+    //DEBUG
+    sf::Text mousePosX, mousePosY;
+    sf::Font font_debug;
+    font_debug.loadFromFile("data\\fonts\\Baskic8.otf"); //Fuente custom ya que quitaron el defaultfont en sfml
+    //Este codigo podría ser usado para el SCORE
+
+    auto drawText = [&](sf::Text& t, std::string str, int value, int x, int y, int size, sf::Font& f, const sf::Color& c) { //Lambda porque no quería modificar otros archivos
+        t.setString(str + std::to_string(value));        //Pone un texto y luego agrega un valor numérico convertido a texto                                                                  
+        t.setPosition(x, y); //Posición del texto
+        t.setCharacterSize(size); //Tamanio de caracteres
+        t.setFont(f); //font custom
+        t.setFillColor(c);  //Color de texto
+        App.draw(t); //Hace aparecer el texto
+    };
+
+    sf::Texture d_p;
+    d_p.loadFromFile("data\\extras\\daki_peter.jpg");
+    sf::Sprite d_p_s;
+    d_p_s.setTexture(d_p);
+    d_p_s.setPosition(pantalla.W / 2.f - d_p_s.getTextureRect().width / 2.f, 100.f);
+    d_p_s.setScale(0.7f, 0.7f);
+
+    static bool debug{ false }; //Crea el booleano para activar y desactivar el "modo debug" 
+
     while (App.isOpen())
     {
         sf::Event ev;
@@ -202,20 +226,12 @@ int main()
                     App.create(sf::VideoMode(pantalla.W, pantalla.H, 32), "Juego");
                     App.setFramerateLimit(60);
                     fullscream = false;
-                }//pulsa SHIFT para imprimir en la consola las coordenadas actuales del mouse
-                 //if (ev.key.code == sf::Keyboard::Key::LShift) {//Como evento, dejarlo apretado no afecta
-                 //       if(Coordeb == false){
-                 //               Coordeb=true;
-                 //           }else{
-                 //               Coordeb=false;
-                 //           }
-                 //} 
+                }
             default:
                 break;
             }
         }
-        try { // ->Uso del manejo de excepcion
-
+        try { 
             if (LEVEL == 0) {
                 ms.play();
                 Menu* menu = new Menu(puntuaciones,maxUnlockedLevel);
@@ -259,7 +275,7 @@ int main()
                         piso->initialize();
                         piso->generar_bloque_1();
                         piso->setScale(xF1, yF1);
-                        piso->setPosition(i * piso->getTamSprite_X() * xF1, pantalla.H - piso->getTamSprite_Y() * yF1 * 0.5);
+                        piso->setPosition(i * piso->getTamSprite_X() * xF1, pantalla.H - piso->getTamSprite_Y() * yF1 * 0.5f);
                         vec_plataformas.push_back(piso);
                     }
                     
@@ -282,11 +298,11 @@ int main()
                     }
 
                     Traps* mazo = new Mallet;
-                    mazo->Inicialize(pantalla.W / 2 - 100, pantalla.H - 30, 3.f);
+                    mazo->Inicialize(pantalla.W / 2 - 100, pantalla.H - 30.f, 3.f);
                     mazo->setScale(0.75f, 0.75f);
                     vec_trampas.push_back(mazo);
                     Traps* mazo2 = new Mallet;
-                    mazo2->Inicialize(pantalla.W / 2 + 150, pantalla.H - 30, -3.f);
+                    mazo2->Inicialize(pantalla.W / 2 + 150, pantalla.H - 30.f, -3.f);
                     mazo2->setScale(0.75f, 0.75f);
                     vec_trampas.push_back(mazo2);
 
@@ -403,7 +419,7 @@ int main()
                             Platform* piso_plat1 = new Aqua;
                             piso_plat1->initialize();
                             piso_plat1->generar_bloque_2();
-                            piso_plat1->setPosition(piso_plat1->getTamSprite_X()* i * 0.5, pantalla.H - piso_plat1->getTamSprite_Y() * 0.25f);
+                            piso_plat1->setPosition(piso_plat1->getTamSprite_X()* i * 0.5f, pantalla.H - piso_plat1->getTamSprite_Y() * 0.25f);
                             piso_plat1->setScale(0.5f, 0.5f);
                             vec_plataformas.push_back(piso_plat1);                
 
@@ -411,24 +427,24 @@ int main()
                                 Platform* piso_plat2 = new Aqua;
                                 piso_plat2->initialize();
                                 piso_plat2->generar_bloque_2();
-                                piso_plat2->setPosition(piso_plat2->getTamSprite_X()* i * 0.5, piso_plat2->getTamSprite_Y());
+                                piso_plat2->setPosition(piso_plat2->getTamSprite_X()* i * 0.5f, piso_plat2->getTamSprite_Y());
                                 piso_plat2->setScale(0.5f, 0.5f);
                                 vec_plataformas.push_back(piso_plat2);
 
                                 Item* item_llave = new Key;
-                                item_llave->inicialize(piso_plat2->getTamSprite_X()* i * 0.5 + 50.f, piso_plat2->getTamSprite_Y() - 50.f);
+                                item_llave->inicialize(piso_plat2->getTamSprite_X()* i * 0.5f + 50.f, piso_plat2->getTamSprite_Y() - 50.f);
                                 item_llave->setScale(0.55f, 0.55f);
                                 vec_items.push_back(item_llave);
                             }
                             else if (i == 4) {
                                 Traps* plataforma_movil2 = new Platform_Movil;
-                                plataforma_movil2->Inicialize(piso_plat1->getTamSprite_X() * i * 0.5 - 100.f, piso_plat1->getTamSprite_Y(), 0.f, 3.5f);
+                                plataforma_movil2->Inicialize(piso_plat1->getTamSprite_X() * i * 0.5f - 100.f, piso_plat1->getTamSprite_Y(), 0.f, 3.5f);
                                 plataforma_movil2->setScale(3.f, 3.f);
                                 vec_trampas.push_back(plataforma_movil2);
                             }
                             else if (i == 6) {
                                 Traps* plataforma_movil3 = new Platform_Movil;
-                                plataforma_movil3->Inicialize(piso_plat1->getTamSprite_X() * i * 0.5 + 120.f, piso_plat1->getTamSprite_Y(), 0.f, -3.5f);
+                                plataforma_movil3->Inicialize(piso_plat1->getTamSprite_X() * i * 0.5f + 120.f, piso_plat1->getTamSprite_Y(), 0.f, -3.5f);
                                 plataforma_movil3->setScale(3.f, 3.f);
                                 vec_trampas.push_back(plataforma_movil3);
                             }
@@ -454,6 +470,7 @@ int main()
                             if (i == 3) {
                                 Item* item_portal = new Portal;
                                 item_portal->inicialize(piso_plat1->getTamSprite_X() * i * 0.5 - 170.f, pantalla.H / 2 - piso_plat1->getTamSprite_Y() * 0.85f);
+                                item_portal->orientacion(true);
                                 item_portal->setScale(1.5f, 1.5f);
                                 vec_items.push_back(item_portal);
                             }
@@ -501,7 +518,7 @@ int main()
                     buceo2->setScale(2.5f, 2.5f);
                     vec_enemigos.push_back(buceo2);
                     Enemy* submarino = new Submarino;
-                    submarino->initialize(pantalla.W / 2, pantalla.H / 2, 2.25f);
+                    submarino->initialize(pantalla.W / 2, pantalla.H / 2.f, 2.25f);
                     submarino->setScale(2.5f, 2.5f);
                     vec_enemigos.push_back(submarino);
 
@@ -620,7 +637,7 @@ int main()
                         piso_plat1->initialize();
                         piso_plat1->generar_bloque_1();
                         piso_plat1->setScale(xF1, yF1);
-                        piso_plat1->setPosition(piso_plat1->getTamSprite_X() * (i - 1), pantalla.H / 2 - piso_plat1->getTamSprite_Y()*5);
+                        piso_plat1->setPosition(piso_plat1->getTamSprite_X() * (i - 1), pantalla.H / 2.f - piso_plat1->getTamSprite_Y()*5);
                         vec_plataformas.push_back(piso_plat1);
                     }
 
@@ -739,6 +756,7 @@ int main()
                     ms.stop();           
                     jugador1->setPosition(520, 400);
                     jugador2->setPosition(700, 400);
+                    una_vez = false;
 
                     //Creación de plataformas estáticas
                     for (int i = 1; i < 10; i++) {             
@@ -776,12 +794,12 @@ int main()
                         vec_plataformas.push_back(Suelo);
                     }
 
-                    for (int i = 0; i < 8; i++) {
+                    for (int i = 0; i < 6; i++) {
                         Platform* Suelo2 = new SpaceSus;
                         Suelo2->initialize();
                         Suelo2->generar_bloque_4();
                         Suelo2->setScale(1.8, 1.5);
-                        Suelo2->setPosition(400 + i * 60, 300);
+                        Suelo2->setPosition(450 + i * 60, 330.f);
                         vec_plataformas.push_back(Suelo2);
                     }
 
@@ -790,20 +808,26 @@ int main()
                         Suelo3->initialize();
                         Suelo3->generar_bloque_3();
                         Suelo3->setScale(1.8, 1.5);
-                        Suelo3->setPosition(520 + i * 60, 150);
+                        Suelo3->setPosition(520 + i * 60, 180);
                         vec_plataformas.push_back(Suelo3);
                     }
 
                     //Plataforma movible
-                    Traps* plataforma_movil2 = new Platform_Movil;
-                    plataforma_movil2->Inicialize(277, 0, 0.f, 3.5f);
-                    plataforma_movil2->setScale(3.f, 3.f);
-                    vec_trampas.push_back(plataforma_movil2);
 
                     Traps* plataforma_movil3 = new Platform_Movil;
-                    plataforma_movil3->Inicialize(930, 466, 0.f, 3.5f);
+                    plataforma_movil3->Inicialize(830.f, 466.f, 0.f, 3.5f);
                     plataforma_movil3->setScale(3.f, 3.f);
                     vec_trampas.push_back(plataforma_movil3);
+
+                    for (int i = 0; i < 14; i++) {
+                        if (i > 2 && i < 10) {
+                            continue;
+                        }
+                        Traps* trampa_suriken = new Suriken;
+                        trampa_suriken->Inicialize(i * 100.f, 0.f);
+                        trampa_suriken->setScale(2.f, 2.f);
+                        vec_trampas.push_back(trampa_suriken);
+                    }
 
                     //Items
                     Item* item_llave = new Key;
@@ -818,22 +842,29 @@ int main()
                         Muro->initialize();
                         Muro->generar_bloque_1();
                         Muro->setScale(2.f, 2.f);
-                        Muro->setPosition(520, 86 - 60 * i);
+                        Muro->setPosition(520, 116 - 60 * i);
                         vec_unlock_plataformas.push_back(Muro);
 
                         Platform* Muro2 = new SpaceSus;
                         Muro2->initialize();
                         Muro2->generar_bloque_1();
                         Muro2->setScale(2.f, 2.f);
-                        Muro2->setPosition(700, 86 - 60 * i);
+                        Muro2->setPosition(700, 116 - 60 * i);
                         vec_unlock_plataformas.push_back(Muro2);
                     }
 
                     //Portal END
                     Item* item_portal = new Portal;
-                    item_portal->inicialize(600, 0);
+                    item_portal->inicialize(600.f, 0.f);
                     item_portal->setScale(1.5f, 1.5f);
                     vec_items.push_back(item_portal);
+
+                    Item* item_portal_debug = new PortalEnemy;
+                    item_portal_debug->inicialize(0.f, 100.f);
+                    item_portal_debug->orientacion(true);
+                    item_portal_debug->setScale(1.5f, 1.5f);
+                    vec_items.push_back(item_portal_debug);
+
                     //Enemigos
                     Enemy* unknow_ball = new UnknowBall;
                     unknow_ball->initialize(300.f, 100.f , 0.f, 2.5f);
@@ -843,12 +874,10 @@ int main()
                     unknow_ball2->initialize(1000.f, 100.f, 0.f, -2.5f);
                     unknow_ball2->setScale(4.f, 4.f);
                     vec_enemigos.push_back(unknow_ball2);
-
                     Enemy* unknow_ball3 = new UnknowBall;
                     unknow_ball3->initialize(200.f, 200.f, 0.f, 2.5f);
                     unknow_ball3->setScale(4.f, 4.f);
                     vec_enemigos.push_back(unknow_ball3);
-
                     Enemy* unknow_ball4 = new UnknowBall;
                     unknow_ball4->initialize(1100, 200.f, 0.f, -2.5f);
                     unknow_ball4->setScale(4.f, 4.f);
@@ -884,16 +913,51 @@ int main()
 
                     ejecutar_nivel(App, jugador1, jugador2, vec_plataformas, vec_unlock_plataformas, vec_enemigos, vec_trampas, vec_items);
 
-                    if (tiempo_spawn.getElapsedTime().asSeconds() > 22.f) {
+                    if (tiempo_spawn.getElapsedTime().asSeconds() > 22.5f) {
                         Enemy* enemigo_thrower_3 = new Throwingfire;
                         Enemy* enemigo_thrower_4 = new Throwingfire;
-                        enemigo_thrower_3->initialize(20.f, 400.f, 2.15f, 5.5f);
+                        enemigo_thrower_3->initialize(20.f, 400.f, 2.15f, 2.5f);
                         enemigo_thrower_3->setScale(3.f, 3.f);
-                        enemigo_thrower_4->initialize(pantalla.W - 150.f, 400.f, 2.15f, 5.5f);
+                        enemigo_thrower_4->initialize(pantalla.W - 150.f, 400.f, 2.15f, 2.5f);
                         enemigo_thrower_4->setScale(3.f, 3.f);
                         vec_enemigos.push_back(enemigo_thrower_4);
                         vec_enemigos.push_back(enemigo_thrower_3);
                         tiempo_spawn.restart();
+                    }
+
+                    if (detectar_llave(vec_items) && !una_vez) {
+                        Traps* plataforma_movil2 = new Platform_Movil;
+                        plataforma_movil2->Inicialize(277, 0, 0.f, 3.5f);
+                        plataforma_movil2->setScale(3.f, 3.f);
+                        vec_trampas.push_back(plataforma_movil2);
+
+                        //Enemigos
+                        Enemy* unknow_ball = new UnknowBall;
+                        unknow_ball->initialize(300.f, 100.f, 0.f, 2.5f);
+                        unknow_ball->setScale(4.f, 4.f);
+                        vec_enemigos.push_back(unknow_ball);
+                        Enemy* unknow_ball2 = new UnknowBall;
+                        unknow_ball2->initialize(1000.f, 100.f, 0.f, -2.5f);
+                        unknow_ball2->setScale(4.f, 4.f);
+                        vec_enemigos.push_back(unknow_ball2);
+                        Enemy* unknow_ball3 = new UnknowBall;
+                        unknow_ball3->initialize(200.f, 200.f, 0.f, 2.5f);
+                        unknow_ball3->setScale(4.f, 4.f);
+                        vec_enemigos.push_back(unknow_ball3);
+                        Enemy* unknow_ball4 = new UnknowBall;
+                        unknow_ball4->initialize(1100, 200.f, 0.f, -2.5f);
+                        unknow_ball4->setScale(4.f, 4.f);
+                        vec_enemigos.push_back(unknow_ball4);
+                        Enemy* unknow_ball5 = new UnknowBall;
+                        unknow_ball5->initialize(100.f, 300.f, 0.f, 2.5f);
+                        unknow_ball5->setScale(4.f, 4.f);
+                        vec_enemigos.push_back(unknow_ball5);
+                        Enemy* unknow_ball6 = new UnknowBall;
+                        unknow_ball6->initialize(900, 0.f, 0.f, -2.5f);
+                        unknow_ball6->setScale(4.f, 4.f);
+                        vec_enemigos.push_back(unknow_ball6);
+
+                        una_vez = true;
                     }
 
                     if (detectar_portal(vec_items)) {
@@ -905,7 +969,18 @@ int main()
                         CARGANDO = true;
                         tiempo_spawn.restart();
                         tiempo_spawn_2.restart();
-                    }               
+                    }             
+
+                    if (detectar_portal_debug(vec_items)) {
+                        LEVEL = -1;
+                        puntuaciones[3] = mayor_puntaje_jugador(jugador1, jugador2);
+                        escenario->parar_musica();
+                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
+                        borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
+                        CARGANDO = true;
+                        tiempo_spawn.restart();
+                        tiempo_spawn_2.restart();
+                    }
                 }
             }
             else if (LEVEL == 5) {
@@ -913,6 +988,7 @@ int main()
                     ms.stop();
                     cout << "Cargando una vez elementos en level " << LEVEL << endl;
                     CARGANDO = false;
+                    una_vez = false;
                     jugador1->setPosition(200.f, pantalla.H - 150.f);
                     jugador2->setPosition(200.f, pantalla.H - 150.f);
                     for (int i = 0; i < 2; i++)
@@ -1013,6 +1089,7 @@ int main()
                     vec_items.push_back(item_llave);
                     Item* item_portal = new Portal;
                     item_portal->inicialize(10.f, pantalla.H - 200.f);
+                    item_portal->orientacion(true);
                     item_portal->setScale(1.5f, 1.5f);
                     vec_items.push_back(item_portal);
                     Enemy* enemigo_demon = new Demon;
@@ -1147,6 +1224,104 @@ int main()
                     cuenta.restart();
                 }
             }
+            else if (LEVEL == -1) {
+                if (CARGANDO) {
+                    ms.stop();
+                    cout << "Cargando una vez elementos en level " << LEVEL << endl;
+                    jugador1->setPosition(50.f, pantalla.H - 100.f);
+                    jugador2->setPosition(100.f, pantalla.H - 100.f);
+
+                    for (int i = 0; i < 20; i++) {
+                        Platform* piso = new Hell;
+                        piso->generar_bloque_1();
+                        piso->initialize();
+                        piso->setPosition(i * piso->getTamSprite_X(), pantalla.H - piso->getTamSprite_Y());
+                        vec_plataformas.push_back(piso);
+
+                        Item* puntos = new Puntos;
+                        puntos->inicialize(i * piso->getTamSprite_X(), pantalla.H - piso->getTamSprite_Y() * 2.5f);
+                        puntos->setScale(0.9f, 0.9f);
+                        vec_items.push_back(puntos);
+                    }
+
+                    for (int i = 0; i < 4; i++) {
+                        for (int j = 0; j < 7; j++) {
+                            Item* puntos = new Puntos;
+                            puntos->inicialize(pantalla.W / 2.f - 400.f + i * 60.f, pantalla.H / 2.f - 300.f + j * 60.f);
+                            puntos->setScale(0.9f, 0.9f);
+                            vec_items.push_back(puntos);
+                        }
+                    }
+
+                    for (int i = 0; i < 4; i++) {
+                        for (int j = 0; j < 7; j++) {
+                            Item* puntos = new Puntos;
+                            puntos->inicialize(pantalla.W / 2.f + 125.f + i * 60.f, pantalla.H / 2.f - 300.f + j * 60.f);
+                            puntos->setScale(0.9f, 0.9f);
+                            vec_items.push_back(puntos);
+                        }
+                    }
+
+                    Item* item_portal = new Portal;
+                    item_portal->inicialize(pantalla.W - 100.f, pantalla.H / 3.0f);
+                    item_portal->setScale(1.5f, 1.5f);
+                    vec_items.push_back(item_portal);
+
+                    Traps* plataforma_movil2 = new Platform_Movil;
+                    plataforma_movil2->Inicialize(277, 0, 0.f, 3.5f);
+                    plataforma_movil2->setScale(3.f, 3.f);
+                    vec_trampas.push_back(plataforma_movil2);
+
+                    Traps* plataforma_movil3 = new Platform_Movil;
+                    plataforma_movil3->Inicialize(820, pantalla.H - 70.f, 0.f, 3.5f);
+                    plataforma_movil3->setScale(3.f, 3.f);
+                    vec_trampas.push_back(plataforma_movil3);
+
+                    escenario->setBuilder(escenario_debug);
+                    escenario->construir_Scenary();
+
+                    tiempo_spawn.restart();
+                    debug = true;
+                    CARGANDO = false;
+                }
+                else {
+                    App.clear();
+
+                    puntaje_jugador_1.setString("P1: " + std::to_string(jugador1->puntaje.getTotal()));
+                    puntaje_jugador_2.setString("P2: " + std::to_string(jugador2->puntaje.getTotal()));
+
+                    escenario->draw_scenary(App);
+                    escenario->reproducir_musica();
+                    jugador1->colision_windows(pantalla.W, pantalla.H);
+                    jugador2->colision_windows(pantalla.W, pantalla.H);
+                    jugador1->revivir(50.f, pantalla.H - 100.f);
+                    jugador2->revivir(100.f, pantalla.H - 100.f);
+
+                    App.draw(puntaje_jugador_1);
+                    App.draw(puntaje_jugador_2);
+
+                    App.draw(d_p_s);
+
+                    if (debug) {
+                        drawText(mousePosX, std::string("Pos X mouse: "), sf::Mouse::getPosition(App).x, 1040, 85, 30, font_debug, sf::Color::White);
+                        drawText(mousePosX, std::string("Pos Y mouse: "), sf::Mouse::getPosition(App).y, 1040, 125, 30, font_debug, sf::Color::White);
+                    }
+
+                    ejecutar_nivel(App, jugador1, jugador2, vec_plataformas, vec_unlock_plataformas, vec_enemigos, vec_trampas, vec_items);
+
+                    if (detectar_portal(vec_items)) {
+                        LEVEL = 5;
+                        puntuaciones[4] = mayor_puntaje_jugador(jugador1, jugador2);
+                        escenario->parar_musica();
+                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
+                        borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
+                        CARGANDO = true;
+                        tiempo_spawn.restart();
+                        tiempo_spawn_2.restart();
+                    }
+                }
+            }
+
             else {
                 throw Excepcion();
             }
@@ -1154,27 +1329,7 @@ int main()
         catch (Excepcion& exp) {
             cout << exp.what() << endl;
             return -1;
-        }
-
-        //debug. Si quiere ser usado, debe pegarse arriba de "App.display()" dentro del nivel en el que se quiera usar.
-        //if (Coordeb == true) {
-        //    sf::Text mousePosX, mousePosY; 
-        //    sf::Font font;
-        //    font.loadFromFile("data\\fonts\\Baskic8.otf"); //Fuente custom ya que quitaron el defaultfont en sfml
-        //    //Este codigo podría ser usado para el SCORE
-        //
-        //   auto drawText = [&](sf::Text& t, std::string str, int value, int x, int y, int size, sf::Font& f, const sf::Color& c) { //Lambda porque no quería modificar otros archivos
-        //        t.setString(str + std::to_string(value));        //Pone un texto y luego agrega un valor numérico convertido a texto                                                                  
-        //        t.setPosition(x, y); //Posición del texto
-        //        t.setCharacterSize(size); //Tamanio de caracteres
-        //        t.setFont(f); //font custom
-        //        t.setFillColor(c);  //Color de texto
-        //        App.draw(t); //Hace aparecer el texto
-        //    };
-        //
-        //    drawText(mousePosX, std::string("Pos X mouse: "), sf::Mouse::getPosition(App).x, 1040, 85, 30, font, sf::Color::Black);
-        //    drawText(mousePosX, std::string("Pos Y mouse: "), sf::Mouse::getPosition(App).y, 1040, 125, 30, font, sf::Color::Black);
-        //}      
+        }     
     }
 
     //Puntuaciones escritura en el archivo 'userdata.txt'
@@ -1188,7 +1343,7 @@ int main()
     
     //ELIMINAR OBJETOS Y LIBERAR MEMORIA
     borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
-    delete jugador1, jugador2, escenario, escenario_infierno, escenario_montana, escenario_tatooine, escenario_space;
+    delete jugador1, jugador2, escenario, escenario_infierno, escenario_montana, escenario_tatooine, escenario_space, escenario_debug;
     return 0;
 }
 
@@ -1284,7 +1439,7 @@ void ejecutar_nivel(sf::RenderWindow& App, Player* jugador1, Player* jugador2, s
 
         if (crear_alien) {
             Enemy* alien = new Alien;
-            alien->initialize(pos_x, pos_y, 2.5f);
+            alien->initialize(pos_x, pos_y - 100.f, 2.5f);
             alien->setScale(0.9f, 0.9f);
             vec_enemigos.push_back(alien);
         }
@@ -1318,13 +1473,23 @@ void ejecutar_nivel(sf::RenderWindow& App, Player* jugador1, Player* jugador2, s
         App.display();
 }
 
-bool sortbysec(const std::pair<std::string, int>& a, const std::pair<std::string, int>& b) { return (a.second > b.second); }
-
 bool detectar_portal(std::vector<Item*>& portal)
 {
     for (const auto& i : portal) {
         if (i->recogido && i->tipo_item == Item::TIPO_ITEM::PORTAL)
             return true;
+    }
+    return false;
+}
+
+bool detectar_portal_debug(const std::vector<Item*>& portal_enemy) {
+
+    if (!portal_enemy.empty()) {
+        for (const auto& i : portal_enemy) {
+            if (i->recogido && i->tipo_item == Item::TIPO_ITEM::PORTAL_ENEMY) {
+                return true;
+            }
+        }
     }
     return false;
 }

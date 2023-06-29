@@ -64,3 +64,8 @@ Item::TIPO_ITEM Item::get_tipo_item()
 	return tipo_item;
 }
 
+void Item::orientacion(bool orientacion)
+{
+	if (orientacion)
+		anim.rectSourceSprite.top = anim.tamSprite_y;
+}

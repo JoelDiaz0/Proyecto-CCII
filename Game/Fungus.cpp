@@ -2,7 +2,7 @@
 Fungus::Fungus() : Enemy()
 {
 	tipo_enemigo = TIPO_ENEMIGO::FUNGUS;
-	life = 10;
+	life = 5;
 }
 
 Fungus::~Fungus()

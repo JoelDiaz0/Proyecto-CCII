@@ -13,6 +13,8 @@ public:
 	friend class Key;
 	friend class Portal;
 	friend class PuntosSobrecarga;
+	friend class PortalEnemy;
+
 	bool operator==(const Score& t1) const;
 	bool operator!=(const Score& t1) const;
 	bool operator<(const Score& t1) const;
