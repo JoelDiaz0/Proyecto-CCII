@@ -1,2 +1,44 @@
-﻿  PortalEnemy.cpp
+﻿  main.cpp
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(192,26): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(192,23): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(301,53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(305,54): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(375,54): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(376,54): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(430,123): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(441,138): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(447,138): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(457,85): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(466,85): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(472,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(480,96): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(521,54): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(541,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(542,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(576,75): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(576,59): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(607,98): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(607,78): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(618,101): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(618,77): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(626,102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(626,78): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(639,78): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(668,60): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(677,91): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(762,56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(766,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(777,115): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(783,116): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(791,90): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(799,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(800,49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(808,50): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(809,49): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(843,52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(850,53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(1054,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(1232,82): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(1232,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Ciencia de la Computacion\Juego\Game\main.cpp(1236,46): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Game.vcxproj -> D:\Ciencia de la Computacion\Juego\x64\Debug\Game.exe

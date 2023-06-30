@@ -582,7 +582,6 @@ int main()
                     if (detectar_portal(vec_items)) {
                         LEVEL = 3;
                         puntuaciones[1] = mayor_puntaje_jugador(jugador1, jugador2);
-                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
                         borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
                         escenario->parar_musica();
                         CARGANDO = true;
@@ -744,7 +743,6 @@ int main()
                         LEVEL = 4;
                         puntuaciones[2] = mayor_puntaje_jugador(jugador1, jugador2);
                         escenario->parar_musica();
-                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
                         borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
                         CARGANDO = true;
                         tiempo_spawn.restart();
@@ -964,7 +962,6 @@ int main()
                         LEVEL = 5;
                         puntuaciones[3] = mayor_puntaje_jugador(jugador1, jugador2);
                         escenario->parar_musica();
-                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
                         borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
                         CARGANDO = true;
                         tiempo_spawn.restart();
@@ -973,9 +970,7 @@ int main()
 
                     if (detectar_portal_debug(vec_items)) {
                         LEVEL = -1;
-                        puntuaciones[3] = mayor_puntaje_jugador(jugador1, jugador2);
                         escenario->parar_musica();
-                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
                         borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
                         CARGANDO = true;
                         tiempo_spawn.restart();
@@ -1181,7 +1176,6 @@ int main()
                         LEVEL = 6;
                         escenario->parar_musica();
                         puntuaciones[4] = mayor_puntaje_jugador(jugador1, jugador2);
-                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
                         borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
                         CARGANDO = true;
                         cuenta.restart();
@@ -1311,9 +1305,8 @@ int main()
 
                     if (detectar_portal(vec_items)) {
                         LEVEL = 5;
-                        puntuaciones[4] = mayor_puntaje_jugador(jugador1, jugador2);
+                        puntuaciones[3] = mayor_puntaje_jugador(jugador1, jugador2);
                         escenario->parar_musica();
-                        borrar_balas(*jugador1, *jugador2, vec_enemigos);
                         borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
                         CARGANDO = true;
                         tiempo_spawn.restart();
@@ -1342,6 +1335,7 @@ int main()
     }
     
     //ELIMINAR OBJETOS Y LIBERAR MEMORIA
+    borrar_balas(*jugador1, *jugador2, vec_enemigos);
     borrar_objetos(vec_items, vec_trampas, vec_enemigos, vec_plataformas, vec_unlock_plataformas);
     delete jugador1, jugador2, escenario, escenario_infierno, escenario_montana, escenario_tatooine, escenario_space, escenario_debug;
     return 0;
@@ -1515,12 +1509,11 @@ void borrar_balas(Player& p1, Player& p2, std::vector<Enemy*>& enemigos)
             delete b;
         p2.balas.clear();
     }
-    for (auto& e : enemigos)
-    {
-        if (!e->balas.empty())
+    if (!enemigos.empty()) {
+        for (auto& e : enemigos) 
             delete e;
-        e->balas.clear();
-    }
+        enemigos.clear();
+    } 
 }
 
 void borrar_objetos(std::vector<Item*>& items, std::vector<Traps*>& trampas, std::vector<Enemy*>& enemigo, std::vector<Platform*>& plataformas, std::vector<Platform*>& des_plataformas)

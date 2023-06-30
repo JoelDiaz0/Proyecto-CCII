@@ -21,7 +21,11 @@ Enemy::Enemy()
 
 Enemy::~Enemy()
 {
-
+	if (!balas.empty()) {
+		for (auto& b : balas) {
+			delete b;
+		}
+	}
 }
 
 void Enemy::colision_windows(int width, int height)
